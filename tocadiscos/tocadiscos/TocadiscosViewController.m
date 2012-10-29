@@ -79,6 +79,23 @@
     sliderStereoRotacion = CGAffineTransformRotate(sliderStereoRotacion, -(M_PI / 2));
     self._sliderVolumen.transform = sliderStereoRotacion;
     
+    /* -------------------------------------------
+     Cambio por: Beto
+     Tipo movimiento: Giro de la aguja.
+     
+     Notas:
+     Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro
+     */
+    CGRect aguja = self.imagenAguja.frame; // Asignamos la variable aguja que trae las propiedades de la imagenAguja
+    aguja.origin.x = 190; // Posicionamos la imagen de x
+    aguja.origin.y = 4; //Posicionamos la imagen de y
+    
+    self.imagenAguja.layer.anchorPoint = CGPointMake(.5, .26); //Le decimos donde queremos anclar la imagen
+    self.imagenAguja.frame = aguja; //Le asignamos los nuevos parametros a la imagen original de la aguja
+    
+    
+    /* fin Cambio por: Beto. ----------------------- */
+    
     //Personalizamos el slider de velocidad
     UIImage *minImageVe = [UIImage imageNamed:@"ControlVelocidadHorizontal-02.png"];
     UIImage *maxImageVe = [UIImage imageNamed:@"ControlVelocidadHorizontal-02.png"];
@@ -107,18 +124,7 @@
     self.reproductor.enableRate = YES;
     self.reproductor.rate = 1;
     [self.reproductor prepareToPlay];
-    
-    
-    //Posicion de la imagen del brazo de la aguja
-    self.imagenAguja.layer.anchorPoint = CGPointMake(1.0, 1.0);
-    self.imagenAguja.center = CGPointMake(273.0, 38.0);
-    
-    
-    
-    
-    
-    
-    
+   
    
 }
 
@@ -168,7 +174,7 @@
     CGAffineTransform moverAguja = self.imagenAguja.transform;
     //moverAguja = CGAffineTransformMakeRotation(+0.1);
     
-    moverAguja = CGAffineTransformMakeRotation(+0.1);
+    moverAguja = CGAffineTransformMakeRotation(+0.4);
     self.imagenAguja.transform = moverAguja;
     
     [UIView commitAnimations];
@@ -222,7 +228,7 @@
     
     
     CGAffineTransform moverAguja = self.imagenAguja.transform;
-    moverAguja = CGAffineTransformMakeRotation(-0.5);
+    moverAguja = CGAffineTransformMakeRotation(-0.01);
     self.imagenAguja.transform = moverAguja;
     [UIView commitAnimations];
     [self.reproductor pause];
@@ -239,7 +245,7 @@
     
     
     CGAffineTransform moverAguja = self.imagenAguja.transform;
-    moverAguja = CGAffineTransformMakeRotation(-0.5);
+    moverAguja = CGAffineTransformMakeRotation(-0.01);
     self.imagenAguja.transform = moverAguja;
     [UIView commitAnimations];
     

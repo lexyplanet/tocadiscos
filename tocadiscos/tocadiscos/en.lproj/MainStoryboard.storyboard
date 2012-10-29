@@ -39,8 +39,8 @@
                                 <rect key="frame" x="12" y="13" width="240" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Barilla Aguja92x139.png" id="Zer-mJ-XQb">
-                                <rect key="frame" x="181" y="38" width="92" height="139"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Aguja2.png" id="Zer-mJ-XQb">
+                                <rect key="frame" x="177" y="0.0" width="126" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Controles.png" id="er4-AU-7ge">
@@ -246,7 +246,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Barilla Aguja92x139.png" width="92" height="139"/>
+        <image name="Aguja2.png" width="102" height="293"/>
         <image name="BotonOn.png" width="37" height="38"/>
         <image name="BotonPauseVerde.png" width="84" height="67"/>
         <image name="BotonPlayVerde.png" width="109" height="67"/>
