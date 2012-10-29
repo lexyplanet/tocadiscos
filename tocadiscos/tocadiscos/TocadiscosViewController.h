@@ -39,6 +39,9 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imagenDisco;
 @property (strong, nonatomic) IBOutlet UIImageView *imagenAguja;
 
+//Añadido para crear otra imagen del brazo del tocadiscos
+//@property (strong, nonatomic) UIImageView *brazoImageView;
+
 @property(nonatomic, strong) NSString* cancionActual;
 
 - (IBAction)Play:(id)sender;

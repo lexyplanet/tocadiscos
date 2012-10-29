@@ -24,10 +24,6 @@
 @synthesize _sliderRate;
 @synthesize reproductor;
 
-
-
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,10 +35,6 @@
 
 - (void)viewDidLoad
 {
-    //[super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-    //[super viewDidLoad];
     //[super viewDidLoad];
     
     //Personalizamos el slider de Stereo
@@ -60,12 +52,11 @@
     minImage = nil;
     maxImage = nil;
     thumbImage = nil;
-    
+        
     //Giramos el slider de Stereo
     CGAffineTransform sliderVolumenRotacion = CGAffineTransformIdentity;
     sliderVolumenRotacion = CGAffineTransformRotate(sliderVolumenRotacion, -(M_PI / 2));
     self._sliderStereo.transform = sliderVolumenRotacion;
-    
     
     //Personalizamos el slider de volumen
     UIImage *minImageV = [UIImage imageNamed:@"ControlVolumenHorizontal-02.png"];
@@ -87,11 +78,6 @@
     CGAffineTransform sliderStereoRotacion = CGAffineTransformIdentity;
     sliderStereoRotacion = CGAffineTransformRotate(sliderStereoRotacion, -(M_PI / 2));
     self._sliderVolumen.transform = sliderStereoRotacion;
-    
-    //[super viewDidLoad];
-    //[super viewDidLoad];
-    
-    
     
     //Personalizamos el slider de velocidad
     UIImage *minImageVe = [UIImage imageNamed:@"ControlVelocidadHorizontal-02.png"];
@@ -122,6 +108,18 @@
     self.reproductor.rate = 1;
     [self.reproductor prepareToPlay];
     
+    
+    //Posicion de la imagen del brazo de la aguja
+    self.imagenAguja.layer.anchorPoint = CGPointMake(1.0, 1.0);
+    self.imagenAguja.center = CGPointMake(273.0, 38.0);
+    
+    
+    
+    
+    
+    
+    
+   
 }
 
 - (void)didReceiveMemoryWarning
@@ -159,7 +157,17 @@
     self.reproductor.currentTime = timeActualFloat;
     [self.reproductor prepareToPlay];
     
+    
+    //Establece el anchor point del giro
+    /*self.imagenAguja.frame.origin.x-126;
+    self.imagenAguja.frame.origin.y-190;
+    self.imagenAguja.layer.anchorPoint = CGPointMake(1.0, 1.0);*/
+    
+    
+    //Gira el brazo de la aguja
     CGAffineTransform moverAguja = self.imagenAguja.transform;
+    //moverAguja = CGAffineTransformMakeRotation(+0.1);
+    
     moverAguja = CGAffineTransformMakeRotation(+0.1);
     self.imagenAguja.transform = moverAguja;
     

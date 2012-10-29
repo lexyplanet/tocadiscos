@@ -44,6 +44,7 @@
 		CE9FEA4F163DE64A001DBBA9 /* TocadiscosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9FEA4E163DE64A001DBBA9 /* TocadiscosViewController.m */; };
 		CE9FEA53163DE68B001DBBA9 /* NuevaCancionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9FEA52163DE68B001DBBA9 /* NuevaCancionViewController.m */; };
 		CE9FEA5E163DE988001DBBA9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FEA5D163DE988001DBBA9 /* AVFoundation.framework */; };
+		CE9FEA69163F0F6D001DBBA9 /* Barilla Aguja92x139.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA68163F0F6D001DBBA9 /* Barilla Aguja92x139.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		CE9FEA51163DE68B001DBBA9 /* NuevaCancionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuevaCancionViewController.h; sourceTree = "<group>"; };
 		CE9FEA52163DE68B001DBBA9 /* NuevaCancionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuevaCancionViewController.m; sourceTree = "<group>"; };
 		CE9FEA5D163DE988001DBBA9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CE9FEA68163F0F6D001DBBA9 /* Barilla Aguja92x139.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Barilla Aguja92x139.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		CE9FEA1A163DE552001DBBA9 /* Imagenes */ = {
 			isa = PBXGroup;
 			children = (
+				CE9FEA68163F0F6D001DBBA9 /* Barilla Aguja92x139.png */,
 				CE9FEA1C163DE592001DBBA9 /* Aguja.png */,
 				CE9FEA1D163DE592001DBBA9 /* BotonControlVelocidadHorizontal-03.png */,
 				CE9FEA1E163DE592001DBBA9 /* BotonOff.png */,
@@ -300,6 +303,7 @@
 				CE9FEA47163DE592001DBBA9 /* Tocadiscos.png in Resources */,
 				CE9FEA4B163DE5E2001DBBA9 /* Estopa. Cuerpo Triste.mp3 in Resources */,
 				CE9FEA4C163DE5E2001DBBA9 /* Estopa. La primavera.mp3 in Resources */,
+				CE9FEA69163F0F6D001DBBA9 /* Barilla Aguja92x139.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
