@@ -125,6 +125,11 @@
     self.reproductor.rate = 1;
     [self.reproductor prepareToPlay];
    
+    //Se oculta las imagenes asignadas a los botones del tocadiscos (play, pause, stop)
+    [self.playButton setImage:NO forState:UIControlStateNormal];
+    [self.pauseButton setImage:NO forState:UIControlStateNormal];
+    [self.stopButton setImage:NO forState:UIControlStateNormal];
+    
    
 }
 
@@ -136,10 +141,28 @@
 
 
 - (IBAction)Play:(id)sender {
+    //Pone el botón del play en color verde.
+    [self.playButton setImage:[UIImage imageNamed:@"BotonPlayVerde.png"] forState:UIControlStateNormal];
+    //Apaga el botón pause y stop
+    [self.pauseButton setImage:NO forState:UIControlStateNormal];
+    [self.stopButton setImage:NO forState:UIControlStateNormal];
+    
     //Animación
+    float time = 1.00;
     [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:1.00];
+    [UIView setAnimationDuration:time];
     [UIView setAnimationBeginsFromCurrentState:YES];
+    
+    //Gira el brazo de la aguja
+    CGAffineTransform moverAguja = self.imagenAguja.transform;
+    moverAguja = CGAffineTransformMakeRotation(+0.4);
+    self.imagenAguja.transform = moverAguja;
+    
+    [self startSpin];
+    
+    [UIView commitAnimations];
+    
+    
     
     /* Asignacion de los valores actuales del reproductor para que no se pierdan a la hora de reproducir la nueva instancia */
     panActualFloat = self.reproductor.pan;
@@ -161,31 +184,23 @@
     
     self.reproductor.rate = rateActualFloat;
     self.reproductor.currentTime = timeActualFloat;
-    [self.reproductor prepareToPlay];
+    //[self.reproductor prepareToPlay];
+    
+        
     
     
-    //Establece el anchor point del giro
-    /*self.imagenAguja.frame.origin.x-126;
-    self.imagenAguja.frame.origin.y-190;
-    self.imagenAguja.layer.anchorPoint = CGPointMake(1.0, 1.0);*/
+    //[UIView commitAnimations];
     
-    
-    //Gira el brazo de la aguja
-    CGAffineTransform moverAguja = self.imagenAguja.transform;
-    //moverAguja = CGAffineTransformMakeRotation(+0.1);
-    
-    moverAguja = CGAffineTransformMakeRotation(+0.4);
-    self.imagenAguja.transform = moverAguja;
-    
-    [UIView commitAnimations];
-    
-    [self startSpin];
+    //[self startSpin];
     
     /* tiempoQueTranscurre.text = [[NSString alloc] initWithFormat: @"%4.2f", self.reproductor.currentTime];
      
      tiempoTotal.text = [[NSString alloc] initWithFormat:@"%4.2f", self.reproductor.duration];
      barraProgreso = [[UIProgressView alloc] init];*/
     
+    //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:time]];
+    //Comienza a sonar la canción
     [self.reproductor play];
 }
 
@@ -216,6 +231,13 @@
 }
 
 - (IBAction)Pausa:(id)sender {
+    //Pone el botón del pause en color verde.
+    [self.pauseButton setImage:[UIImage imageNamed:@"BotonPauseVerde.png"] forState:UIControlStateNormal];
+    //Apaga el botón play y stop
+    [self.playButton setImage:NO forState:UIControlStateNormal];
+    [self.stopButton setImage:NO forState:UIControlStateNormal];
+    
+    
     /*etiqueta.text = [[NSString alloc] initWithFormat:@"duration: %4.2f \n currentTime %4.2f", self.reproductor.duration, self.reproductor.currentTime];*/
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:1.00];
@@ -235,6 +257,12 @@
 }
 
 - (IBAction)Stop:(id)sender {
+    //Pone el botón del stop en color verde.
+    [self.stopButton setImage:[UIImage imageNamed:@"BotonStopVerde.png"] forState:UIControlStateNormal];
+    //Apaga el botón play y pause
+    [self.playButton setImage:NO forState:UIControlStateNormal];
+    [self.pauseButton setImage:NO forState:UIControlStateNormal];
+    
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:1.00];
     [UIView setAnimationBeginsFromCurrentState:YES];

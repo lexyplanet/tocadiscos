@@ -39,10 +39,12 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imagenDisco;
 @property (strong, nonatomic) IBOutlet UIImageView *imagenAguja;
 
-//Añadido para crear otra imagen del brazo del tocadiscos
-//@property (strong, nonatomic) UIImageView *brazoImageView;
-
 @property(nonatomic, strong) NSString* cancionActual;
+
+//Botones del tocadiscos
+@property (nonatomic, strong) IBOutlet UIButton *playButton;
+@property (nonatomic, strong) IBOutlet UIButton *pauseButton;
+@property (nonatomic, strong) IBOutlet UIButton *stopButton;
 
 - (IBAction)Play:(id)sender;
 - (IBAction)Pausa:(id)sender;
