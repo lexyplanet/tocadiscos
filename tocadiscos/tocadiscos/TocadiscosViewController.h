@@ -40,6 +40,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imagenAguja;
 
 @property(nonatomic, strong) NSString* cancionActual;
+@property(nonatomic, strong) NSString* nombreCancionActual;
 
 - (IBAction)Play:(id)sender;
 - (IBAction)Pausa:(id)sender;

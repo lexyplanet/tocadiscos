@@ -15,8 +15,6 @@
 @end
 
 
-
-
 @implementation TocadiscosViewController
 
 @synthesize _sliderVolumen;
@@ -110,7 +108,13 @@
     thumbImageVe = nil;
     NSError * error;
     
+    
+    
+    
+    
+    //Hay una canción por defecto hasta que se use la selección.
     self.cancionActual = [[NSBundle mainBundle] pathForResource:@"Estopa. La primavera" ofType:@"mp3"];
+    self.etiqueta.text=@"Estopa. La primavera";
     
     NSURL * url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
     self.reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
@@ -149,6 +153,16 @@
     
     self.reproductor.pan = panActualFloat;
     self.reproductor.volume = volumenActualFloat;
+    
+    /*BORRAR SI TODO VA BIEN
+     Asignamos el nombre de la canción seleccionada en el PickerView, si esta es nula, 
+     le ponemos la de por defecto.*/
+/*    self.etiqueta.text=self.nombreCancionActual;
+    if (self.etiqueta.text==nil) {
+        self.etiqueta.text=@"Estopa. La primavera";
+    }
+ */   
+    
     
     /* Se vuelve a ajustar la propiedad EnableRate a YES para que la nueva instancia realize el Rate
      ya que por default una nueva instancia tiene un valor de NO asi que si asignamos una nueva instancia de AVAudioPlayer
@@ -301,7 +315,13 @@
 {
     self.cancionActual = cancion;
     
-    
+}
+
+- (void) nuevaCancionSeleccionada: (NSString *) cancionSelec{
+    self.nombreCancionActual = cancionSelec;
+    self.etiqueta.text=self.nombreCancionActual;
+
+
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

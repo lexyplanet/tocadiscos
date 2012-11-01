@@ -16,6 +16,7 @@
 
 @optional
 - (void) nuevaCancion: (NSString *) cancion;
+- (void) nuevaCancionSeleccionada: (NSString *) cancionSelec;
 
 @end
 
@@ -25,6 +26,7 @@ NSInteger posUltimaCancion;
 
 @property (nonatomic, strong) id <NuevaCancionDelegate> delegate;
 @property (nonatomic, strong) NSString *cancionSeleccionada;
+@property (nonatomic, strong) NSString *nombreCancionSeleccionada;
 @property (nonatomic, strong) NSArray *canciones;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *hechoBarButtonItem;
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerMusicItem;
