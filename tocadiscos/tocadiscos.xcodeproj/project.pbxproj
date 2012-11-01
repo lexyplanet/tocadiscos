@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE755F8E163F24F800DA58B8 /* Aguja2.png */; };
 		CE9A3E241642E58800F1DC66 /* clic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9A3E221642E58800F1DC66 /* clic.mp3 */; };
-		CE9A3E251642E58800F1DC66 /* Vinilo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9A3E231642E58800F1DC66 /* Vinilo.mp3 */; };
 		CE9A3E2B1642E79B00F1DC66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */; };
 		CE9FE9D0163DDB7D001DBBA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FE9CF163DDB7D001DBBA9 /* UIKit.framework */; };
 		CE9FE9D2163DDB7D001DBBA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FE9D1163DDB7D001DBBA9 /* Foundation.framework */; };
@@ -49,12 +48,12 @@
 		CE9FEA53163DE68B001DBBA9 /* NuevaCancionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9FEA52163DE68B001DBBA9 /* NuevaCancionViewController.m */; };
 		CE9FEA5E163DE988001DBBA9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FEA5D163DE988001DBBA9 /* AVFoundation.framework */; };
 		CE9FEA69163F0F6D001DBBA9 /* Barilla Aguja92x139.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA68163F0F6D001DBBA9 /* Barilla Aguja92x139.png */; };
+		CEA362E716430CB4006DBB4F /* Vinilo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEA362E616430CB4006DBB4F /* Vinilo.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE755F8E163F24F800DA58B8 /* Aguja2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Aguja2.png; sourceTree = "<group>"; };
 		CE9A3E221642E58800F1DC66 /* clic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clic.mp3; sourceTree = "<group>"; };
-		CE9A3E231642E58800F1DC66 /* Vinilo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Vinilo.mp3; sourceTree = "<group>"; };
 		CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CE9FE9CB163DDB7D001DBBA9 /* tocadiscos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tocadiscos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9FE9CF163DDB7D001DBBA9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -100,6 +99,7 @@
 		CE9FEA52163DE68B001DBBA9 /* NuevaCancionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuevaCancionViewController.m; sourceTree = "<group>"; };
 		CE9FEA5D163DE988001DBBA9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CE9FEA68163F0F6D001DBBA9 /* Barilla Aguja92x139.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Barilla Aguja92x139.png"; sourceTree = "<group>"; };
+		CEA362E616430CB4006DBB4F /* Vinilo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Vinilo.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				CE9A3E221642E58800F1DC66 /* clic.mp3 */,
-				CE9A3E231642E58800F1DC66 /* Vinilo.mp3 */,
+				CEA362E616430CB4006DBB4F /* Vinilo.mp3 */,
 			);
 			name = Sonidos;
 			sourceTree = "<group>";
@@ -327,7 +327,7 @@
 				CE9FEA69163F0F6D001DBBA9 /* Barilla Aguja92x139.png in Resources */,
 				CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */,
 				CE9A3E241642E58800F1DC66 /* clic.mp3 in Resources */,
-				CE9A3E251642E58800F1DC66 /* Vinilo.mp3 in Resources */,
+				CEA362E716430CB4006DBB4F /* Vinilo.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

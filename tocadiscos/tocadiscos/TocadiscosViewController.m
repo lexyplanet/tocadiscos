@@ -152,16 +152,14 @@
     [self.stopButton setImage:NO forState:UIControlStateNormal];
     
     /********* PEDRO 1/11/2012 *********/
-    //Hace el sonido de movimiento de la aguja
+    //Hace el sonido de movimiento del brazo de la aguja
     SystemSoundID soundID;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"clic" ofType:@"mp3"];
     AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)[NSURL fileURLWithPath:path], &soundID);
     AudioServicesPlaySystemSound(soundID);
     
-    
     //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
-    //[[NSRunLoop pausaClickRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1,0]];
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.2]];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.25]];
     /*********************************/
     
     
@@ -227,6 +225,8 @@
     NSString *pathVinilo = [[NSBundle mainBundle] pathForResource:@"Vinilo" ofType:@"mp3"];
     AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)[NSURL fileURLWithPath:pathVinilo], &viniloSoundID);
     AudioServicesPlaySystemSound(viniloSoundID);
+    //Introduce una pausa para que la canción empiece después del sonido de la aguja sobre el vinilo
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.4]];
     /**********************************/
     
     //Comienza a sonar la canción
