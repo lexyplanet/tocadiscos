@@ -25,6 +25,7 @@
     IBOutlet UISlider *_sliderStereo;//para personalizar un slider de Stereo
     IBOutlet UISlider *_sliderRate; //para personalizar un slider de rate
     BOOL animating; //esta variable ayuda a saber si esta animando o corriendo el bucle.
+    BOOL pausado;   //Variable para el status de Pause ADRIAN
 }
 @property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar un slider
 @property (strong, nonatomic) IBOutlet UISlider *_sliderStereo; //para personalizar otro slider
@@ -35,11 +36,12 @@
 @property (strong, nonatomic) IBOutlet UIProgressView *barraProgreso;
 
 @property (nonatomic, strong) AVAudioPlayer * reproductor;
-@property (strong, nonatomic) IBOutlet UILabel *etiqueta;
+//@property (strong, nonatomic) IBOutlet UILabel *etiqueta;
 @property (strong, nonatomic) IBOutlet UIImageView *imagenDisco;
 @property (strong, nonatomic) IBOutlet UIImageView *imagenAguja;
 
 @property(nonatomic, strong) NSString* cancionActual;
+@property(nonatomic, strong) NSTimer *timer; //ADRIAN
 
 //Botones del tocadiscos
 @property (nonatomic, strong) IBOutlet UIButton *playButton;

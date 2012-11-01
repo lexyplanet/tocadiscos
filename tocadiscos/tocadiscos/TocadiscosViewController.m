@@ -23,6 +23,7 @@
 @synthesize _sliderStereo;
 @synthesize _sliderRate;
 @synthesize reproductor;
+@synthesize barraProgreso; //ADRIAN
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,7 +36,7 @@
 
 - (void)viewDidLoad
 {
-    //[super viewDidLoad];
+    [super viewDidLoad];
     
     //Personalizamos el slider de Stereo
     UIImage *minImage = [UIImage imageNamed:@"ControlStereoHorizontal-03.png"];
@@ -130,6 +131,9 @@
     [self.pauseButton setImage:NO forState:UIControlStateNormal];
     [self.stopButton setImage:NO forState:UIControlStateNormal];
     
+    /******************************** INICIALIZACION DE VARIABLE DE STATUS DE PAUSE (ADRIAN) *********************/
+    pausado = NO;
+    /*******************************************************************************************/
    
 }
 
@@ -202,7 +206,64 @@
     [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:time]];
     //Comienza a sonar la canción
     [self.reproductor play];
+    
+    /******************************** VERSION ADRIAN PROGRESS BAR Y LABELS *********************/
+    float duracionAudio = [self.reproductor duration];
+    
+    //Obteniendo los minutos
+    float minutos = floor(duracionAudio/60);
+    //Obteniendo los segundos del audio restando los minutos que lleva
+    float segundos = duracionAudio - (minutos*60);
+    
+    //Inserta el tiempo total de la cancion.
+    //Si los segundos son menores a 10 formatea el numero a mostrar
+    if(segundos < 10)
+    {
+        //Ajuste del Label del tiempo transcurrido
+        self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
+    } else {
+        //Ajuste del Label del tiempo transcurrido
+        self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
+    }
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressBar:) userInfo:nil repeats:YES];
+    /******************************************************************************/
 }
+
+/******************************* ACTUALIZA PROGRESSBAR (ADRIAN) ************************************/
+#pragma mark - UpdateProgressBar
+- (void)updateProgressBar:(NSTimer *)timer
+{
+    NSTimeInterval tiempoDelAudio = [self.reproductor currentTime];     //Tiempo actual del audio
+    NSTimeInterval duracionTotalDelAudio = [self.reproductor duration]; //Tiempo total del audio
+    float progreso = tiempoDelAudio / duracionTotalDelAudio;            //Progreso de la cancion
+    [self.barraProgreso setProgress: progreso];                          //Ajusta el componente al progreso calculado
+    //NSLog(@"%f", self.barraProgreso.progress);
+    
+    //Obteniendo los minutos
+    float minutos = floor(tiempoDelAudio/60);
+    //Obteniendo los segundos del audio restando los minutos que lleva
+    float segundos = tiempoDelAudio - (minutos*60);
+    
+    //Evita que en el label aparezca el seg 60
+    if(segundos > 59)
+    {
+        segundos = 0.0;
+        minutos += 1;
+    }
+    
+    //Si los segundos son menores a 10 formatea el numero a mostrar
+    if(segundos <= 9)
+    {
+        //Ajuste del Label del tiempo transcurrido
+        self.tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
+    } else {
+        //Ajuste del Label del tiempo transcurrido
+        self.tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
+    }
+}
+
+#pragma mark - Giro disco
 
 -(void)spin{
     [UIView animateWithDuration: 1
@@ -236,6 +297,14 @@
     //Apaga el botón play y stop
     [self.playButton setImage:NO forState:UIControlStateNormal];
     [self.stopButton setImage:NO forState:UIControlStateNormal];
+    
+    /********************* MODIFICACIÓN ADRIÁN *****************/
+    if (pausado) {
+        [self.reproductor play];
+        pausado = NO;
+        return;
+    }
+     /***********************************************************/
     
     
     /*etiqueta.text = [[NSString alloc] initWithFormat:@"duration: %4.2f \n currentTime %4.2f", self.reproductor.duration, self.reproductor.currentTime];*/
@@ -301,9 +370,9 @@
 
 - (void)viewDidUnload
 {
-    [self setEtiqueta:nil];
-    [self setTiempoQueTranscurre:nil];
-    [self setTiempoTotal:nil];
+    //[self setEtiqueta:nil]; ADRIAN
+    //[self setTiempoQueTranscurre:nil]; ADRIAN
+    //[self setTiempoTotal:nil]; ADRIAN
     [self setBarraProgreso:nil];
     [self setImagenDisco:nil];
     [self setImagenAguja:nil];
