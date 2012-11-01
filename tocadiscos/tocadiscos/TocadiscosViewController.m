@@ -151,12 +151,26 @@
     [self.pauseButton setImage:NO forState:UIControlStateNormal];
     [self.stopButton setImage:NO forState:UIControlStateNormal];
     
+    /********* PEDRO 1/11/2012 *********/
+    //Hace el sonido de movimiento de la aguja
+    SystemSoundID soundID;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"clic" ofType:@"mp3"];
+    AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)[NSURL fileURLWithPath:path], &soundID);
+    AudioServicesPlaySystemSound(soundID);
+    
+    
+    //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
+    //[[NSRunLoop pausaClickRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1,0]];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.2]];
+    /*********************************/
+    
+    
     //Animación
     float time = 1.00;
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:time];
     [UIView setAnimationBeginsFromCurrentState:YES];
-    
+        
     //Gira el brazo de la aguja
     CGAffineTransform moverAguja = self.imagenAguja.transform;
     moverAguja = CGAffineTransformMakeRotation(+0.4);
@@ -202,8 +216,19 @@
      tiempoTotal.text = [[NSString alloc] initWithFormat:@"%4.2f", self.reproductor.duration];
      barraProgreso = [[UIProgressView alloc] init];*/
     
+    
+    
     //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
     [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:time]];
+    
+    /********* PEDRO 1/11/2012 *********/
+    //Simula el sonido del contacto de la aguja sobre el vinilo
+    SystemSoundID viniloSoundID;
+    NSString *pathVinilo = [[NSBundle mainBundle] pathForResource:@"Vinilo" ofType:@"mp3"];
+    AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)[NSURL fileURLWithPath:pathVinilo], &viniloSoundID);
+    AudioServicesPlaySystemSound(viniloSoundID);
+    /**********************************/
+    
     //Comienza a sonar la canción
     [self.reproductor play];
     
