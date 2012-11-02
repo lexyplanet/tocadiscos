@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "NuevaCancionViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 
@@ -26,6 +27,7 @@
     IBOutlet UISlider *_sliderRate; //para personalizar un slider de rate
     BOOL animating; //esta variable ayuda a saber si esta animando o corriendo el bucle.
 }
+- (IBAction)showMediaPicker:(id)sender;
 @property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar un slider
 @property (strong, nonatomic) IBOutlet UISlider *_sliderStereo; //para personalizar otro slider
 @property (strong, nonatomic) IBOutlet UISlider *_sliderRate; //para personalizar Slider rate

@@ -336,5 +336,37 @@
     
 }
 
+//HE CREADO ESTE IBACTION
+- (IBAction)showMediaPicker:(id)sender {
+    
+    
+    MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes: MPMediaTypeAny];
+    
+    mediaPicker.delegate = self;
+    mediaPicker.allowsPickingMultipleItems = YES;
+    mediaPicker.prompt = @"Select songs to play";
+    
+    [self presentModalViewController:mediaPicker animated:YES];
+}
+
+- (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection
+{
+    if (mediaItemCollection) {
+        
+//        [reproductor setQueueWithItemCollection: mediaItemCollection];
+//        [musicPlayer play];
+    }
+    
+	[self dismissModalViewControllerAnimated: YES];
+}
+
+
+- (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker
+{
+	[self dismissModalViewControllerAnimated: YES];
+
+}
+//HE COPIADO HASTA AQUI y comentado lo de enmedio
+//HE IMPORTADO EL FRAMEWORK AL .H y HE INCORPORADO EL FRAMEWORK AL PROYECTO
 
 @end

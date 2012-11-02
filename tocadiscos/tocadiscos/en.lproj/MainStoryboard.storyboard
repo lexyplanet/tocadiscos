@@ -152,6 +152,21 @@
                                 <rect key="frame" x="23" y="184" width="30" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BzX-0A-Qx9">
+                                <rect key="frame" x="67" y="358" width="55" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                <state key="normal" title="Biblio">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showMediaPicker:" destination="x4e-py-0JL" eventType="touchUpInside" id="lxH-nn-E7D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -256,36 +271,6 @@
         <image name="Disco.png" width="306" height="306"/>
         <image name="Tocadiscos.png" width="460" height="388"/>
     </resources>
-    <classes>
-        <class className="NuevaCancionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NuevaCancionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="hecho:"/>
-                <relationship kind="outlet" name="hechoBarButtonItem" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="pickerMusicItem" candidateClass="UIPickerView"/>
-            </relationships>
-        </class>
-        <class className="TocadiscosViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TocadiscosViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Pausa:"/>
-                <relationship kind="action" name="Play:"/>
-                <relationship kind="action" name="Stop:"/>
-                <relationship kind="action" name="cambioPan:"/>
-                <relationship kind="action" name="cambioRate:"/>
-                <relationship kind="action" name="cambioVolumen:"/>
-                <relationship kind="outlet" name="_sliderRate" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="_sliderStereo" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="_sliderVolumen" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="barraProgreso" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="etiqueta" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="imagenAguja" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="imagenDisco" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="tiempoQueTranscurre" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tiempoTotal" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

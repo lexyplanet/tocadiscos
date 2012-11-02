@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C55616116432E59003010C6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C55616016432E59003010C6 /* MediaPlayer.framework */; };
 		CE9FE9D0163DDB7D001DBBA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FE9CF163DDB7D001DBBA9 /* UIKit.framework */; };
 		CE9FE9D2163DDB7D001DBBA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FE9D1163DDB7D001DBBA9 /* Foundation.framework */; };
 		CE9FE9D4163DDB7D001DBBA9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FE9D3163DDB7D001DBBA9 /* CoreGraphics.framework */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C55616016432E59003010C6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		CE9FE9CB163DDB7D001DBBA9 /* tocadiscos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tocadiscos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9FE9CF163DDB7D001DBBA9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE9FE9D1163DDB7D001DBBA9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -97,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C55616116432E59003010C6 /* MediaPlayer.framework in Frameworks */,
 				CE9FEA5E163DE988001DBBA9 /* AVFoundation.framework in Frameworks */,
 				CE9FE9D0163DDB7D001DBBA9 /* UIKit.framework in Frameworks */,
 				CE9FE9D2163DDB7D001DBBA9 /* Foundation.framework in Frameworks */,
@@ -127,6 +130,7 @@
 		CE9FE9CE163DDB7D001DBBA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C55616016432E59003010C6 /* MediaPlayer.framework */,
 				CE9FEA5D163DE988001DBBA9 /* AVFoundation.framework */,
 				CE9FE9CF163DDB7D001DBBA9 /* UIKit.framework */,
 				CE9FE9D1163DDB7D001DBBA9 /* Foundation.framework */,
