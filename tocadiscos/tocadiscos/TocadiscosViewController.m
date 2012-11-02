@@ -112,7 +112,7 @@
     minImageVe = nil;
     maxImageVe = nil;
     thumbImageVe = nil;
-    NSError * error;
+  //  NSError * error;
     
     //Ver qué hacemos con canción inicial
     
@@ -120,14 +120,14 @@
     
     self.caratula = [UIImage imageNamed:@"noArtworkImage.png"]; // artWork = carátula
     
-    NSURL * url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
-    self.reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
+//    NSURL * url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
+    self.reproductor = [[MPMusicPlayerController alloc] init];
     
-    self.reproductor.pan = 0;
+  //MJ  self.reproductor.pan = 0;
     self.reproductor.volume = 0.5;
     
-    self.reproductor.enableRate = YES;
-    self.reproductor.rate = 1;
+ //MJ   self.reproductor.enableRate = YES;
+  //MJ  self.reproductor.rate = 1;
     [self.reproductor prepareToPlay];
    
     //Se oculta las imagenes asignadas a los botones del tocadiscos (play, pause, stop)
@@ -173,25 +173,25 @@
     
     
     /* Asignacion de los valores actuales del reproductor para que no se pierdan a la hora de reproducir la nueva instancia */
-    panActualFloat = self.reproductor.pan;
+   //MJ panActualFloat = self.reproductor.pan;
     volumenActualFloat = self.reproductor.volume;
-    rateActualFloat = self.reproductor.rate;
+  //MJ  rateActualFloat = self.reproductor.rate;
     
     /* Asigna la nueva instancia al reproductor con los nuevos valores */
-    NSError * error;
-    NSURL *url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
-    self.reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
+  //  NSError * error;
+ //   NSURL *url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
+    self.reproductor = [[MPMusicPlayerController alloc] init];
     
-    self.reproductor.pan = panActualFloat;
+  //MJ  self.reproductor.pan = panActualFloat;
     self.reproductor.volume = volumenActualFloat;
     
     /* Se vuelve a ajustar la propiedad EnableRate a YES para que la nueva instancia realize el Rate
      ya que por default una nueva instancia tiene un valor de NO asi que si asignamos una nueva instancia de AVAudioPlayer
      y despues lo reproducimos, si queremos cambiar el rate éste no lo hará (que es lo que pasaba) */
-    self.reproductor.enableRate = YES;
+  //MJ  self.reproductor.enableRate = YES;
     
-    self.reproductor.rate = rateActualFloat;
-    self.reproductor.currentTime = timeActualFloat;
+  //MJ  self.reproductor.rate = rateActualFloat;
+  //MJ  self.reproductor.currentTime = timeActualFloat;
     //[self.reproductor prepareToPlay];
     
         
@@ -212,22 +212,22 @@
     [self.reproductor play];
     
     /******************************** VERSION ADRIAN PROGRESS BAR Y LABELS *********************/
-    float  duracionAudio = [self.reproductor duration];
+//MJ    float  duracionAudio = [self.reproductor duration];
     
     //Obteniendo los minutos
-    float minutos = floor(duracionAudio/60);
+ //MJ   float minutos = floor(duracionAudio/60);
     //Obteniendo los segundos del audio restando los minutos que lleva
-    float segundos = duracionAudio - (minutos*60);
+ //MJ   float segundos = duracionAudio - (minutos*60);
     
     //Inserta el tiempo total de la cancion.
     //Si los segundos son menores a 10 formatea el numero a mostrar
-    if(segundos < 10)
+ //MJ   if(segundos < 10)
     {
         //Ajuste del Label del tiempo transcurrido
-        self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
-    } else {
+//MJ        self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
+ //MJ   } else {
         //Ajuste del Label del tiempo transcurrido
-        self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
+ //MJ       self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
     }
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressBar:) userInfo:nil repeats:YES];
@@ -238,32 +238,32 @@
 #pragma mark - UpdateProgressBar
 - (void)updateProgressBar:(NSTimer *)timer
 {
-    NSTimeInterval tiempoDelAudio = [self.reproductor currentTime];     //Tiempo actual del audio
-    NSTimeInterval duracionTotalDelAudio = [self.reproductor duration]; //Tiempo total del audio
-    float progreso = tiempoDelAudio / duracionTotalDelAudio;            //Progreso de la cancion
-    [self.barraProgreso setProgress: progreso];                          //Ajusta el componente al progreso calculado
+//MJ    NSTimeInterval tiempoDelAudio = [self.reproductor currentTime];     //Tiempo actual del audio
+//MJ   NSTimeInterval duracionTotalDelAudio = [self.reproductor duration]; //Tiempo total del audio
+//MJ    float progreso = tiempoDelAudio / duracionTotalDelAudio;            //Progreso de la cancion
+ //MJ   [self.barraProgreso setProgress: progreso];                          //Ajusta el componente al progreso calculado
     //NSLog(@"%f", self.barraProgreso.progress);
     
     //Obteniendo los minutos
-    float minutos = floor(tiempoDelAudio/60);
+//MJ    float minutos = floor(tiempoDelAudio/60);
     //Obteniendo los segundos del audio restando los minutos que lleva
-    float segundos = tiempoDelAudio - (minutos*60);
+ //MJ   float segundos = tiempoDelAudio - (minutos*60);
     
     //Evita que en el label aparezca el seg 60
-    if(segundos > 59)
+//MJ    if(segundos > 59)
     {
-        segundos = 0.0;
-        minutos += 1;
+ //MJ       segundos = 0.0;
+ //MJ       minutos += 1;
     }
     
     //Si los segundos son menores a 10 formatea el numero a mostrar
-    if(segundos <= 9)
+//MJ    if(segundos <= 9)
     {
         //Ajuste del Label del tiempo transcurrido
-        self.tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
-    } else {
+//MJ        self.tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
+//MJ    } else {
         //Ajuste del Label del tiempo transcurrido
-        self.tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
+//MJ        self.tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
     }
 }
 
@@ -315,7 +315,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:1.00];
     [UIView setAnimationBeginsFromCurrentState:YES];
-    timeActualFloat = self.reproductor.currentTime;
+//MJ    timeActualFloat = self.reproductor.currentTime;
     
     [self stopSpin];
     
@@ -339,8 +339,8 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:1.00];
     [UIView setAnimationBeginsFromCurrentState:YES];
-    self.reproductor.currentTime = 0;
-    timeActualFloat = self.reproductor.currentTime;
+ //MJ   self.reproductor.currentTime = 0;
+ //MJ   timeActualFloat = self.reproductor.currentTime;
     [self stopSpin];
     //etiqueta.text = 0;
     
@@ -362,12 +362,12 @@
 }
 
 - (IBAction)cambioPan:(id)sender {
-    self.reproductor.pan = ((UISlider *) sender).value;
+ //MJ   self.reproductor.pan = ((UISlider *) sender).value;
 }
 
 - (IBAction)cambioRate:(id)sender {
     NSLog(@"%f", ((UISlider *) sender).value);
-    self.reproductor.rate = ((UISlider *) sender).value;
+//MJ    self.reproductor.rate = ((UISlider *) sender).value;
 }
 
 
@@ -433,8 +433,8 @@
     
     if (mediaItemCollection) {
         
-        [self.musicPlayer setQueueWithItemCollection: mediaItemCollection];
-        self.reproductor = (AVAudioPlayer *) self.musicPlayer; // conversion de tipo
+        [self.reproductor setQueueWithItemCollection: mediaItemCollection];
+       // self.reproductor = (AVAudioPlayer *) self.musicPlayer; // conversion de tipo
         [self.reproductor play];
     }
     
@@ -458,7 +458,7 @@
     [notificationCenter addObserver: self
                            selector: @selector (handle_NowPlayingItemChanged:)
                                name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification
-                             object: self.musicPlayer];
+                             object: self.reproductor];
     
     /*[notificationCenter addObserver: self
      selector: @selector (handle_PlaybackStateChanged:)
@@ -479,7 +479,7 @@
     NSString *val_artist;
     NSNumber *val_duracion;
     
-    MPMediaItem *currentItem = [self.musicPlayer nowPlayingItem];
+    MPMediaItem *currentItem = [self.reproductor nowPlayingItem];
     
     if (currentItem) {
         NSString *artist = [currentItem valueForProperty: MPMediaItemPropertyArtist];

@@ -36,8 +36,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *tiempoTotal;
 @property (strong, nonatomic) IBOutlet UIProgressView *barraProgreso;
 
-@property (nonatomic, strong) AVAudioPlayer   *reproductor;
-@property (nonatomic, strong) MPMusicPlayerController *musicPlayer;
+@property (nonatomic, strong) MPMusicPlayerController/*AVAudioPlayer*/   *reproductor;
+//@property (nonatomic, strong) MPMusicPlayerController *musicPlayer;
 
 //@property (strong, nonatomic) IBOutlet UILabel *etiqueta;
 @property (strong, nonatomic) IBOutlet UIImageView *imagenDisco;
