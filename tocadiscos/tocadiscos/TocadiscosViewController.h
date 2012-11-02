@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
+
 #import "NuevaCancionViewController.h"
+
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 
@@ -35,10 +36,14 @@
 @property (strong, nonatomic) IBOutlet UILabel *tiempoTotal;
 @property (strong, nonatomic) IBOutlet UIProgressView *barraProgreso;
 
-@property (nonatomic, strong) AVAudioPlayer * reproductor;
+@property (nonatomic, strong) AVAudioPlayer   *reproductor;
+@property (nonatomic, strong) MPMusicPlayerController *musicPlayer;
+
 //@property (strong, nonatomic) IBOutlet UILabel *etiqueta;
 @property (strong, nonatomic) IBOutlet UIImageView *imagenDisco;
 @property (strong, nonatomic) IBOutlet UIImageView *imagenAguja;
+
+@property (strong, nonatomic) IBOutlet UIImage *artWork; //imagen centro disco (MJ)
 
 @property(nonatomic, strong) NSString* cancionActual;
 @property(nonatomic, strong) NSTimer *timer; //ADRIAN
@@ -55,6 +60,10 @@
 - (IBAction)cambioPan:(id)sender;
 - (IBAction)cambioRate:(id)sender;
 
+- (IBAction)showMediaPicker:(id)sender;//para acceso biblio (MJ)
+- (void) registerMediaPlayerNotifications;//para acceso biblio (MJ)
+
+
 //Agregue estas 3 funciones que controlan el bucle.
 -(void)spin; //Ejecuta el bucle o animación
 -(void)startSpin;//Inicia el bucle o animación
@@ -65,3 +74,4 @@
 
 
 @end
+

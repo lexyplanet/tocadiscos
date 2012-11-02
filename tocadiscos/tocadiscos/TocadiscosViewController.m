@@ -407,8 +407,97 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+
+// para abrir biblioteca musical
+#pragma mark - Media Picker
+
+- (IBAction)showMediaPicker:(id)sender
+{
+    MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes: MPMediaTypeAny];
+    
+    mediaPicker.delegate = self;
+    mediaPicker.allowsPickingMultipleItems = YES;
+    mediaPicker.prompt = @"Elige tus canciones";
+    
+    //   [self presentModalViewController:mediaPicker animated:YES];
+    //deprecated la funcion nueva es presentViewController:mediaPicker
+    
+}
+
+- (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection
+{
+    
+    if (mediaItemCollection) {
+        
+        [self.musicPlayer setQueueWithItemCollection: mediaItemCollection];
+        self.reproductor = (AVAudioPlayer *) self.musicPlayer;
+        [self.reproductor play];
+    }
+    
+	//[self dismissModalViewControllerAnimated: YES];
+}
+
+- (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker
+{
+    //	[self dismissModalViewControllerAnimated: YES];
+}
+
+#pragma mark - Notifications
+
+- (void) registerMediaPlayerNotifications
+{
+    
+    
+    
+    NSNotificationCenter *notificationCenter;// = [NSNotificationCenter defaultCenter];
+    
+    [notificationCenter addObserver: self
+                           selector: @selector (handle_NowPlayingItemChanged:)
+                               name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification
+                             object: self.musicPlayer];
+    
+    /*[notificationCenter addObserver: self
+     selector: @selector (handle_PlaybackStateChanged:)
+     name: MPMusicPlayerControllerPlaybackStateDidChangeNotification
+     object: self.musicPlayer];
+     
+     [notificationCenter addObserver: self
+     selector: @selector (handle_VolumeChanged:)
+     name: MPMusicPlayerControllerVolumeDidChangeNotification
+     object: self.musicPlayer];*/
+    
+    //	[self.reproductor beginGeneratingPlaybackNotifications];
+}
+
+- (void) handle_NowPlayingItemChanged: (id) notification
+{
+    
+    MPMediaItem *currentItem = [self.musicPlayer nowPlayingItem];
+	
+    self.artWork = [UIImage imageNamed:@"noArtworkImage.png"];
+	
+    MPMediaItemArtwork *artwork = [currentItem valueForProperty: MPMediaItemPropertyArtwork];
+	
+	if (artwork) {
+		self.artWork = [artwork imageWithSize: CGSizeMake (200, 200)];
+	}
+    self.reproductor = (AVAudioPlayer *) self.musicPlayer; // Conversion de tipo (aunque con dudas de que resuelva bien)
+    
+    self.cancionActual = (NSString *)self.musicPlayer.nowPlayingItem;
+    [self.reproductor prepareToPlay];
+    
+}
+
+
+@end
+
+
+
+
+
+
 /*Adrian: Invoqué el metodo IBAction ya definido ya que contiene toda la animacion y play de la cancion*/
-- (void) nuevaCancion: (NSString *) cancion;
+/*- (void) nuevaCancion: (NSString *) cancion;
 {
     self.cancionActual = cancion;
     
@@ -427,5 +516,5 @@
     
 }
 
+*/
 
-@end

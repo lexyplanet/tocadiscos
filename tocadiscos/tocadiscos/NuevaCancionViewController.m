@@ -31,7 +31,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.canciones = [[NSArray alloc] initWithObjects:@"Estopa. La primavera", @"Estopa. Cuerpo Triste",nil];
-    self.pickerMusicItem.tag = posUltimaCancion;
+    
+    posUltimaCancion = self.pickerMusicItem.tag;
+    self.pickerMusicItem.tag = YES;
 }
 
 - (void)didReceiveMemoryWarning

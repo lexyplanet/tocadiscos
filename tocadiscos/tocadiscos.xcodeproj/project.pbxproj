@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		494B614B16441E8D0001DD71 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494B614A16441E8D0001DD71 /* MediaPlayer.framework */; };
 		CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE755F8E163F24F800DA58B8 /* Aguja2.png */; };
 		CE9FE9D0163DDB7D001DBBA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FE9CF163DDB7D001DBBA9 /* UIKit.framework */; };
 		CE9FE9D2163DDB7D001DBBA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FE9D1163DDB7D001DBBA9 /* Foundation.framework */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		494B614A16441E8D0001DD71 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		CE755F8E163F24F800DA58B8 /* Aguja2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Aguja2.png; sourceTree = "<group>"; };
 		CE9FE9CB163DDB7D001DBBA9 /* tocadiscos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tocadiscos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9FE9CF163DDB7D001DBBA9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -101,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494B614B16441E8D0001DD71 /* MediaPlayer.framework in Frameworks */,
 				CE9FEA5E163DE988001DBBA9 /* AVFoundation.framework in Frameworks */,
 				CE9FE9D0163DDB7D001DBBA9 /* UIKit.framework in Frameworks */,
 				CE9FE9D2163DDB7D001DBBA9 /* Foundation.framework in Frameworks */,
@@ -131,6 +134,7 @@
 		CE9FE9CE163DDB7D001DBBA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				494B614A16441E8D0001DD71 /* MediaPlayer.framework */,
 				CE9FEA5D163DE988001DBBA9 /* AVFoundation.framework */,
 				CE9FE9CF163DDB7D001DBBA9 /* UIKit.framework */,
 				CE9FE9D1163DDB7D001DBBA9 /* Foundation.framework */,
