@@ -114,7 +114,11 @@
     thumbImageVe = nil;
     NSError * error;
     
+    //Ver qué hacemos con canción inicial
+    
     self.cancionActual = [[NSBundle mainBundle] pathForResource:@"Estopa. La primavera" ofType:@"mp3"];
+    
+    self.caratula = [UIImage imageNamed:@"noArtworkImage.png"]; // artWork = carátula
     
     NSURL * url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
     self.reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
@@ -485,12 +489,12 @@
         val_artist = [NSString stringWithFormat:@"%@", artist];
         //si necesitamos el artista lo podemos coger aquí
 	
-        self.artWork = [UIImage imageNamed:@"noArtworkImage.png"]; // artWork = carátula
+        self.caratula = [UIImage imageNamed:@"noArtworkImage.png"]; // artWork = carátula
 	
         MPMediaItemArtwork *artwork = [currentItem valueForProperty: MPMediaItemPropertyArtwork];
 	
         if (artwork) {
-            self.artWork = [artwork imageWithSize: CGSizeMake (200, 200)];
+            self.caratula = [artwork imageWithSize: CGSizeMake (200, 200)];
         }
     }
    // self.reproductor = (AVAudioPlayer *) self.musicPlayer;
@@ -498,6 +502,8 @@
     
 
     [self.reproductor prepareToPlay];
+    [self.reproductor play];
+
     
 }
 

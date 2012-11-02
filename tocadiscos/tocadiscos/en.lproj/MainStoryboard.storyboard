@@ -13,6 +13,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="uaO-Gn-GBh">
+                                <rect key="frame" x="116" y="270" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="81y-oe-kvK">
                                 <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -179,6 +183,7 @@
                         <outlet property="_sliderStereo" destination="FQv-tK-Bu7" id="Hma-k7-nCF"/>
                         <outlet property="_sliderVolumen" destination="xHj-XB-737" id="hcX-bA-z51"/>
                         <outlet property="barraProgreso" destination="xvM-if-8jq" id="TwG-Zs-GiC"/>
+                        <outlet property="caratula" destination="uaO-Gn-GBh" id="moN-5d-BEA"/>
                         <outlet property="imagenAguja" destination="Zer-mJ-XQb" id="GNr-kg-uC4"/>
                         <outlet property="imagenDisco" destination="ypT-m6-bqr" id="8Ue-Yr-NLI"/>
                         <outlet property="pauseButton" destination="ud6-nj-n00" id="Tkx-Gx-rTm"/>
@@ -235,8 +240,8 @@
                 <relationship kind="outlet" name="_sliderRate" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="_sliderStereo" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="_sliderVolumen" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="artWork" candidateClass="UIImage"/>
                 <relationship kind="outlet" name="barraProgreso" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="caratula" candidateClass="UIImage"/>
                 <relationship kind="outlet" name="imagenAguja" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="imagenDisco" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>

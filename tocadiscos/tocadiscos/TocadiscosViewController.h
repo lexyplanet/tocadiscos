@@ -43,7 +43,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imagenDisco;
 @property (strong, nonatomic) IBOutlet UIImageView *imagenAguja;
 
-@property (strong, nonatomic) IBOutlet UIImage *artWork; //imagen centro disco (MJ)
+@property (strong, nonatomic) IBOutlet UIImage *caratula; //imagen centro disco (MJ)
 
 @property(nonatomic, strong) NSString *cancionActual;
 @property(nonatomic, strong) NSTimer *timer; //ADRIAN
