@@ -13,7 +13,7 @@
 #import "NuevaCancionViewController.h"
 
 
-@interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
+@interface TocadiscosViewController : UIViewController  <MPMediaPickerControllerDelegate>
 
 {
     /* Variables Auxiliares para el ajuste de valores en el reproductor al momento de cambiar de cancion */
