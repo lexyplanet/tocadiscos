@@ -7,7 +7,7 @@
 //
 
 #import "TocadiscosViewController.h"
-#import "NuevaCancionViewController.h"
+//#import "NuevaCancionViewController.h"
 
 
 @interface TocadiscosViewController ()
@@ -483,11 +483,14 @@
     if (currentItem) {
         NSString *artist = [currentItem valueForProperty: MPMediaItemPropertyArtist];
         NSString *song = [currentItem valueForProperty: MPMediaItemPropertyTitle];
+        NSNumber *duracion = [currentItem valueForProperty:MPMediaItemPropertyPlaybackDuration];
         
         val_song = [NSString stringWithFormat:@"%@", song];
         self.cancionActual = val_song; // comprobar en este punto que la asignación lleva ext.
+       
         val_artist = [NSString stringWithFormat:@"%@", artist];
-        //si necesitamos el artista lo podemos coger aquí
+        //si necesitamos el artista lo podemos coger aquí y el resto de propiedades también
+        
 	
         self.caratula = [UIImage imageNamed:@"noArtworkImage.png"]; // artWork = carátula
 	
