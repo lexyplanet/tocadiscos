@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 
-#import "NuevaCancionViewController.h"
+//#import "NuevaCancionViewController.h"
 
 
 @interface TocadiscosViewController : UIViewController  <MPMediaPickerControllerDelegate>
