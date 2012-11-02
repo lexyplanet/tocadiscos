@@ -212,7 +212,7 @@
     [self.reproductor play];
     
     /******************************** VERSION ADRIAN PROGRESS BAR Y LABELS *********************/
-    float duracionAudio = [self.reproductor duration];
+    float  duracionAudio = [self.reproductor duration];
     
     //Obteniendo los minutos
     float minutos = floor(duracionAudio/60);
@@ -477,6 +477,7 @@
 {
     NSString *val_song;
     NSString *val_artist;
+    NSNumber *val_duracion;
     
     MPMediaItem *currentItem = [self.musicPlayer nowPlayingItem];
     
@@ -490,7 +491,8 @@
        
         val_artist = [NSString stringWithFormat:@"%@", artist];
         //si necesitamos el artista lo podemos coger aquí y el resto de propiedades también
-        
+        val_duracion = duracion;
+        //falta asignarlo a la duracion del reproductor si en este punto se cogen bien los valores avisar resto de grupo para cambio de float a NSNumber
 	
         self.caratula = [UIImage imageNamed:@"noArtworkImage.png"]; // artWork = carátula
 	
