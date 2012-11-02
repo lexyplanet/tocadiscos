@@ -45,7 +45,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImage *artWork; //imagen centro disco (MJ)
 
-@property(nonatomic, strong) NSString* cancionActual;
+@property(nonatomic, strong) NSString *cancionActual;
 @property(nonatomic, strong) NSTimer *timer; //ADRIAN
 
 //Botones del tocadiscos

@@ -430,7 +430,7 @@
     if (mediaItemCollection) {
         
         [self.musicPlayer setQueueWithItemCollection: mediaItemCollection];
-        self.reproductor = (AVAudioPlayer *) self.musicPlayer;
+        self.reproductor = (AVAudioPlayer *) self.musicPlayer; // conversion de tipo
         [self.reproductor play];
     }
     
@@ -471,19 +471,32 @@
 
 - (void) handle_NowPlayingItemChanged: (id) notification
 {
+    NSString *val_song;
+    NSString *val_artist;
     
     MPMediaItem *currentItem = [self.musicPlayer nowPlayingItem];
-	
-    self.artWork = [UIImage imageNamed:@"noArtworkImage.png"];
-	
-    MPMediaItemArtwork *artwork = [currentItem valueForProperty: MPMediaItemPropertyArtwork];
-	
-	if (artwork) {
-		self.artWork = [artwork imageWithSize: CGSizeMake (200, 200)];
-	}
-    self.reproductor = (AVAudioPlayer *) self.musicPlayer; // Conversion de tipo (aunque con dudas de que resuelva bien)
     
-    self.cancionActual = (NSString *)self.musicPlayer.nowPlayingItem;
+    if (currentItem) {
+        NSString *artist = [currentItem valueForProperty: MPMediaItemPropertyArtist];
+        NSString *song = [currentItem valueForProperty: MPMediaItemPropertyTitle];
+        
+        val_song = [NSString stringWithFormat:@"%@", song];
+        self.cancionActual = val_song; // comprobar en este punto que la asignación lleva ext.
+        val_artist = [NSString stringWithFormat:@"%@", artist];
+        //si necesitamos el artista lo podemos coger aquí
+	
+        self.artWork = [UIImage imageNamed:@"noArtworkImage.png"]; // artWork = carátula
+	
+        MPMediaItemArtwork *artwork = [currentItem valueForProperty: MPMediaItemPropertyArtwork];
+	
+        if (artwork) {
+            self.artWork = [artwork imageWithSize: CGSizeMake (200, 200)];
+        }
+    }
+   // self.reproductor = (AVAudioPlayer *) self.musicPlayer;
+        // Conversion de tipo (aunque con dudas de que resuelva bien)
+    
+
     [self.reproductor prepareToPlay];
     
 }
