@@ -15,6 +15,8 @@
 #import "GiroBrazo.h"
 #import "Disco.h"
 #import "Animacion.h"
+#import "PlayerPicker.h"
+#import "BotonesRetro.h"
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 {
@@ -42,6 +44,8 @@
     Disco *disco;
     //Objeto para crear animaciones
     Animacion *animacion;
+    //Objeto para crear el player que selecciona las canciones mediante el Picker
+    PlayerPicker *playerPicker;
     /*************************************/
 }
 @property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar un slider
@@ -52,17 +56,17 @@
 @property (strong, nonatomic) IBOutlet UILabel *tiempoTotal;
 @property (strong, nonatomic) IBOutlet UIProgressView *barraProgreso;
 
-@property (nonatomic, strong) AVAudioPlayer *reproductor;
+@property (nonatomic, strong) AVAudioPlayer *reproductor; //PLAYERPICKER
 @property (strong, nonatomic) IBOutlet UIImageView *discoImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *brazoAgujaImageView; //GIROBRAZO
 
-@property(nonatomic, strong) NSString* cancionActual;
+@property(nonatomic, strong) NSString* cancionActual; //PLAYERPICKER
 @property(nonatomic, strong) NSTimer *timer; //ADRIAN
 
 //Botones del tocadiscos
-@property (nonatomic, strong) IBOutlet UIButton *playButton;
-@property (nonatomic, strong) IBOutlet UIButton *pauseButton;
-@property (nonatomic, strong) IBOutlet UIButton *stopButton;
+@property (nonatomic, strong) IBOutlet UIButton *playButton; //PLAYERPICKER
+@property (nonatomic, strong) IBOutlet UIButton *pauseButton; //PLAYERPICKER
+@property (nonatomic, strong) IBOutlet UIButton *stopButton; //PLAYERPICKER
 
 - (IBAction)Play:(id)sender;
 - (IBAction)Pausa:(id)sender;

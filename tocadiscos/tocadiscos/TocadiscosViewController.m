@@ -28,6 +28,9 @@
 @synthesize barraProgreso; //ADRIAN
 @synthesize brazoAgujaImageView; //GIROBRAZO
 @synthesize discoImageView; //DISCO
+@synthesize playButton;
+@synthesize pauseButton;
+@synthesize stopButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,7 +56,10 @@
     disco = [[Disco alloc] init];
     //Inicializa el objeto de la clase Animación
     animacion = [[Animacion alloc] init];
+    //Inicializa el objeto de la clase PlayerPicker
+    playerPicker = [[PlayerPicker alloc] init];
     /*********************************************/
+    
     
     //Personalizamos el slider de Stereo
     UIImage *minImage = [UIImage imageNamed:@"ControlStereoHorizontal-03.png"];
@@ -116,9 +122,10 @@
     minImageVe = nil;
     maxImageVe = nil;
     thumbImageVe = nil;
-    NSError * error;
     
-    self.cancionActual = [[NSBundle mainBundle] pathForResource:@"Estopa. La primavera" ofType:@"mp3"];
+    /*NSError * error;
+    
+    self.cancionActual = [[NSBundle mainBundle] pathForResource:@"dePeli" ofType:@"mp3"];
     
     NSURL * url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
     self.reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
@@ -128,12 +135,13 @@
     
     self.reproductor.enableRate = YES;
     self.reproductor.rate = 1;
-    [self.reproductor prepareToPlay];
+    [self.reproductor prepareToPlay];*/
    
     //Se oculta las imagenes asignadas a los botones del tocadiscos (play, pause, stop)
-    [self.playButton setImage:NO forState:UIControlStateNormal];
+    /*[self.playButton setImage:NO forState:UIControlStateNormal];
     [self.pauseButton setImage:NO forState:UIControlStateNormal];
-    [self.stopButton setImage:NO forState:UIControlStateNormal];
+    [self.stopButton setImage:NO forState:UIControlStateNormal]; */
+    [playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
     
     /******************************** INICIALIZACION DE VARIABLE DE STATUS DE PAUSE (ADRIAN) *********************/
     pausado = NO;

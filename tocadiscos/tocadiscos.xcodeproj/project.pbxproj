@@ -12,6 +12,8 @@
 		CE6B6FCF16455D5F00EFEC69 /* Enganchado a ti.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6B6FCB16455D5F00EFEC69 /* Enganchado a ti.mp3 */; };
 		CE6B6FD016455D5F00EFEC69 /* sinRumbo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6B6FCC16455D5F00EFEC69 /* sinRumbo.mp3 */; };
 		CE720D3916450E5200A63A1F /* GiroBrazo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE720D3816450E5200A63A1F /* GiroBrazo.m */; };
+		CE73CEE31645729E00E398BE /* PlayerPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73CEE21645729E00E398BE /* PlayerPicker.m */; };
+		CE73CEE71645794000E398BE /* BotonesRetro.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73CEE61645794000E398BE /* BotonesRetro.m */; };
 		CE73E15816456D3500015FBA /* Animacion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73E15716456D3500015FBA /* Animacion.m */; };
 		CE743E3016453340006B60BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE743E2F16453340006B60BD /* QuartzCore.framework */; };
 		CE743E35164549BA006B60BD /* Disco.m in Sources */ = {isa = PBXBuildFile; fileRef = CE743E34164549BA006B60BD /* Disco.m */; };
@@ -50,8 +52,6 @@
 		CE9FEA45163DE592001DBBA9 /* PantallaApagada.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA2F163DE592001DBBA9 /* PantallaApagada.png */; };
 		CE9FEA46163DE592001DBBA9 /* PantallaEncendida.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA30163DE592001DBBA9 /* PantallaEncendida.png */; };
 		CE9FEA47163DE592001DBBA9 /* Tocadiscos.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA31163DE592001DBBA9 /* Tocadiscos.png */; };
-		CE9FEA4B163DE5E2001DBBA9 /* Estopa. Cuerpo Triste.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA49163DE5E2001DBBA9 /* Estopa. Cuerpo Triste.mp3 */; };
-		CE9FEA4C163DE5E2001DBBA9 /* Estopa. La primavera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA4A163DE5E2001DBBA9 /* Estopa. La primavera.mp3 */; };
 		CE9FEA4F163DE64A001DBBA9 /* TocadiscosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9FEA4E163DE64A001DBBA9 /* TocadiscosViewController.m */; };
 		CE9FEA53163DE68B001DBBA9 /* NuevaCancionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9FEA52163DE68B001DBBA9 /* NuevaCancionViewController.m */; };
 		CE9FEA5E163DE988001DBBA9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FEA5D163DE988001DBBA9 /* AVFoundation.framework */; };
@@ -68,6 +68,10 @@
 		CE6B6FCC16455D5F00EFEC69 /* sinRumbo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sinRumbo.mp3; sourceTree = "<group>"; };
 		CE720D3716450E5200A63A1F /* GiroBrazo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiroBrazo.h; sourceTree = "<group>"; };
 		CE720D3816450E5200A63A1F /* GiroBrazo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiroBrazo.m; sourceTree = "<group>"; };
+		CE73CEE11645729E00E398BE /* PlayerPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerPicker.h; sourceTree = "<group>"; };
+		CE73CEE21645729E00E398BE /* PlayerPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerPicker.m; sourceTree = "<group>"; };
+		CE73CEE51645794000E398BE /* BotonesRetro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BotonesRetro.h; sourceTree = "<group>"; };
+		CE73CEE61645794000E398BE /* BotonesRetro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BotonesRetro.m; sourceTree = "<group>"; };
 		CE73E15616456D3500015FBA /* Animacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animacion.h; sourceTree = "<group>"; };
 		CE73E15716456D3500015FBA /* Animacion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animacion.m; sourceTree = "<group>"; };
 		CE743E2F16453340006B60BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -112,8 +116,6 @@
 		CE9FEA2F163DE592001DBBA9 /* PantallaApagada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PantallaApagada.png; sourceTree = "<group>"; };
 		CE9FEA30163DE592001DBBA9 /* PantallaEncendida.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PantallaEncendida.png; sourceTree = "<group>"; };
 		CE9FEA31163DE592001DBBA9 /* Tocadiscos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tocadiscos.png; sourceTree = "<group>"; };
-		CE9FEA49163DE5E2001DBBA9 /* Estopa. Cuerpo Triste.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Estopa. Cuerpo Triste.mp3"; sourceTree = "<group>"; };
-		CE9FEA4A163DE5E2001DBBA9 /* Estopa. La primavera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Estopa. La primavera.mp3"; sourceTree = "<group>"; };
 		CE9FEA4D163DE64A001DBBA9 /* TocadiscosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TocadiscosViewController.h; sourceTree = "<group>"; };
 		CE9FEA4E163DE64A001DBBA9 /* TocadiscosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TocadiscosViewController.m; sourceTree = "<group>"; };
 		CE9FEA51163DE68B001DBBA9 /* NuevaCancionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuevaCancionViewController.h; sourceTree = "<group>"; };
@@ -151,6 +153,24 @@
 				CE720D3816450E5200A63A1F /* GiroBrazo.m */,
 			);
 			name = GiroBrazo;
+			sourceTree = "<group>";
+		};
+		CE73CEDF1645726D00E398BE /* PlayerPicker */ = {
+			isa = PBXGroup;
+			children = (
+				CE73CEE11645729E00E398BE /* PlayerPicker.h */,
+				CE73CEE21645729E00E398BE /* PlayerPicker.m */,
+			);
+			name = PlayerPicker;
+			sourceTree = "<group>";
+		};
+		CE73CEE41645790A00E398BE /* Botones */ = {
+			isa = PBXGroup;
+			children = (
+				CE73CEE51645794000E398BE /* BotonesRetro.h */,
+				CE73CEE61645794000E398BE /* BotonesRetro.m */,
+			);
+			name = Botones;
 			sourceTree = "<group>";
 		};
 		CE73E15416456D0F00015FBA /* Animacion */ = {
@@ -226,6 +246,8 @@
 				CE720D3216450BDF00A63A1F /* GiroBrazo */,
 				CE743E321645496B006B60BD /* Disco */,
 				CE73E15416456D0F00015FBA /* Animacion */,
+				CE73CEDF1645726D00E398BE /* PlayerPicker */,
+				CE73CEE41645790A00E398BE /* Botones */,
 				CE9FE9D6163DDB7E001DBBA9 /* Supporting Files */,
 			);
 			path = tocadiscos;
@@ -283,8 +305,6 @@
 				CE6B6FCA16455D5F00EFEC69 /* downbeat.mp3 */,
 				CE6B6FCB16455D5F00EFEC69 /* Enganchado a ti.mp3 */,
 				CE6B6FCC16455D5F00EFEC69 /* sinRumbo.mp3 */,
-				CE9FEA49163DE5E2001DBBA9 /* Estopa. Cuerpo Triste.mp3 */,
-				CE9FEA4A163DE5E2001DBBA9 /* Estopa. La primavera.mp3 */,
 			);
 			name = Canciones;
 			sourceTree = "<group>";
@@ -403,8 +423,6 @@
 				CE9FEA45163DE592001DBBA9 /* PantallaApagada.png in Resources */,
 				CE9FEA46163DE592001DBBA9 /* PantallaEncendida.png in Resources */,
 				CE9FEA47163DE592001DBBA9 /* Tocadiscos.png in Resources */,
-				CE9FEA4B163DE5E2001DBBA9 /* Estopa. Cuerpo Triste.mp3 in Resources */,
-				CE9FEA4C163DE5E2001DBBA9 /* Estopa. La primavera.mp3 in Resources */,
 				CE9FEA69163F0F6D001DBBA9 /* Barilla Aguja92x139.png in Resources */,
 				CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */,
 				CE9A3E241642E58800F1DC66 /* clic.mp3 in Resources */,
@@ -432,6 +450,8 @@
 				CE720D3916450E5200A63A1F /* GiroBrazo.m in Sources */,
 				CE743E35164549BA006B60BD /* Disco.m in Sources */,
 				CE73E15816456D3500015FBA /* Animacion.m in Sources */,
+				CE73CEE31645729E00E398BE /* PlayerPicker.m in Sources */,
+				CE73CEE71645794000E398BE /* BotonesRetro.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
