@@ -453,7 +453,7 @@
     mediaPicker.allowsPickingMultipleItems = YES;
     mediaPicker.prompt = @"Elige tus canciones";
     
-    [self presentModalViewController:mediaPicker animated:YES];
+    //   [self presentModalViewController:mediaPicker animated:YES];
     //deprecated la funcion nueva es presentViewController:mediaPicker
     
 }
@@ -468,12 +468,12 @@
         [self.reproductor play];
     }
     
-	[self dismissModalViewControllerAnimated: YES];
+	//[self dismissModalViewControllerAnimated: YES];
 }
 
 - (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker
 {
-    [self dismissModalViewControllerAnimated: YES];
+    //	[self dismissModalViewControllerAnimated: YES];
 }
 
 #pragma mark - Notifications
