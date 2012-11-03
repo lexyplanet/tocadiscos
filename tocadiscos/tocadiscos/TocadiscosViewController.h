@@ -13,6 +13,7 @@
 #import "Sonido.h"
 #import "Retardo.h"
 #import "GiroBrazo.h"
+#import "Disco.h"
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 {
@@ -25,7 +26,7 @@
     IBOutlet UISlider *_sliderVolumen;//para personalizar un slider de Volumen
     IBOutlet UISlider *_sliderStereo;//para personalizar un slider de Stereo
     IBOutlet UISlider *_sliderRate; //para personalizar un slider de rate
-    BOOL animating; //esta variable ayuda a saber si esta animando o corriendo el bucle.GIRODISCO
+    //BOOL animating; //esta variable ayuda a saber si esta animando o corriendo el bucle.GIRODISCO
     BOOL pausado;   //Variable para el status de Pause ADRIAN
     
     /********* PEDRO 3-11-2012 *************/
@@ -34,8 +35,10 @@
     //Objeto para crear un retardo en la ejecución del programa
     Retardo *retardo;
     //Objeto para realizar el giro del brazo de la aguja
-    GiroBrazo *giroBrazo;
-    NSString *nombreImageBrazo;
+    GiroBrazo *brazo;
+    NSString *nombreImagenBrazo;
+    //Objeto para hacer girar el disco
+    Disco *disco;
     /*************************************/
 }
 @property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar un slider
@@ -66,9 +69,9 @@
 - (IBAction)cambioRate:(id)sender;
 
 //Agregue estas 3 funciones que controlan el bucle.
--(void)spin; //Ejecuta el bucle o animación GIRODISCO
+/*-(void)spin; //Ejecuta el bucle o animación GIRODISCO
 -(void)startSpin;//Inicia el bucle o animación GIRODISCO
--(void)stopSpin;//Para el bucle o animación GIRODISCO
+-(void)stopSpin;//Para el bucle o animación GIRODISCO */
 //-----------
 
 @end

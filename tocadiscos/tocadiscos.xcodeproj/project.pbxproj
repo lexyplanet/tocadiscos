@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE720D3916450E5200A63A1F /* GiroBrazo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE720D3816450E5200A63A1F /* GiroBrazo.m */; };
 		CE743E3016453340006B60BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE743E2F16453340006B60BD /* QuartzCore.framework */; };
+		CE743E35164549BA006B60BD /* Disco.m in Sources */ = {isa = PBXBuildFile; fileRef = CE743E34164549BA006B60BD /* Disco.m */; };
 		CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE755F8E163F24F800DA58B8 /* Aguja2.png */; };
 		CE9A3E241642E58800F1DC66 /* clic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9A3E221642E58800F1DC66 /* clic.mp3 */; };
 		CE9A3E2B1642E79B00F1DC66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */; };
@@ -59,6 +60,8 @@
 		CE720D3716450E5200A63A1F /* GiroBrazo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiroBrazo.h; sourceTree = "<group>"; };
 		CE720D3816450E5200A63A1F /* GiroBrazo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiroBrazo.m; sourceTree = "<group>"; };
 		CE743E2F16453340006B60BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CE743E33164549BA006B60BD /* Disco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Disco.h; sourceTree = "<group>"; };
+		CE743E34164549BA006B60BD /* Disco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Disco.m; sourceTree = "<group>"; };
 		CE755F8E163F24F800DA58B8 /* Aguja2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Aguja2.png; sourceTree = "<group>"; };
 		CE9A3E221642E58800F1DC66 /* clic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clic.mp3; sourceTree = "<group>"; };
 		CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -139,6 +142,15 @@
 			name = GiroBrazo;
 			sourceTree = "<group>";
 		};
+		CE743E321645496B006B60BD /* Disco */ = {
+			isa = PBXGroup;
+			children = (
+				CE743E33164549BA006B60BD /* Disco.h */,
+				CE743E34164549BA006B60BD /* Disco.m */,
+			);
+			name = Disco;
+			sourceTree = "<group>";
+		};
 		CE9A3E201642E4B700F1DC66 /* Sonidos */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +204,7 @@
 				CEADD36C16447EA200815EC5 /* Sonido */,
 				CEADD37016448EA800815EC5 /* Retardo */,
 				CE720D3216450BDF00A63A1F /* GiroBrazo */,
+				CE743E321645496B006B60BD /* Disco */,
 				CE9FE9D6163DDB7E001DBBA9 /* Supporting Files */,
 			);
 			path = tocadiscos;
@@ -388,6 +401,7 @@
 				CEADD36F164483FD00815EC5 /* Sonido.m in Sources */,
 				CEADD37316448EE500815EC5 /* Retardo.m in Sources */,
 				CE720D3916450E5200A63A1F /* GiroBrazo.m in Sources */,
+				CE743E35164549BA006B60BD /* Disco.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

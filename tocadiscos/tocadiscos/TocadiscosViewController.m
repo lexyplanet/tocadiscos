@@ -27,6 +27,7 @@
 @synthesize reproductor;
 @synthesize barraProgreso; //ADRIAN
 @synthesize brazoAgujaImageView; //GIROBRAZO
+@synthesize discoImageView; //DISCO
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,7 +48,9 @@
     //Inicializa el objeto de la clase Retardo
     retardo = [[Retardo alloc] init];
     //Inicializa el objeto de la clase GiroBrazo
-    giroBrazo = [[GiroBrazo alloc] init];
+    brazo = [[GiroBrazo alloc] init];
+    //Inicializa el objeto de la clase Disco
+    disco = [[Disco alloc] init];
     /*********************************************/
     
     //Personalizamos el slider de Stereo
@@ -94,7 +97,7 @@
     
     /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro
      */
-    [giroBrazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
+    [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
     
     //Personalizamos el slider de velocidad
     UIImage *minImageVe = [UIImage imageNamed:@"ControlVelocidadHorizontal-02.png"];
@@ -166,9 +169,10 @@
     [UIView setAnimationBeginsFromCurrentState:YES];
         
     //Gira el brazo de la aguja
-    [giroBrazo giroBrazo:brazoAgujaImageView andGradosGiro:0.4];
+    [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.4];
     
-    [self startSpin];
+    //[self startSpin];
+    [disco inicioGiro:discoImageView];
     
     [UIView commitAnimations];
     
@@ -267,34 +271,6 @@
     }
 }
 
-#pragma mark - Giro disco
-
--(void)spin{
-    [UIView animateWithDuration: 1
-                          delay: 0.0f
-                        options: UIViewAnimationOptionCurveLinear
-                     animations: ^{
-                         self.discoImageView.transform = CGAffineTransformRotate(self.discoImageView.transform, M_PI / 2);
-                     }
-                     completion: ^(BOOL finished) {
-                         if (finished && animating) {
-                             // if flag still set, keep spinning
-                             [self spin];
-                         }
-                     }];
-}
--(void)startSpin{
-    if (!animating) {
-        animating = YES;
-        [self spin];
-    }
-}
-
-- (void) stopSpin {
-    // set the flag to stop spinning at the next 90 degree increment
-    animating = NO;
-}
-
 - (IBAction)Pausa:(id)sender {
     //Pone el botón del pause en color verde.
     [self.pauseButton setImage:[UIImage imageNamed:@"BotonPauseVerde.png"] forState:UIControlStateNormal];
@@ -310,16 +286,14 @@
     }
      /***********************************************************/
     
-    
-    /*etiqueta.text = [[NSString alloc] initWithFormat:@"duration: %4.2f \n currentTime %4.2f", self.reproductor.duration, self.reproductor.currentTime];*/
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:1.00];
     [UIView setAnimationBeginsFromCurrentState:YES];
     timeActualFloat = self.reproductor.currentTime;
-    
-    [self stopSpin];
 
-    [giroBrazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
+    [disco pararGiro];
+
+    [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
     
     [UIView commitAnimations];
     [self.reproductor pause];
@@ -337,12 +311,9 @@
     [UIView setAnimationBeginsFromCurrentState:YES];
     self.reproductor.currentTime = 0;
     timeActualFloat = self.reproductor.currentTime;
-    [self stopSpin];
-
-    [giroBrazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
+    [disco pararGiro];
+    [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
     [UIView commitAnimations];
-    
-    
     
     [self.reproductor stop];
 }
@@ -367,9 +338,6 @@
 
 - (void)viewDidUnload
 {
-    //[self setEtiqueta:nil]; ADRIAN
-    //[self setTiempoQueTranscurre:nil]; ADRIAN
-    //[self setTiempoTotal:nil]; ADRIAN
     [self setBarraProgreso:nil];
     [self setDiscoImageView:nil];
     [self setBrazoAgujaImageView:nil];
@@ -423,6 +391,5 @@
     }
     
 }
-
 
 @end
