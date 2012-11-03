@@ -196,7 +196,7 @@
     NSNumber *duracion = [actual valueForProperty:MPMediaItemPropertyPlaybackDuration];
 
    // esta linea no se como estaba --> comparar con anteriores duracion = timeActualFloat;
-    //[self.reproductor prepareToPlay];
+   // [self.reproductor prepareToPlay];
     
         
     
@@ -323,14 +323,14 @@
     
     /*etiqueta.text = [[NSString alloc] initWithFormat:@"duration: %4.2f \n currentTime %4.2f", self.reproductor.duration, self.reproductor.currentTime];*/
     [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:1.00];
+    [UIView setAnimationDuration:1.0];
     [UIView setAnimationBeginsFromCurrentState:YES];
     
     MPMediaItem *actual = self.reproductor.nowPlayingItem;
     
     NSNumber *duracion = [actual valueForProperty:MPMediaItemPropertyPlaybackDuration];
 
-    timeActualFloat = duracion.floatValue;
+    timeActualFloat = duracion.floatValue; //este seria el tiempo total ver para buscar el actual
     
     [self stopSpin];
     
@@ -369,7 +369,8 @@
     
     duracion = [actual valueForProperty:MPMediaItemPropertyPlaybackDuration];
     
-    timeActualFloat = duracion.floatValue;
+  //  timeActualFloat = duracion.floatValue;
+    timeActualFloat = 0;
     [self stopSpin];
     //etiqueta.text = 0;
     
