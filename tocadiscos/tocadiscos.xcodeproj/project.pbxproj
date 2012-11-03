@@ -7,7 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE755F8E163F24F800DA58B8 /* Aguja2.png */; };
+		299575391645BB1000D96964 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 299575331645BB1000D96964 /* bg.png */; };
+		2995753A1645BB1000D96964 /* btn-play.png in Resources */ = {isa = PBXBuildFile; fileRef = 299575341645BB1000D96964 /* btn-play.png */; };
+		2995753B1645BB1000D96964 /* btn-stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 299575351645BB1000D96964 /* btn-stop.png */; };
+		2995753C1645BB1000D96964 /* stop-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 299575361645BB1000D96964 /* stop-off.png */; };
+		2995753D1645BB1000D96964 /* stop-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 299575371645BB1000D96964 /* stop-on.png */; };
+		2995753F1645BB2700D96964 /* brazo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2995753E1645BB2700D96964 /* brazo.png */; };
+		299575411645BB4500D96964 /* disco.png in Resources */ = {isa = PBXBuildFile; fileRef = 299575401645BB4500D96964 /* disco.png */; };
+		299575431645C06F00D96964 /* play-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 299575421645C06F00D96964 /* play-on.png */; };
+		299575451645C1D300D96964 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 299575441645C1D200D96964 /* next.png */; };
+		299575471645C1D800D96964 /* pre.png in Resources */ = {isa = PBXBuildFile; fileRef = 299575461645C1D800D96964 /* pre.png */; };
+		299575491645C98400D96964 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 299575481645C98400D96964 /* bg2.png */; };
+		2995754B1645D3A200D96964 /* sombra.png in Resources */ = {isa = PBXBuildFile; fileRef = 2995754A1645D3A200D96964 /* sombra.png */; };
 		CE9A3E241642E58800F1DC66 /* clic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9A3E221642E58800F1DC66 /* clic.mp3 */; };
 		CE9A3E2B1642E79B00F1DC66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */; };
 		CE9FE9D0163DDB7D001DBBA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FE9CF163DDB7D001DBBA9 /* UIKit.framework */; };
@@ -20,39 +31,27 @@
 		CE9FE9E4163DDB7E001DBBA9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FE9E3163DDB7E001DBBA9 /* Default@2x.png */; };
 		CE9FE9E6163DDB7E001DBBA9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FE9E5163DDB7E001DBBA9 /* Default-568h@2x.png */; };
 		CE9FE9E9163DDB7E001DBBA9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9FE9E7163DDB7E001DBBA9 /* MainStoryboard.storyboard */; };
-		CE9FEA32163DE592001DBBA9 /* Aguja.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA1C163DE592001DBBA9 /* Aguja.png */; };
-		CE9FEA33163DE592001DBBA9 /* BotonControlVelocidadHorizontal-03.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA1D163DE592001DBBA9 /* BotonControlVelocidadHorizontal-03.png */; };
-		CE9FEA34163DE592001DBBA9 /* BotonOff.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA1E163DE592001DBBA9 /* BotonOff.png */; };
-		CE9FEA35163DE592001DBBA9 /* BotonOn.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA1F163DE592001DBBA9 /* BotonOn.png */; };
-		CE9FEA36163DE592001DBBA9 /* BotonPauseVerde.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA20163DE592001DBBA9 /* BotonPauseVerde.png */; };
-		CE9FEA37163DE592001DBBA9 /* BotonPlayVerde.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA21163DE592001DBBA9 /* BotonPlayVerde.png */; };
-		CE9FEA38163DE592001DBBA9 /* BotonStereo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA22163DE592001DBBA9 /* BotonStereo.png */; };
-		CE9FEA39163DE592001DBBA9 /* BotonStereoHorizontal-05.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA23163DE592001DBBA9 /* BotonStereoHorizontal-05.png */; };
-		CE9FEA3A163DE592001DBBA9 /* BotonStopVerde.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA24163DE592001DBBA9 /* BotonStopVerde.png */; };
-		CE9FEA3B163DE592001DBBA9 /* BotonVolumen.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA25163DE592001DBBA9 /* BotonVolumen.png */; };
-		CE9FEA3C163DE592001DBBA9 /* BotonVolumenHorizontal-04.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA26163DE592001DBBA9 /* BotonVolumenHorizontal-04.png */; };
-		CE9FEA3D163DE592001DBBA9 /* CarpetaMusica.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA27163DE592001DBBA9 /* CarpetaMusica.png */; };
-		CE9FEA3E163DE592001DBBA9 /* Controles.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA28163DE592001DBBA9 /* Controles.png */; };
-		CE9FEA3F163DE592001DBBA9 /* ControlStereo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA29163DE592001DBBA9 /* ControlStereo.png */; };
-		CE9FEA40163DE592001DBBA9 /* ControlStereoHorizontal-03.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA2A163DE592001DBBA9 /* ControlStereoHorizontal-03.png */; };
-		CE9FEA41163DE592001DBBA9 /* ControlVelocidadHorizontal-02.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA2B163DE592001DBBA9 /* ControlVelocidadHorizontal-02.png */; };
-		CE9FEA42163DE592001DBBA9 /* ControlVolumen.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA2C163DE592001DBBA9 /* ControlVolumen.png */; };
-		CE9FEA43163DE592001DBBA9 /* ControlVolumenHorizontal-02.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA2D163DE592001DBBA9 /* ControlVolumenHorizontal-02.png */; };
-		CE9FEA44163DE592001DBBA9 /* Disco.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA2E163DE592001DBBA9 /* Disco.png */; };
-		CE9FEA45163DE592001DBBA9 /* PantallaApagada.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA2F163DE592001DBBA9 /* PantallaApagada.png */; };
-		CE9FEA46163DE592001DBBA9 /* PantallaEncendida.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA30163DE592001DBBA9 /* PantallaEncendida.png */; };
-		CE9FEA47163DE592001DBBA9 /* Tocadiscos.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA31163DE592001DBBA9 /* Tocadiscos.png */; };
 		CE9FEA4B163DE5E2001DBBA9 /* Estopa. Cuerpo Triste.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA49163DE5E2001DBBA9 /* Estopa. Cuerpo Triste.mp3 */; };
 		CE9FEA4C163DE5E2001DBBA9 /* Estopa. La primavera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA4A163DE5E2001DBBA9 /* Estopa. La primavera.mp3 */; };
 		CE9FEA4F163DE64A001DBBA9 /* TocadiscosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9FEA4E163DE64A001DBBA9 /* TocadiscosViewController.m */; };
 		CE9FEA53163DE68B001DBBA9 /* NuevaCancionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9FEA52163DE68B001DBBA9 /* NuevaCancionViewController.m */; };
 		CE9FEA5E163DE988001DBBA9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FEA5D163DE988001DBBA9 /* AVFoundation.framework */; };
-		CE9FEA69163F0F6D001DBBA9 /* Barilla Aguja92x139.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA68163F0F6D001DBBA9 /* Barilla Aguja92x139.png */; };
 		CEA362E716430CB4006DBB4F /* Vinilo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEA362E616430CB4006DBB4F /* Vinilo.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE755F8E163F24F800DA58B8 /* Aguja2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Aguja2.png; sourceTree = "<group>"; };
+		299575331645BB1000D96964 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		299575341645BB1000D96964 /* btn-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-play.png"; sourceTree = "<group>"; };
+		299575351645BB1000D96964 /* btn-stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-stop.png"; sourceTree = "<group>"; };
+		299575361645BB1000D96964 /* stop-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-off.png"; sourceTree = "<group>"; };
+		299575371645BB1000D96964 /* stop-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-on.png"; sourceTree = "<group>"; };
+		2995753E1645BB2700D96964 /* brazo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brazo.png; sourceTree = "<group>"; };
+		299575401645BB4500D96964 /* disco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disco.png; sourceTree = "<group>"; };
+		299575421645C06F00D96964 /* play-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-on.png"; sourceTree = "<group>"; };
+		299575441645C1D200D96964 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		299575461645C1D800D96964 /* pre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pre.png; sourceTree = "<group>"; };
+		299575481645C98400D96964 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
+		2995754A1645D3A200D96964 /* sombra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sombra.png; sourceTree = "<group>"; };
 		CE9A3E221642E58800F1DC66 /* clic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clic.mp3; sourceTree = "<group>"; };
 		CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CE9FE9CB163DDB7D001DBBA9 /* tocadiscos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tocadiscos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,28 +68,6 @@
 		CE9FE9E3163DDB7E001DBBA9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CE9FE9E5163DDB7E001DBBA9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CE9FE9E8163DDB7E001DBBA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		CE9FEA1C163DE592001DBBA9 /* Aguja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Aguja.png; sourceTree = "<group>"; };
-		CE9FEA1D163DE592001DBBA9 /* BotonControlVelocidadHorizontal-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BotonControlVelocidadHorizontal-03.png"; sourceTree = "<group>"; };
-		CE9FEA1E163DE592001DBBA9 /* BotonOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BotonOff.png; sourceTree = "<group>"; };
-		CE9FEA1F163DE592001DBBA9 /* BotonOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BotonOn.png; sourceTree = "<group>"; };
-		CE9FEA20163DE592001DBBA9 /* BotonPauseVerde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BotonPauseVerde.png; sourceTree = "<group>"; };
-		CE9FEA21163DE592001DBBA9 /* BotonPlayVerde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BotonPlayVerde.png; sourceTree = "<group>"; };
-		CE9FEA22163DE592001DBBA9 /* BotonStereo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BotonStereo.png; sourceTree = "<group>"; };
-		CE9FEA23163DE592001DBBA9 /* BotonStereoHorizontal-05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BotonStereoHorizontal-05.png"; sourceTree = "<group>"; };
-		CE9FEA24163DE592001DBBA9 /* BotonStopVerde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BotonStopVerde.png; sourceTree = "<group>"; };
-		CE9FEA25163DE592001DBBA9 /* BotonVolumen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BotonVolumen.png; sourceTree = "<group>"; };
-		CE9FEA26163DE592001DBBA9 /* BotonVolumenHorizontal-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BotonVolumenHorizontal-04.png"; sourceTree = "<group>"; };
-		CE9FEA27163DE592001DBBA9 /* CarpetaMusica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CarpetaMusica.png; sourceTree = "<group>"; };
-		CE9FEA28163DE592001DBBA9 /* Controles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Controles.png; sourceTree = "<group>"; };
-		CE9FEA29163DE592001DBBA9 /* ControlStereo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ControlStereo.png; sourceTree = "<group>"; };
-		CE9FEA2A163DE592001DBBA9 /* ControlStereoHorizontal-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ControlStereoHorizontal-03.png"; sourceTree = "<group>"; };
-		CE9FEA2B163DE592001DBBA9 /* ControlVelocidadHorizontal-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ControlVelocidadHorizontal-02.png"; sourceTree = "<group>"; };
-		CE9FEA2C163DE592001DBBA9 /* ControlVolumen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ControlVolumen.png; sourceTree = "<group>"; };
-		CE9FEA2D163DE592001DBBA9 /* ControlVolumenHorizontal-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ControlVolumenHorizontal-02.png"; sourceTree = "<group>"; };
-		CE9FEA2E163DE592001DBBA9 /* Disco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Disco.png; sourceTree = "<group>"; };
-		CE9FEA2F163DE592001DBBA9 /* PantallaApagada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PantallaApagada.png; sourceTree = "<group>"; };
-		CE9FEA30163DE592001DBBA9 /* PantallaEncendida.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PantallaEncendida.png; sourceTree = "<group>"; };
-		CE9FEA31163DE592001DBBA9 /* Tocadiscos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tocadiscos.png; sourceTree = "<group>"; };
 		CE9FEA49163DE5E2001DBBA9 /* Estopa. Cuerpo Triste.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Estopa. Cuerpo Triste.mp3"; sourceTree = "<group>"; };
 		CE9FEA4A163DE5E2001DBBA9 /* Estopa. La primavera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Estopa. La primavera.mp3"; sourceTree = "<group>"; };
 		CE9FEA4D163DE64A001DBBA9 /* TocadiscosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TocadiscosViewController.h; sourceTree = "<group>"; };
@@ -98,7 +75,6 @@
 		CE9FEA51163DE68B001DBBA9 /* NuevaCancionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuevaCancionViewController.h; sourceTree = "<group>"; };
 		CE9FEA52163DE68B001DBBA9 /* NuevaCancionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuevaCancionViewController.m; sourceTree = "<group>"; };
 		CE9FEA5D163DE988001DBBA9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		CE9FEA68163F0F6D001DBBA9 /* Barilla Aguja92x139.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Barilla Aguja92x139.png"; sourceTree = "<group>"; };
 		CEA362E616430CB4006DBB4F /* Vinilo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Vinilo.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +94,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2995751B1645B79D00D96964 /* imagenes */ = {
+			isa = PBXGroup;
+			children = (
+				299575331645BB1000D96964 /* bg.png */,
+				2995753E1645BB2700D96964 /* brazo.png */,
+				299575341645BB1000D96964 /* btn-play.png */,
+				299575461645C1D800D96964 /* pre.png */,
+				299575351645BB1000D96964 /* btn-stop.png */,
+				299575481645C98400D96964 /* bg2.png */,
+				2995754A1645D3A200D96964 /* sombra.png */,
+				299575361645BB1000D96964 /* stop-off.png */,
+				299575421645C06F00D96964 /* play-on.png */,
+				299575441645C1D200D96964 /* next.png */,
+				299575401645BB4500D96964 /* disco.png */,
+				299575371645BB1000D96964 /* stop-on.png */,
+			);
+			name = imagenes;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		CE9A3E201642E4B700F1DC66 /* Sonidos */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,8 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				CE9A3E201642E4B700F1DC66 /* Sonidos */,
+				2995751B1645B79D00D96964 /* imagenes */,
 				CE9FEA48163DE5A4001DBBA9 /* Canciones */,
-				CE9FEA1A163DE552001DBBA9 /* Imagenes */,
 				CE9FE9DE163DDB7E001DBBA9 /* AppDelegate.h */,
 				CE9FE9DF163DDB7E001DBBA9 /* AppDelegate.m */,
 				CE9FE9E7163DDB7E001DBBA9 /* MainStoryboard.storyboard */,
@@ -184,37 +180,6 @@
 				CE9FE9E5163DDB7E001DBBA9 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CE9FEA1A163DE552001DBBA9 /* Imagenes */ = {
-			isa = PBXGroup;
-			children = (
-				CE755F8E163F24F800DA58B8 /* Aguja2.png */,
-				CE9FEA68163F0F6D001DBBA9 /* Barilla Aguja92x139.png */,
-				CE9FEA1C163DE592001DBBA9 /* Aguja.png */,
-				CE9FEA1D163DE592001DBBA9 /* BotonControlVelocidadHorizontal-03.png */,
-				CE9FEA1E163DE592001DBBA9 /* BotonOff.png */,
-				CE9FEA1F163DE592001DBBA9 /* BotonOn.png */,
-				CE9FEA20163DE592001DBBA9 /* BotonPauseVerde.png */,
-				CE9FEA21163DE592001DBBA9 /* BotonPlayVerde.png */,
-				CE9FEA22163DE592001DBBA9 /* BotonStereo.png */,
-				CE9FEA23163DE592001DBBA9 /* BotonStereoHorizontal-05.png */,
-				CE9FEA24163DE592001DBBA9 /* BotonStopVerde.png */,
-				CE9FEA25163DE592001DBBA9 /* BotonVolumen.png */,
-				CE9FEA26163DE592001DBBA9 /* BotonVolumenHorizontal-04.png */,
-				CE9FEA27163DE592001DBBA9 /* CarpetaMusica.png */,
-				CE9FEA28163DE592001DBBA9 /* Controles.png */,
-				CE9FEA29163DE592001DBBA9 /* ControlStereo.png */,
-				CE9FEA2A163DE592001DBBA9 /* ControlStereoHorizontal-03.png */,
-				CE9FEA2B163DE592001DBBA9 /* ControlVelocidadHorizontal-02.png */,
-				CE9FEA2C163DE592001DBBA9 /* ControlVolumen.png */,
-				CE9FEA2D163DE592001DBBA9 /* ControlVolumenHorizontal-02.png */,
-				CE9FEA2E163DE592001DBBA9 /* Disco.png */,
-				CE9FEA2F163DE592001DBBA9 /* PantallaApagada.png */,
-				CE9FEA30163DE592001DBBA9 /* PantallaEncendida.png */,
-				CE9FEA31163DE592001DBBA9 /* Tocadiscos.png */,
-			);
-			name = Imagenes;
 			sourceTree = "<group>";
 		};
 		CE9FEA48163DE5A4001DBBA9 /* Canciones */ = {
@@ -300,34 +265,22 @@
 				CE9FE9E4163DDB7E001DBBA9 /* Default@2x.png in Resources */,
 				CE9FE9E6163DDB7E001DBBA9 /* Default-568h@2x.png in Resources */,
 				CE9FE9E9163DDB7E001DBBA9 /* MainStoryboard.storyboard in Resources */,
-				CE9FEA32163DE592001DBBA9 /* Aguja.png in Resources */,
-				CE9FEA33163DE592001DBBA9 /* BotonControlVelocidadHorizontal-03.png in Resources */,
-				CE9FEA34163DE592001DBBA9 /* BotonOff.png in Resources */,
-				CE9FEA35163DE592001DBBA9 /* BotonOn.png in Resources */,
-				CE9FEA36163DE592001DBBA9 /* BotonPauseVerde.png in Resources */,
-				CE9FEA37163DE592001DBBA9 /* BotonPlayVerde.png in Resources */,
-				CE9FEA38163DE592001DBBA9 /* BotonStereo.png in Resources */,
-				CE9FEA39163DE592001DBBA9 /* BotonStereoHorizontal-05.png in Resources */,
-				CE9FEA3A163DE592001DBBA9 /* BotonStopVerde.png in Resources */,
-				CE9FEA3B163DE592001DBBA9 /* BotonVolumen.png in Resources */,
-				CE9FEA3C163DE592001DBBA9 /* BotonVolumenHorizontal-04.png in Resources */,
-				CE9FEA3D163DE592001DBBA9 /* CarpetaMusica.png in Resources */,
-				CE9FEA3E163DE592001DBBA9 /* Controles.png in Resources */,
-				CE9FEA3F163DE592001DBBA9 /* ControlStereo.png in Resources */,
-				CE9FEA40163DE592001DBBA9 /* ControlStereoHorizontal-03.png in Resources */,
-				CE9FEA41163DE592001DBBA9 /* ControlVelocidadHorizontal-02.png in Resources */,
-				CE9FEA42163DE592001DBBA9 /* ControlVolumen.png in Resources */,
-				CE9FEA43163DE592001DBBA9 /* ControlVolumenHorizontal-02.png in Resources */,
-				CE9FEA44163DE592001DBBA9 /* Disco.png in Resources */,
-				CE9FEA45163DE592001DBBA9 /* PantallaApagada.png in Resources */,
-				CE9FEA46163DE592001DBBA9 /* PantallaEncendida.png in Resources */,
-				CE9FEA47163DE592001DBBA9 /* Tocadiscos.png in Resources */,
 				CE9FEA4B163DE5E2001DBBA9 /* Estopa. Cuerpo Triste.mp3 in Resources */,
 				CE9FEA4C163DE5E2001DBBA9 /* Estopa. La primavera.mp3 in Resources */,
-				CE9FEA69163F0F6D001DBBA9 /* Barilla Aguja92x139.png in Resources */,
-				CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */,
 				CE9A3E241642E58800F1DC66 /* clic.mp3 in Resources */,
 				CEA362E716430CB4006DBB4F /* Vinilo.mp3 in Resources */,
+				299575391645BB1000D96964 /* bg.png in Resources */,
+				2995753A1645BB1000D96964 /* btn-play.png in Resources */,
+				2995753B1645BB1000D96964 /* btn-stop.png in Resources */,
+				2995753C1645BB1000D96964 /* stop-off.png in Resources */,
+				2995753D1645BB1000D96964 /* stop-on.png in Resources */,
+				2995753F1645BB2700D96964 /* brazo.png in Resources */,
+				299575411645BB4500D96964 /* disco.png in Resources */,
+				299575431645C06F00D96964 /* play-on.png in Resources */,
+				299575451645C1D300D96964 /* next.png in Resources */,
+				299575471645C1D800D96964 /* pre.png in Resources */,
+				299575491645C98400D96964 /* bg2.png in Resources */,
+				2995754B1645D3A200D96964 /* sombra.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
