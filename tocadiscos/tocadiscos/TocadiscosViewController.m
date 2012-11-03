@@ -51,6 +51,8 @@
     brazo = [[GiroBrazo alloc] init];
     //Inicializa el objeto de la clase Disco
     disco = [[Disco alloc] init];
+    //Inicializa el objeto de la clase Animación
+    animacion = [[Animacion alloc] init];
     /*********************************************/
     
     //Personalizamos el slider de Stereo
@@ -164,9 +166,7 @@
     
     //Animación
     float time = 1.00;
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:time];
-    [UIView setAnimationBeginsFromCurrentState:YES];
+    [animacion inicioAnimacion:time];
         
     //Gira el brazo de la aguja
     [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.4];
@@ -174,7 +174,7 @@
     //[self startSpin];
     [disco inicioGiro:discoImageView];
     
-    [UIView commitAnimations];
+    [animacion finAnimacion];
     
     
     
@@ -286,16 +286,15 @@
     }
      /***********************************************************/
     
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:1.00];
-    [UIView setAnimationBeginsFromCurrentState:YES];
+    [animacion inicioAnimacion:1.0];
     timeActualFloat = self.reproductor.currentTime;
 
     [disco pararGiro];
 
     [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
     
-    [UIView commitAnimations];
+    [animacion finAnimacion];
+    
     [self.reproductor pause];
 }
 
@@ -306,14 +305,12 @@
     [self.playButton setImage:NO forState:UIControlStateNormal];
     [self.pauseButton setImage:NO forState:UIControlStateNormal];
     
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:1.00];
-    [UIView setAnimationBeginsFromCurrentState:YES];
+    [animacion inicioAnimacion:1.0];
     self.reproductor.currentTime = 0;
     timeActualFloat = self.reproductor.currentTime;
     [disco pararGiro];
     [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
-    [UIView commitAnimations];
+    [animacion finAnimacion];
     
     [self.reproductor stop];
 }

@@ -14,6 +14,7 @@
 #import "Retardo.h"
 #import "GiroBrazo.h"
 #import "Disco.h"
+#import "Animacion.h"
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 {
@@ -39,6 +40,8 @@
     NSString *nombreImagenBrazo;
     //Objeto para hacer girar el disco
     Disco *disco;
+    //Objeto para crear animaciones
+    Animacion *animacion;
     /*************************************/
 }
 @property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar un slider

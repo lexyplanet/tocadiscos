@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE6B6FCD16455D5F00EFEC69 /* dePeli.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6B6FC916455D5F00EFEC69 /* dePeli.mp3 */; };
+		CE6B6FCE16455D5F00EFEC69 /* downbeat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6B6FCA16455D5F00EFEC69 /* downbeat.mp3 */; };
+		CE6B6FCF16455D5F00EFEC69 /* Enganchado a ti.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6B6FCB16455D5F00EFEC69 /* Enganchado a ti.mp3 */; };
+		CE6B6FD016455D5F00EFEC69 /* sinRumbo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6B6FCC16455D5F00EFEC69 /* sinRumbo.mp3 */; };
 		CE720D3916450E5200A63A1F /* GiroBrazo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE720D3816450E5200A63A1F /* GiroBrazo.m */; };
+		CE73E15816456D3500015FBA /* Animacion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73E15716456D3500015FBA /* Animacion.m */; };
 		CE743E3016453340006B60BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE743E2F16453340006B60BD /* QuartzCore.framework */; };
 		CE743E35164549BA006B60BD /* Disco.m in Sources */ = {isa = PBXBuildFile; fileRef = CE743E34164549BA006B60BD /* Disco.m */; };
 		CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE755F8E163F24F800DA58B8 /* Aguja2.png */; };
@@ -57,8 +62,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE6B6FC916455D5F00EFEC69 /* dePeli.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dePeli.mp3; sourceTree = "<group>"; };
+		CE6B6FCA16455D5F00EFEC69 /* downbeat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = downbeat.mp3; sourceTree = "<group>"; };
+		CE6B6FCB16455D5F00EFEC69 /* Enganchado a ti.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Enganchado a ti.mp3"; sourceTree = "<group>"; };
+		CE6B6FCC16455D5F00EFEC69 /* sinRumbo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sinRumbo.mp3; sourceTree = "<group>"; };
 		CE720D3716450E5200A63A1F /* GiroBrazo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiroBrazo.h; sourceTree = "<group>"; };
 		CE720D3816450E5200A63A1F /* GiroBrazo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiroBrazo.m; sourceTree = "<group>"; };
+		CE73E15616456D3500015FBA /* Animacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animacion.h; sourceTree = "<group>"; };
+		CE73E15716456D3500015FBA /* Animacion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animacion.m; sourceTree = "<group>"; };
 		CE743E2F16453340006B60BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE743E33164549BA006B60BD /* Disco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Disco.h; sourceTree = "<group>"; };
 		CE743E34164549BA006B60BD /* Disco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Disco.m; sourceTree = "<group>"; };
@@ -142,6 +153,15 @@
 			name = GiroBrazo;
 			sourceTree = "<group>";
 		};
+		CE73E15416456D0F00015FBA /* Animacion */ = {
+			isa = PBXGroup;
+			children = (
+				CE73E15616456D3500015FBA /* Animacion.h */,
+				CE73E15716456D3500015FBA /* Animacion.m */,
+			);
+			name = Animacion;
+			sourceTree = "<group>";
+		};
 		CE743E321645496B006B60BD /* Disco */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +225,7 @@
 				CEADD37016448EA800815EC5 /* Retardo */,
 				CE720D3216450BDF00A63A1F /* GiroBrazo */,
 				CE743E321645496B006B60BD /* Disco */,
+				CE73E15416456D0F00015FBA /* Animacion */,
 				CE9FE9D6163DDB7E001DBBA9 /* Supporting Files */,
 			);
 			path = tocadiscos;
@@ -258,6 +279,10 @@
 		CE9FEA48163DE5A4001DBBA9 /* Canciones */ = {
 			isa = PBXGroup;
 			children = (
+				CE6B6FC916455D5F00EFEC69 /* dePeli.mp3 */,
+				CE6B6FCA16455D5F00EFEC69 /* downbeat.mp3 */,
+				CE6B6FCB16455D5F00EFEC69 /* Enganchado a ti.mp3 */,
+				CE6B6FCC16455D5F00EFEC69 /* sinRumbo.mp3 */,
 				CE9FEA49163DE5E2001DBBA9 /* Estopa. Cuerpo Triste.mp3 */,
 				CE9FEA4A163DE5E2001DBBA9 /* Estopa. La primavera.mp3 */,
 			);
@@ -384,6 +409,10 @@
 				CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */,
 				CE9A3E241642E58800F1DC66 /* clic.mp3 in Resources */,
 				CEA362E716430CB4006DBB4F /* Vinilo.mp3 in Resources */,
+				CE6B6FCD16455D5F00EFEC69 /* dePeli.mp3 in Resources */,
+				CE6B6FCE16455D5F00EFEC69 /* downbeat.mp3 in Resources */,
+				CE6B6FCF16455D5F00EFEC69 /* Enganchado a ti.mp3 in Resources */,
+				CE6B6FD016455D5F00EFEC69 /* sinRumbo.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +431,7 @@
 				CEADD37316448EE500815EC5 /* Retardo.m in Sources */,
 				CE720D3916450E5200A63A1F /* GiroBrazo.m in Sources */,
 				CE743E35164549BA006B60BD /* Disco.m in Sources */,
+				CE73E15816456D3500015FBA /* Animacion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
