@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "NuevaCancionViewController.h"
 #import "Sonido.h"
 #import "Retardo.h"
+#import "GiroBrazo.h"
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 {
@@ -26,17 +25,17 @@
     IBOutlet UISlider *_sliderVolumen;//para personalizar un slider de Volumen
     IBOutlet UISlider *_sliderStereo;//para personalizar un slider de Stereo
     IBOutlet UISlider *_sliderRate; //para personalizar un slider de rate
-    BOOL animating; //esta variable ayuda a saber si esta animando o corriendo el bucle.
+    BOOL animating; //esta variable ayuda a saber si esta animando o corriendo el bucle.GIRODISCO
     BOOL pausado;   //Variable para el status de Pause ADRIAN
     
     /********* PEDRO 3-11-2012 *************/
-    //Objetos para escuchar un sonido
+    //Objeto para escuchar un sonido
     Sonido *sonido;
-    NSString *nuevoSonido;
-    NSString *extensionFichero;
-    //Objetos para crear un retardo en la ejecución del programa
+    //Objeto para crear un retardo en la ejecución del programa
     Retardo *retardo;
-    float tiempo;
+    //Objeto para realizar el giro del brazo de la aguja
+    GiroBrazo *giroBrazo;
+    NSString *nombreImageBrazo;
     /*************************************/
 }
 @property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar un slider
@@ -47,10 +46,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *tiempoTotal;
 @property (strong, nonatomic) IBOutlet UIProgressView *barraProgreso;
 
-@property (nonatomic, strong) AVAudioPlayer * reproductor;
-//@property (strong, nonatomic) IBOutlet UILabel *etiqueta;
-@property (strong, nonatomic) IBOutlet UIImageView *imagenDisco;
-@property (strong, nonatomic) IBOutlet UIImageView *imagenAguja;
+@property (nonatomic, strong) AVAudioPlayer *reproductor;
+@property (strong, nonatomic) IBOutlet UIImageView *discoImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *brazoAgujaImageView; //GIROBRAZO
 
 @property(nonatomic, strong) NSString* cancionActual;
 @property(nonatomic, strong) NSTimer *timer; //ADRIAN
@@ -68,12 +66,9 @@
 - (IBAction)cambioRate:(id)sender;
 
 //Agregue estas 3 funciones que controlan el bucle.
--(void)spin; //Ejecuta el bucle o animación
--(void)startSpin;//Inicia el bucle o animación
--(void)stopSpin;//Para el bucle o animación
+-(void)spin; //Ejecuta el bucle o animación GIRODISCO
+-(void)startSpin;//Inicia el bucle o animación GIRODISCO
+-(void)stopSpin;//Para el bucle o animación GIRODISCO
 //-----------
-
-
-
 
 @end

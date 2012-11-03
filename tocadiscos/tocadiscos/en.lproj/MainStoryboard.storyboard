@@ -32,7 +32,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Tocadiscos.png" id="qYp-xP-lou">
-                                <rect key="frame" x="14" y="4" width="292" height="258"/>
+                                <rect key="frame" x="14" y="0.0" width="292" height="258"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Disco.png" id="ypT-m6-bqr">
@@ -172,8 +172,8 @@
                         <outlet property="_sliderStereo" destination="FQv-tK-Bu7" id="Hma-k7-nCF"/>
                         <outlet property="_sliderVolumen" destination="xHj-XB-737" id="hcX-bA-z51"/>
                         <outlet property="barraProgreso" destination="xvM-if-8jq" id="TwG-Zs-GiC"/>
-                        <outlet property="imagenAguja" destination="Zer-mJ-XQb" id="GNr-kg-uC4"/>
-                        <outlet property="imagenDisco" destination="ypT-m6-bqr" id="8Ue-Yr-NLI"/>
+                        <outlet property="brazoAgujaImageView" destination="Zer-mJ-XQb" id="D4g-yC-u7U"/>
+                        <outlet property="discoImageView" destination="ypT-m6-bqr" id="e1q-Qb-AEd"/>
                         <outlet property="pauseButton" destination="ud6-nj-n00" id="Tkx-Gx-rTm"/>
                         <outlet property="playButton" destination="VIW-oy-0qD" id="DU8-Zj-DMi"/>
                         <outlet property="stopButton" destination="grL-4d-2q4" id="jUJ-Ro-Sdq"/>
@@ -283,7 +283,7 @@
                 <relationship kind="outlet" name="_sliderStereo" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="_sliderVolumen" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="barraProgreso" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="imagenAguja" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="brazoAgujaImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="imagenDisco" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>

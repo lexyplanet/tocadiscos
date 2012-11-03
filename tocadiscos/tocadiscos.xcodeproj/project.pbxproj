@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE720D3916450E5200A63A1F /* GiroBrazo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE720D3816450E5200A63A1F /* GiroBrazo.m */; };
+		CE743E3016453340006B60BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE743E2F16453340006B60BD /* QuartzCore.framework */; };
 		CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE755F8E163F24F800DA58B8 /* Aguja2.png */; };
 		CE9A3E241642E58800F1DC66 /* clic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9A3E221642E58800F1DC66 /* clic.mp3 */; };
 		CE9A3E2B1642E79B00F1DC66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */; };
@@ -54,6 +56,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE720D3716450E5200A63A1F /* GiroBrazo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiroBrazo.h; sourceTree = "<group>"; };
+		CE720D3816450E5200A63A1F /* GiroBrazo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiroBrazo.m; sourceTree = "<group>"; };
+		CE743E2F16453340006B60BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE755F8E163F24F800DA58B8 /* Aguja2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Aguja2.png; sourceTree = "<group>"; };
 		CE9A3E221642E58800F1DC66 /* clic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clic.mp3; sourceTree = "<group>"; };
 		CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -113,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE743E3016453340006B60BD /* QuartzCore.framework in Frameworks */,
 				CE9A3E2B1642E79B00F1DC66 /* AudioToolbox.framework in Frameworks */,
 				CE9FEA5E163DE988001DBBA9 /* AVFoundation.framework in Frameworks */,
 				CE9FE9D0163DDB7D001DBBA9 /* UIKit.framework in Frameworks */,
@@ -124,6 +130,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE720D3216450BDF00A63A1F /* GiroBrazo */ = {
+			isa = PBXGroup;
+			children = (
+				CE720D3716450E5200A63A1F /* GiroBrazo.h */,
+				CE720D3816450E5200A63A1F /* GiroBrazo.m */,
+			);
+			name = GiroBrazo;
+			sourceTree = "<group>";
+		};
 		CE9A3E201642E4B700F1DC66 /* Sonidos */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +168,7 @@
 		CE9FE9CE163DDB7D001DBBA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE743E2F16453340006B60BD /* QuartzCore.framework */,
 				CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */,
 				CE9FEA5D163DE988001DBBA9 /* AVFoundation.framework */,
 				CE9FE9CF163DDB7D001DBBA9 /* UIKit.framework */,
@@ -175,6 +191,7 @@
 				CE9FEA54163DE694001DBBA9 /* NuevaCancionViewController */,
 				CEADD36C16447EA200815EC5 /* Sonido */,
 				CEADD37016448EA800815EC5 /* Retardo */,
+				CE720D3216450BDF00A63A1F /* GiroBrazo */,
 				CE9FE9D6163DDB7E001DBBA9 /* Supporting Files */,
 			);
 			path = tocadiscos;
@@ -370,6 +387,7 @@
 				CE9FEA53163DE68B001DBBA9 /* NuevaCancionViewController.m in Sources */,
 				CEADD36F164483FD00815EC5 /* Sonido.m in Sources */,
 				CEADD37316448EE500815EC5 /* Retardo.m in Sources */,
+				CE720D3916450E5200A63A1F /* GiroBrazo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

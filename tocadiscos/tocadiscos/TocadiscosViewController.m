@@ -26,7 +26,7 @@
 @synthesize _sliderRate;
 @synthesize reproductor;
 @synthesize barraProgreso; //ADRIAN
-
+@synthesize brazoAgujaImageView; //GIROBRAZO
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,6 +40,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    /*************** PEDRO 3-11-2012 **************/
+    //Inicializa el objeto de la clase Sonido
+    sonido = [[Sonido alloc] init];
+    //Inicializa el objeto de la clase Retardo
+    retardo = [[Retardo alloc] init];
+    //Inicializa el objeto de la clase GiroBrazo
+    giroBrazo = [[GiroBrazo alloc] init];
+    /*********************************************/
     
     //Personalizamos el slider de Stereo
     UIImage *minImage = [UIImage imageNamed:@"ControlStereoHorizontal-03.png"];
@@ -83,22 +92,9 @@
     sliderStereoRotacion = CGAffineTransformRotate(sliderStereoRotacion, -(M_PI / 2));
     self._sliderVolumen.transform = sliderStereoRotacion;
     
-    /* -------------------------------------------
-     Cambio por: Beto
-     Tipo movimiento: Giro de la aguja.
-     
-     Notas:
-     Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro
+    /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro
      */
-    CGRect aguja = self.imagenAguja.frame; // Asignamos la variable aguja que trae las propiedades de la imagenAguja
-    aguja.origin.x = 190; // Posicionamos la imagen de x
-    aguja.origin.y = 4; //Posicionamos la imagen de y
-    
-    self.imagenAguja.layer.anchorPoint = CGPointMake(.5, .26); //Le decimos donde queremos anclar la imagen
-    self.imagenAguja.frame = aguja; //Le asignamos los nuevos parametros a la imagen original de la aguja
-    
-    
-    /* fin Cambio por: Beto. ----------------------- */
+    [giroBrazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
     
     //Personalizamos el slider de velocidad
     UIImage *minImageVe = [UIImage imageNamed:@"ControlVelocidadHorizontal-02.png"];
@@ -138,12 +134,7 @@
     pausado = NO;
     /*******************************************************************************************/
    
-    /*************** PEDRO 3-11-2012 **************/
-    //Inicializa el objeto de la Clase Sonido
-    sonido = [[Sonido alloc] init];
-    //Inicializa el objeto de la Clase Retardo
-    retardo = [[Retardo alloc] init];
-    /*********************************************/
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -175,9 +166,7 @@
     [UIView setAnimationBeginsFromCurrentState:YES];
         
     //Gira el brazo de la aguja
-    CGAffineTransform moverAguja = self.imagenAguja.transform;
-    moverAguja = CGAffineTransformMakeRotation(+0.4);
-    self.imagenAguja.transform = moverAguja;
+    [giroBrazo giroBrazo:brazoAgujaImageView andGradosGiro:0.4];
     
     [self startSpin];
     
@@ -285,7 +274,7 @@
                           delay: 0.0f
                         options: UIViewAnimationOptionCurveLinear
                      animations: ^{
-                         self.imagenDisco.transform = CGAffineTransformRotate(self.imagenDisco.transform, M_PI / 2);
+                         self.discoImageView.transform = CGAffineTransformRotate(self.discoImageView.transform, M_PI / 2);
                      }
                      completion: ^(BOOL finished) {
                          if (finished && animating) {
@@ -329,13 +318,9 @@
     timeActualFloat = self.reproductor.currentTime;
     
     [self stopSpin];
+
+    [giroBrazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
     
-    //etiqueta.text = 0;
-    
-    
-    CGAffineTransform moverAguja = self.imagenAguja.transform;
-    moverAguja = CGAffineTransformMakeRotation(-0.01);
-    self.imagenAguja.transform = moverAguja;
     [UIView commitAnimations];
     [self.reproductor pause];
 }
@@ -353,13 +338,10 @@
     self.reproductor.currentTime = 0;
     timeActualFloat = self.reproductor.currentTime;
     [self stopSpin];
-    //etiqueta.text = 0;
-    
-    
-    CGAffineTransform moverAguja = self.imagenAguja.transform;
-    moverAguja = CGAffineTransformMakeRotation(-0.01);
-    self.imagenAguja.transform = moverAguja;
+
+    [giroBrazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
     [UIView commitAnimations];
+    
     
     
     [self.reproductor stop];
@@ -389,8 +371,8 @@
     //[self setTiempoQueTranscurre:nil]; ADRIAN
     //[self setTiempoTotal:nil]; ADRIAN
     [self setBarraProgreso:nil];
-    [self setImagenDisco:nil];
-    [self setImagenAguja:nil];
+    [self setDiscoImageView:nil];
+    [self setBrazoAgujaImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
