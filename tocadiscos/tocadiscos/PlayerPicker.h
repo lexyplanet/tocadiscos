@@ -25,4 +25,6 @@
             andPauseButton: (UIButton*)nuevoPauseButton
              andStopButton: (UIButton*)nuevoStopButton;
 
+- (void) playReproductor;
+
 @end

@@ -28,17 +28,17 @@
 
 - (void) encenderPlay: (UIButton*)playButton
 {
-    
+    [playButton setImage:[UIImage imageNamed:nombreBotonPlay] forState:UIControlStateNormal];
 }
 
 - (void) encenderPause: (UIButton*)pauseButton
 {
-    
+    [pauseButton setImage:[UIImage imageNamed:nombreBotonPause] forState:UIControlStateNormal];
 }
 
 - (void) encenderStop: (UIButton*)stopButton
 {
-    
+    [stopButton setImage:[UIImage imageNamed:nombreBotonStop] forState:UIControlStateNormal];
 }
 
 @end

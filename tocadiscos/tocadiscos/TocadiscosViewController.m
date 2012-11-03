@@ -187,9 +187,9 @@
     
     
     /* Asignacion de los valores actuales del reproductor para que no se pierdan a la hora de reproducir la nueva instancia */
-    panActualFloat = self.reproductor.pan;
+    //panActualFloat = self.reproductor.pan;
     volumenActualFloat = self.reproductor.volume;
-    rateActualFloat = self.reproductor.rate;
+    //rateActualFloat = self.reproductor.rate;
     
     /* Asigna la nueva instancia al reproductor con los nuevos valores */
     NSError * error;

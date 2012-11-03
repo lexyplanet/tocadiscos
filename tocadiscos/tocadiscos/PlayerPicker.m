@@ -17,10 +17,6 @@
             andPauseButton: (UIButton*)nuevoPauseButton
              andStopButton: (UIButton*)nuevoStopButton
 {
-    [botonPlay apagarPlay:nuevoPlayButton];
-    [botonPause apagarPause:nuevoPauseButton];
-    [botonStop apagarStop:nuevoStopButton];
-    
     NSError * error;
     
     cancionActual = [[NSBundle mainBundle] pathForResource:@"dePeli" ofType:@"mp3"];
@@ -37,11 +33,12 @@
     [reproductor prepareToPlay];
     
     //Se oculta las imagenes asignadas a los botones del tocadiscos (play, pause, stop)
-    /*[playButton setImage:NO forState:UIControlStateNormal];
-    [pauseButton setImage:NO forState:UIControlStateNormal];
-    [stopButton setImage:NO forState:UIControlStateNormal];*/
-    
-    
+    botonPlay = [[BotonesRetro alloc] init];
+    botonPause = [[BotonesRetro alloc] init];
+    botonStop = [[BotonesRetro alloc] init];
+    [botonPlay apagarPlay:nuevoPlayButton];
+    [botonPause apagarPause:nuevoPauseButton];
+    [botonStop apagarStop:nuevoStopButton];
 }
 
 @end
