@@ -49,6 +49,8 @@
 		CE9FEA5E163DE988001DBBA9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FEA5D163DE988001DBBA9 /* AVFoundation.framework */; };
 		CE9FEA69163F0F6D001DBBA9 /* Barilla Aguja92x139.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA68163F0F6D001DBBA9 /* Barilla Aguja92x139.png */; };
 		CEA362E716430CB4006DBB4F /* Vinilo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEA362E616430CB4006DBB4F /* Vinilo.mp3 */; };
+		CEADD36F164483FD00815EC5 /* Sonido.m in Sources */ = {isa = PBXBuildFile; fileRef = CEADD36E164483FD00815EC5 /* Sonido.m */; };
+		CEADD37316448EE500815EC5 /* Retardo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEADD37216448EE500815EC5 /* Retardo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,10 @@
 		CE9FEA5D163DE988001DBBA9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CE9FEA68163F0F6D001DBBA9 /* Barilla Aguja92x139.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Barilla Aguja92x139.png"; sourceTree = "<group>"; };
 		CEA362E616430CB4006DBB4F /* Vinilo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Vinilo.mp3; sourceTree = "<group>"; };
+		CEADD36D164483FD00815EC5 /* Sonido.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sonido.h; sourceTree = "<group>"; };
+		CEADD36E164483FD00815EC5 /* Sonido.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sonido.m; sourceTree = "<group>"; };
+		CEADD37116448EE500815EC5 /* Retardo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retardo.h; sourceTree = "<group>"; };
+		CEADD37216448EE500815EC5 /* Retardo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retardo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,8 @@
 				CE9FE9E7163DDB7E001DBBA9 /* MainStoryboard.storyboard */,
 				CE9FEA50163DE650001DBBA9 /* TocadiscosViewController */,
 				CE9FEA54163DE694001DBBA9 /* NuevaCancionViewController */,
+				CEADD36C16447EA200815EC5 /* Sonido */,
+				CEADD37016448EA800815EC5 /* Retardo */,
 				CE9FE9D6163DDB7E001DBBA9 /* Supporting Files */,
 			);
 			path = tocadiscos;
@@ -242,6 +250,24 @@
 				CE9FEA52163DE68B001DBBA9 /* NuevaCancionViewController.m */,
 			);
 			name = NuevaCancionViewController;
+			sourceTree = "<group>";
+		};
+		CEADD36C16447EA200815EC5 /* Sonido */ = {
+			isa = PBXGroup;
+			children = (
+				CEADD36D164483FD00815EC5 /* Sonido.h */,
+				CEADD36E164483FD00815EC5 /* Sonido.m */,
+			);
+			name = Sonido;
+			sourceTree = "<group>";
+		};
+		CEADD37016448EA800815EC5 /* Retardo */ = {
+			isa = PBXGroup;
+			children = (
+				CEADD37116448EE500815EC5 /* Retardo.h */,
+				CEADD37216448EE500815EC5 /* Retardo.m */,
+			);
+			name = Retardo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +368,8 @@
 				CE9FE9E0163DDB7E001DBBA9 /* AppDelegate.m in Sources */,
 				CE9FEA4F163DE64A001DBBA9 /* TocadiscosViewController.m in Sources */,
 				CE9FEA53163DE68B001DBBA9 /* NuevaCancionViewController.m in Sources */,
+				CEADD36F164483FD00815EC5 /* Sonido.m in Sources */,
+				CEADD37316448EE500815EC5 /* Retardo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

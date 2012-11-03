@@ -12,9 +12,10 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "NuevaCancionViewController.h"
+#import "Sonido.h"
+#import "Retardo.h"
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
-
 {
     /* Variables Auxiliares para el ajuste de valores en el reproductor al momento de cambiar de cancion */
     float panActualFloat;
@@ -27,6 +28,16 @@
     IBOutlet UISlider *_sliderRate; //para personalizar un slider de rate
     BOOL animating; //esta variable ayuda a saber si esta animando o corriendo el bucle.
     BOOL pausado;   //Variable para el status de Pause ADRIAN
+    
+    /********* PEDRO 3-11-2012 *************/
+    //Objetos para escuchar un sonido
+    Sonido *sonido;
+    NSString *nuevoSonido;
+    NSString *extensionFichero;
+    //Objetos para crear un retardo en la ejecución del programa
+    Retardo *retardo;
+    float tiempo;
+    /*************************************/
 }
 @property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar un slider
 @property (strong, nonatomic) IBOutlet UISlider *_sliderStereo; //para personalizar otro slider

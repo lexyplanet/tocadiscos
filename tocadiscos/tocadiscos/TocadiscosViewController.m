@@ -8,6 +8,8 @@
 
 #import "TocadiscosViewController.h"
 #import "NuevaCancionViewController.h"
+#import "Sonido.h"
+#import "Retardo.h"
 
 
 @interface TocadiscosViewController ()
@@ -24,6 +26,7 @@
 @synthesize _sliderRate;
 @synthesize reproductor;
 @synthesize barraProgreso; //ADRIAN
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -135,6 +138,12 @@
     pausado = NO;
     /*******************************************************************************************/
    
+    /*************** PEDRO 3-11-2012 **************/
+    //Inicializa el objeto de la Clase Sonido
+    sonido = [[Sonido alloc] init];
+    //Inicializa el objeto de la Clase Retardo
+    retardo = [[Retardo alloc] init];
+    /*********************************************/
 }
 
 - (void)didReceiveMemoryWarning
@@ -151,15 +160,11 @@
     [self.pauseButton setImage:NO forState:UIControlStateNormal];
     [self.stopButton setImage:NO forState:UIControlStateNormal];
     
-    /********* PEDRO 1/11/2012 *********/
-    //Hace el sonido de movimiento del brazo de la aguja
-    SystemSoundID soundID;
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"clic" ofType:@"mp3"];
-    AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)[NSURL fileURLWithPath:path], &soundID);
-    AudioServicesPlaySystemSound(soundID);
-    
+    /********* PEDRO 3/11/2012 *********/
+    //Sonido clic
+    [sonido setSonido:@"clic" andExtension:@"mp3"];
     //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.25]];
+    [retardo tiempoEspera:0.25];
     /*********************************/
     
     
@@ -200,33 +205,18 @@
     
     self.reproductor.rate = rateActualFloat;
     self.reproductor.currentTime = timeActualFloat;
-    //[self.reproductor prepareToPlay];
-    
-        
-    
-    
-    //[UIView commitAnimations];
-    
-    //[self startSpin];
-    
-    /* tiempoQueTranscurre.text = [[NSString alloc] initWithFormat: @"%4.2f", self.reproductor.currentTime];
-     
-     tiempoTotal.text = [[NSString alloc] initWithFormat:@"%4.2f", self.reproductor.duration];
-     barraProgreso = [[UIProgressView alloc] init];*/
-    
+  
     
     
     //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:time]];
+    //[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:time]];
+    [retardo tiempoEspera:time];
     
     /********* PEDRO 1/11/2012 *********/
     //Simula el sonido del contacto de la aguja sobre el vinilo
-    SystemSoundID viniloSoundID;
-    NSString *pathVinilo = [[NSBundle mainBundle] pathForResource:@"Vinilo" ofType:@"mp3"];
-    AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)[NSURL fileURLWithPath:pathVinilo], &viniloSoundID);
-    AudioServicesPlaySystemSound(viniloSoundID);
+    [sonido setSonido:@"Vinilo" andExtension:@"mp3"];
     //Introduce una pausa para que la canción empiece después del sonido de la aguja sobre el vinilo
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.4]];
+    [retardo tiempoEspera:0.4];
     /**********************************/
     
     //Comienza a sonar la canción
