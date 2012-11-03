@@ -116,9 +116,9 @@
     
     //Ver qué hacemos con canción inicial
     
-    self.cancionActual = [[NSBundle mainBundle] pathForResource:@"Estopa. La primavera" ofType:@"mp3"];
+  //  self.cancionActual = [[NSBundle mainBundle] pathForResource:@"Estopa. La primavera" ofType:@"mp3"];
     
-    self.caratula = [UIImage imageNamed:@"noArtworkImage.png"]; // artWork = carátula
+  //  self.caratula = [UIImage imageNamed:@"noArtworkImage.png"]; // artWork = carátula
     
 //    NSURL * url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
     self.reproductor = [[MPMusicPlayerController alloc] init];
@@ -173,7 +173,7 @@
     
     
     /* Asignacion de los valores actuales del reproductor para que no se pierdan a la hora de reproducir la nueva instancia */
-   //MJ panActualFloat = self.reproductor.pan;
+   //MJ panActualFloat = self.reproductor.nopan;
     volumenActualFloat = self.reproductor.volume;
   //MJ  rateActualFloat = self.reproductor.rate;
     
@@ -191,7 +191,11 @@
   //MJ  self.reproductor.enableRate = YES;
     
   //MJ  self.reproductor.rate = rateActualFloat;
-  //MJ  self.reproductor.currentTime = timeActualFloat;
+    MPMediaItem *actual = self.reproductor.nowPlayingItem;
+    
+    NSNumber *duracion = [actual valueForProperty:MPMediaItemPropertyPlaybackDuration];
+
+   // esta linea no se como estaba --> comparar con anteriores duracion = timeActualFloat;
     //[self.reproductor prepareToPlay];
     
         
@@ -212,22 +216,23 @@
     [self.reproductor play];
     
     /******************************** VERSION ADRIAN PROGRESS BAR Y LABELS *********************/
-//MJ    float  duracionAudio = [self.reproductor duration];
+//Mjnuevo    float  duracionAudio = [self.reproductor duration];
+    NSNumber *duracionAudio = duracion;
     
     //Obteniendo los minutos
- //MJ   float minutos = floor(duracionAudio/60);
+    float minutos = floor(duracionAudio.floatValue/60);
     //Obteniendo los segundos del audio restando los minutos que lleva
- //MJ   float segundos = duracionAudio - (minutos*60);
+    float segundos = duracionAudio.floatValue - (minutos*60);
     
     //Inserta el tiempo total de la cancion.
     //Si los segundos son menores a 10 formatea el numero a mostrar
- //MJ   if(segundos < 10)
+    if(segundos < 10)
     {
         //Ajuste del Label del tiempo transcurrido
-//MJ        self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
- //MJ   } else {
+        self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
+    } else {
         //Ajuste del Label del tiempo transcurrido
- //MJ       self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
+        self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
     }
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressBar:) userInfo:nil repeats:YES];
@@ -238,32 +243,37 @@
 #pragma mark - UpdateProgressBar
 - (void)updateProgressBar:(NSTimer *)timer
 {
-//MJ    NSTimeInterval tiempoDelAudio = [self.reproductor currentTime];     //Tiempo actual del audio
-//MJ   NSTimeInterval duracionTotalDelAudio = [self.reproductor duration]; //Tiempo total del audio
-//MJ    float progreso = tiempoDelAudio / duracionTotalDelAudio;            //Progreso de la cancion
- //MJ   [self.barraProgreso setProgress: progreso];                          //Ajusta el componente al progreso calculado
-    //NSLog(@"%f", self.barraProgreso.progress);
+    
+    MPMediaItem *actual = self.reproductor.nowPlayingItem;
+    
+    NSNumber *duracion = [actual valueForProperty:MPMediaItemPropertyPlaybackDuration];
+
+    NSNumber *tiempoDelAudio = duracion;     //Tiempo actual del audio
+    NSNumber *duracionTotalDelAudio = duracion; //Tiempo total del audio
+    float progreso = tiempoDelAudio.floatValue / duracionTotalDelAudio.floatValue;            //Progreso de la cancion
+    [self.barraProgreso setProgress: progreso];                          //Ajusta el componente al progreso calculado
+    NSLog(@"%f", self.barraProgreso.progress);
     
     //Obteniendo los minutos
-//MJ    float minutos = floor(tiempoDelAudio/60);
+    float minutos = floor(tiempoDelAudio.floatValue/60);
     //Obteniendo los segundos del audio restando los minutos que lleva
- //MJ   float segundos = tiempoDelAudio - (minutos*60);
+    float segundos = tiempoDelAudio.floatValue - (minutos*60);
     
     //Evita que en el label aparezca el seg 60
-//MJ    if(segundos > 59)
+    if(segundos > 59)
     {
- //MJ       segundos = 0.0;
- //MJ       minutos += 1;
+        segundos = 0.0;
+        minutos += 1;
     }
     
     //Si los segundos son menores a 10 formatea el numero a mostrar
-//MJ    if(segundos <= 9)
+    if(segundos <= 9)
     {
         //Ajuste del Label del tiempo transcurrido
-//MJ        self.tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
-//MJ    } else {
+        self.tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
+    } else {
         //Ajuste del Label del tiempo transcurrido
-//MJ        self.tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
+        self.tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
     }
 }
 
@@ -315,7 +325,12 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:1.00];
     [UIView setAnimationBeginsFromCurrentState:YES];
-//MJ    timeActualFloat = self.reproductor.currentTime;
+    
+    MPMediaItem *actual = self.reproductor.nowPlayingItem;
+    
+    NSNumber *duracion = [actual valueForProperty:MPMediaItemPropertyPlaybackDuration];
+
+    timeActualFloat = duracion.floatValue;
     
     [self stopSpin];
     
@@ -339,8 +354,22 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:1.00];
     [UIView setAnimationBeginsFromCurrentState:YES];
- //MJ   self.reproductor.currentTime = 0;
- //MJ   timeActualFloat = self.reproductor.currentTime;
+    
+    MPMediaItem *actual = self.reproductor.nowPlayingItem;
+    
+    NSNumber *duracion = [actual valueForProperty:MPMediaItemPropertyPlaybackDuration];
+
+ // ver como hacer esto !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //ver como asignar a la propiedad MPMediaItemPropertyPlaybackDuration el valor 0
+    //nuevomj  [actual valueForProperty:MPMediaItemPropertyPlaybackDuration.initstate:0];
+
+   //self.reproductor.nowPlayingItem    como le asignamos a la duracion 0;
+    
+    actual = self.reproductor.nowPlayingItem;
+    
+    duracion = [actual valueForProperty:MPMediaItemPropertyPlaybackDuration];
+    
+    timeActualFloat = duracion.floatValue;
     [self stopSpin];
     //etiqueta.text = 0;
     
@@ -520,25 +549,6 @@
 
 
 
-/*Adrian: Invoqué el metodo IBAction ya definido ya que contiene toda la animacion y play de la cancion*/
-/*- (void) nuevaCancion: (NSString *) cancion;
-{
-    self.cancionActual = cancion;
-    
-    
-}
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-    if ([segue.identifier isEqualToString:@"goToCanciones"])
-    {
-        NuevaCancionViewController * nuevaCancionViewController = (NuevaCancionViewController *) segue.destinationViewController;
-        nuevaCancionViewController.delegate = self;
-        
-    }
-    
-}
 
-*/
 
