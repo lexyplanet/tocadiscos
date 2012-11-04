@@ -13,6 +13,18 @@
 		5306FAAA1645EF2A005605F3 /* Enganchado a ti.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAA51645EF2A005605F3 /* Enganchado a ti.mp3 */; };
 		5306FAAB1645EF2A005605F3 /* sinRumbo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAA61645EF2A005605F3 /* sinRumbo.mp3 */; };
 		5306FADF164644B9005605F3 /* TocaDiscoRetroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5306FADE164644B9005605F3 /* TocaDiscoRetroViewController.m */; };
+		5306FAFE16464A21005605F3 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAF316464A21005605F3 /* bg.png */; };
+		5306FAFF16464A21005605F3 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAF416464A21005605F3 /* bg2.png */; };
+		5306FB0016464A21005605F3 /* brazo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAF516464A21005605F3 /* brazo.png */; };
+		5306FB0116464A21005605F3 /* btn-play.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAF616464A21005605F3 /* btn-play.png */; };
+		5306FB0216464A21005605F3 /* btn-stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAF716464A21005605F3 /* btn-stop.png */; };
+		5306FB0316464A21005605F3 /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAF816464A21005605F3 /* Pause.png */; };
+		5306FB0416464A21005605F3 /* play-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAF916464A21005605F3 /* play-on.png */; };
+		5306FB0516464A21005605F3 /* pre.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAFA16464A21005605F3 /* pre.png */; };
+		5306FB0616464A21005605F3 /* sombra.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAFB16464A21005605F3 /* sombra.png */; };
+		5306FB0716464A21005605F3 /* stop-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAFC16464A21005605F3 /* stop-off.png */; };
+		5306FB0816464A21005605F3 /* stop-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAFD16464A21005605F3 /* stop-on.png */; };
+		5306FB1316464B0A005605F3 /* disco_r.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306FB1216464B0A005605F3 /* disco_r.png */; };
 		CE720D3916450E5200A63A1F /* GiroBrazo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE720D3816450E5200A63A1F /* GiroBrazo.m */; };
 		CE73CEE31645729E00E398BE /* PlayerPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73CEE21645729E00E398BE /* PlayerPicker.m */; };
 		CE73CEE71645794000E398BE /* BotonesRetro.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73CEE61645794000E398BE /* BotonesRetro.m */; };
@@ -71,6 +83,18 @@
 		5306FAA61645EF2A005605F3 /* sinRumbo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sinRumbo.mp3; sourceTree = "<group>"; };
 		5306FADD164644B9005605F3 /* TocaDiscoRetroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TocaDiscoRetroViewController.h; sourceTree = "<group>"; };
 		5306FADE164644B9005605F3 /* TocaDiscoRetroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TocaDiscoRetroViewController.m; sourceTree = "<group>"; };
+		5306FAF316464A21005605F3 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		5306FAF416464A21005605F3 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
+		5306FAF516464A21005605F3 /* brazo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brazo.png; sourceTree = "<group>"; };
+		5306FAF616464A21005605F3 /* btn-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-play.png"; sourceTree = "<group>"; };
+		5306FAF716464A21005605F3 /* btn-stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-stop.png"; sourceTree = "<group>"; };
+		5306FAF816464A21005605F3 /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
+		5306FAF916464A21005605F3 /* play-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-on.png"; sourceTree = "<group>"; };
+		5306FAFA16464A21005605F3 /* pre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pre.png; sourceTree = "<group>"; };
+		5306FAFB16464A21005605F3 /* sombra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sombra.png; sourceTree = "<group>"; };
+		5306FAFC16464A21005605F3 /* stop-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-off.png"; sourceTree = "<group>"; };
+		5306FAFD16464A21005605F3 /* stop-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-on.png"; sourceTree = "<group>"; };
+		5306FB1216464B0A005605F3 /* disco_r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disco_r.png; sourceTree = "<group>"; };
 		CE720D3716450E5200A63A1F /* GiroBrazo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiroBrazo.h; sourceTree = "<group>"; };
 		CE720D3816450E5200A63A1F /* GiroBrazo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiroBrazo.m; sourceTree = "<group>"; };
 		CE73CEE11645729E00E398BE /* PlayerPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerPicker.h; sourceTree = "<group>"; };
@@ -248,13 +272,13 @@
 		CE9FE9D5163DDB7E001DBBA9 /* tocadiscos */ = {
 			isa = PBXGroup;
 			children = (
-				5306FAE1164644BE005605F3 /* TocaDiscoRetroViewController */,
 				CE9A3E201642E4B700F1DC66 /* Sonidos */,
 				CE9FEA48163DE5A4001DBBA9 /* Canciones */,
 				CE9FEA1A163DE552001DBBA9 /* Imagenes */,
 				CE9FE9DE163DDB7E001DBBA9 /* AppDelegate.h */,
 				CE9FE9DF163DDB7E001DBBA9 /* AppDelegate.m */,
 				CE9FE9E7163DDB7E001DBBA9 /* MainStoryboard.storyboard */,
+				5306FAE1164644BE005605F3 /* TocaDiscoRetroViewController */,
 				CE9FEA50163DE650001DBBA9 /* TocadiscosViewController */,
 				CE9FEA54163DE694001DBBA9 /* NuevaCancionViewController */,
 				CEADD36C16447EA200815EC5 /* Sonido */,
@@ -286,6 +310,18 @@
 		CE9FEA1A163DE552001DBBA9 /* Imagenes */ = {
 			isa = PBXGroup;
 			children = (
+				5306FB1216464B0A005605F3 /* disco_r.png */,
+				5306FAF316464A21005605F3 /* bg.png */,
+				5306FAF416464A21005605F3 /* bg2.png */,
+				5306FAF516464A21005605F3 /* brazo.png */,
+				5306FAF616464A21005605F3 /* btn-play.png */,
+				5306FAF716464A21005605F3 /* btn-stop.png */,
+				5306FAF816464A21005605F3 /* Pause.png */,
+				5306FAF916464A21005605F3 /* play-on.png */,
+				5306FAFA16464A21005605F3 /* pre.png */,
+				5306FAFB16464A21005605F3 /* sombra.png */,
+				5306FAFC16464A21005605F3 /* stop-off.png */,
+				5306FAFD16464A21005605F3 /* stop-on.png */,
 				CE755F8E163F24F800DA58B8 /* Aguja2.png */,
 				CE9FEA68163F0F6D001DBBA9 /* Barilla Aguja92x139.png */,
 				CE9FEA1C163DE592001DBBA9 /* Aguja.png */,
@@ -449,6 +485,18 @@
 				5306FAA91645EF2A005605F3 /* el tiempo se nos va.mp3 in Resources */,
 				5306FAAA1645EF2A005605F3 /* Enganchado a ti.mp3 in Resources */,
 				5306FAAB1645EF2A005605F3 /* sinRumbo.mp3 in Resources */,
+				5306FAFE16464A21005605F3 /* bg.png in Resources */,
+				5306FAFF16464A21005605F3 /* bg2.png in Resources */,
+				5306FB0016464A21005605F3 /* brazo.png in Resources */,
+				5306FB0116464A21005605F3 /* btn-play.png in Resources */,
+				5306FB0216464A21005605F3 /* btn-stop.png in Resources */,
+				5306FB0316464A21005605F3 /* Pause.png in Resources */,
+				5306FB0416464A21005605F3 /* play-on.png in Resources */,
+				5306FB0516464A21005605F3 /* pre.png in Resources */,
+				5306FB0616464A21005605F3 /* sombra.png in Resources */,
+				5306FB0716464A21005605F3 /* stop-off.png in Resources */,
+				5306FB0816464A21005605F3 /* stop-on.png in Resources */,
+				5306FB1316464B0A005605F3 /* disco_r.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
