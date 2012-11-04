@@ -45,9 +45,9 @@
 @property(nonatomic, strong) NSTimer *timer; //ADRIAN
 
 //Botones del tocadiscos
-@property (nonatomic, strong) IBOutlet UIButton *playButton;
-@property (nonatomic, strong) IBOutlet UIButton *pauseButton;
-@property (nonatomic, strong) IBOutlet UIButton *stopButton;
+@property (nonatomic, strong) IBOutlet UIImageView *playButton;
+@property (nonatomic, strong) IBOutlet UIImageView *pauseButton;
+@property (nonatomic, strong) IBOutlet UIImageView *stopButton;
 
 - (IBAction)Play:(id)sender;
 - (IBAction)Pausa:(id)sender;

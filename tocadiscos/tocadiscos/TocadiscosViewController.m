@@ -127,10 +127,10 @@
     [self.reproductor prepareToPlay];
    
     //Se oculta las imagenes asignadas a los botones del tocadiscos (play, pause, stop)
-    [self.playButton setImage:NO forState:UIControlStateNormal];
+    /*[self.playButton setImage:NO forState:UIControlStateNormal];
     [self.pauseButton setImage:NO forState:UIControlStateNormal];
     [self.stopButton setImage:NO forState:UIControlStateNormal];
-    
+    */
     /******************************** INICIALIZACION DE VARIABLE DE STATUS DE PAUSE (ADRIAN) *********************/
     pausado = NO;
     /*******************************************************************************************/
@@ -146,11 +146,12 @@
 
 - (IBAction)Play:(id)sender {
     //Pone el botón del play en color verde.
-    [self.playButton setImage:[UIImage imageNamed:@"BotonPlayVerde.png"] forState:UIControlStateNormal];
+    /*[self.playButton setImage:[UIImage imageNamed:@"BotonPlayVerde.png"] forState:UIControlStateNormal];
+     */
     //Apaga el botón pause y stop
-    [self.pauseButton setImage:NO forState:UIControlStateNormal];
+    /*[self.pauseButton setImage:NO forState:UIControlStateNormal];
     [self.stopButton setImage:NO forState:UIControlStateNormal];
-    
+    */
     /********* PEDRO 1/11/2012 *********/
     //Hace el sonido de movimiento del brazo de la aguja
     SystemSoundID soundID;
@@ -214,7 +215,10 @@
      tiempoTotal.text = [[NSString alloc] initWithFormat:@"%4.2f", self.reproductor.duration];
      barraProgreso = [[UIProgressView alloc] init];*/
     
+    //Codigo Adiconado por: Beto-------------
     
+    [self moveAguja:@"left" aumenta:.4]; //Mando llamara a la función en la cual le digo que se mueva hacia la dirección derecha
+    /*-----------------------------------*/
     
     //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
     [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:time]];
@@ -254,6 +258,25 @@
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressBar:) userInfo:nil repeats:YES];
     /******************************************************************************/
 }
+/**********************************************************************************/
+-(void) moveAguja:(NSString*)direccion aumenta:(float)aumenta{
+    /*
+     Creado por: Beto.
+     Titulo: moveAguja.
+     Nota.
+     Metodo con el cual hacemos que la aguja se mueva en la direccion left or right, el parametro "aumenta" es por si deseamos que avance conforme al tiempo de la canción.
+     */
+    CGAffineTransform moverAguja = self.imagenAguja.transform;
+    
+    if(direccion==@"left")
+        moverAguja = CGAffineTransformMakeRotation(self.imagenAguja.transform.tx+aumenta);
+    else if(direccion==@"right")
+        moverAguja = CGAffineTransformMakeRotation(aumenta);
+    
+    self.imagenAguja.transform = moverAguja;
+}
+
+/********************************************/
 
 /******************************* ACTUALIZA PROGRESSBAR (ADRIAN) ************************************/
 #pragma mark - UpdateProgressBar
@@ -318,11 +341,11 @@
 
 - (IBAction)Pausa:(id)sender {
     //Pone el botón del pause en color verde.
-    [self.pauseButton setImage:[UIImage imageNamed:@"BotonPauseVerde.png"] forState:UIControlStateNormal];
+    /*[self.pauseButton setImage:[UIImage imageNamed:@"BotonPauseVerde.png"] forState:UIControlStateNormal];
     //Apaga el botón play y stop
     [self.playButton setImage:NO forState:UIControlStateNormal];
     [self.stopButton setImage:NO forState:UIControlStateNormal];
-    
+    */
     /********************* MODIFICACIÓN ADRIÁN *****************/
     if (pausado) {
         [self.reproductor play];
@@ -341,7 +364,8 @@
     [self stopSpin];
     
     //etiqueta.text = 0;
-    
+    //Codigo Adicionado Por: Beto. LLamamos al metodo para regresarlo a su estado original.
+    [self moveAguja:@"right" aumenta:0.0];
     
     CGAffineTransform moverAguja = self.imagenAguja.transform;
     moverAguja = CGAffineTransformMakeRotation(-0.01);
@@ -352,11 +376,11 @@
 
 - (IBAction)Stop:(id)sender {
     //Pone el botón del stop en color verde.
-    [self.stopButton setImage:[UIImage imageNamed:@"BotonStopVerde.png"] forState:UIControlStateNormal];
+    /*[self.stopButton setImage:[UIImage imageNamed:@"BotonStopVerde.png"] forState:UIControlStateNormal];
     //Apaga el botón play y pause
     [self.playButton setImage:NO forState:UIControlStateNormal];
     [self.pauseButton setImage:NO forState:UIControlStateNormal];
-    
+    */
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:1.00];
     [UIView setAnimationBeginsFromCurrentState:YES];
@@ -365,7 +389,8 @@
     [self stopSpin];
     //etiqueta.text = 0;
     
-    
+    //Codigo Adicionado Por: Beto. LLamamos al metodo para regresarlo a su estado original.
+    [self moveAguja:@"right" aumenta:0.0];
     CGAffineTransform moverAguja = self.imagenAguja.transform;
     moverAguja = CGAffineTransformMakeRotation(-0.01);
     self.imagenAguja.transform = moverAguja;
