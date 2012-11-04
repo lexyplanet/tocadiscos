@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.canciones = [[NSArray alloc] initWithObjects:@"Estopa. La primavera", @"Estopa. Cuerpo Triste",nil];
+    self.canciones = [[NSArray alloc] initWithObjects:@"dePeli", @"downbeat", @"el tiempo se nos va", @"Enganchado a ti", @"sinRumbo",nil];
     self.pickerMusicItem.tag = posUltimaCancion;
 }
 

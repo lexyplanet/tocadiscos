@@ -26,6 +26,15 @@
             andPauseButton: (UIButton*)nuevoPauseButton
              andStopButton: (UIButton*)nuevoStopButton;
 
-- (void) playReproductor;
+@property(nonatomic, strong) NSTimer *timer; //ADRIAN
+
+-(void) playButton;
+
+-(void) stopButton;
+-(void) nextButton:(id)sender;
+-(void) forwardButton:(id)sender;
+-(void) volumen:(id)sender;
+-(void) songCurrent: (UILabel*) tiempoQueTranscurre;
+-(NSString*) songTime;
 
 @end

@@ -27,6 +27,7 @@
     
     //BOOL animating; //esta variable ayuda a saber si esta animando o corriendo el bucle.GIRODISCO
     BOOL pausado;   //Variable para el status de Pause ADRIAN
+    BOOL stoped; //Variable para el status de Stop Beto
     
     /********* PEDRO 3-11-2012 *************/
     //Objeto para escuchar un sonido
@@ -42,6 +43,8 @@
     Animacion *animacion;
     //Objeto para crear el player que selecciona las canciones mediante el Picker
     PlayerPicker *playerPicker;
+    //OBjeto para crear los botones.
+    BotonesRetro *botonesRetro;
     /*************************************/
 }
 
