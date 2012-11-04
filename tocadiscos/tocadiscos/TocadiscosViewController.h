@@ -12,6 +12,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "NuevaCancionViewController.h"
 #import "ProgressMusicBar.h"
+#import "VolumenSlider.h"
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 
@@ -22,13 +23,13 @@
     float rateActualFloat;
     float timeActualFloat;
     
-    IBOutlet UISlider *_sliderVolumen;//para personalizar un slider de Volumen
+    //IBOutlet UISlider *_sliderVolumen;//para personalizar un slider de Volumen
     IBOutlet UISlider *_sliderStereo;//para personalizar un slider de Stereo
     IBOutlet UISlider *_sliderRate; //para personalizar un slider de rate
     BOOL animating; //esta variable ayuda a saber si esta animando o corriendo el bucle.
     BOOL pausado;   //Variable para el status de Pause ADRIAN
 }
-@property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar un slider
+@property (strong, nonatomic) IBOutlet VolumenSlider *sliderVolumen; //para personalizar un slider
 @property (strong, nonatomic) IBOutlet UISlider *_sliderStereo; //para personalizar otro slider
 @property (strong, nonatomic) IBOutlet UISlider *_sliderRate; //para personalizar Slider rate
 

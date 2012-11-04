@@ -47,6 +47,7 @@
 		CE9FEA5E163DE988001DBBA9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FEA5D163DE988001DBBA9 /* AVFoundation.framework */; };
 		CE9FEA69163F0F6D001DBBA9 /* Barilla Aguja92x139.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA68163F0F6D001DBBA9 /* Barilla Aguja92x139.png */; };
 		D14BE01F1645CE5F0094A23F /* ProgressMusicBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D14BE01E1645CE5F0094A23F /* ProgressMusicBar.m */; };
+		D14BE0501646C3810094A23F /* VolumenSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = D14BE04F1646C3810094A23F /* VolumenSlider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,8 @@
 		CE9FEA68163F0F6D001DBBA9 /* Barilla Aguja92x139.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Barilla Aguja92x139.png"; sourceTree = "<group>"; };
 		D14BE01D1645CE5F0094A23F /* ProgressMusicBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressMusicBar.h; sourceTree = "<group>"; };
 		D14BE01E1645CE5F0094A23F /* ProgressMusicBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressMusicBar.m; sourceTree = "<group>"; };
+		D14BE04E1646C3810094A23F /* VolumenSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumenSlider.h; sourceTree = "<group>"; };
+		D14BE04F1646C3810094A23F /* VolumenSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumenSlider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +148,8 @@
 		CE9FE9D5163DDB7E001DBBA9 /* tocadiscos */ = {
 			isa = PBXGroup;
 			children = (
-				D14BE01B1645CE290094A23F /* ProgressBar */,
+				D14BE04D1646145C0094A23F /* SliderVolumen */,
+				D14BE01B1645CE290094A23F /* ProgressMusicBar */,
 				CE9FEA48163DE5A4001DBBA9 /* Canciones */,
 				CE9FEA1A163DE552001DBBA9 /* Imagenes */,
 				CE9FE9DE163DDB7E001DBBA9 /* AppDelegate.h */,
@@ -230,13 +234,22 @@
 			name = NuevaCancionViewController;
 			sourceTree = "<group>";
 		};
-		D14BE01B1645CE290094A23F /* ProgressBar */ = {
+		D14BE01B1645CE290094A23F /* ProgressMusicBar */ = {
 			isa = PBXGroup;
 			children = (
 				D14BE01D1645CE5F0094A23F /* ProgressMusicBar.h */,
 				D14BE01E1645CE5F0094A23F /* ProgressMusicBar.m */,
 			);
-			name = ProgressBar;
+			name = ProgressMusicBar;
+			sourceTree = "<group>";
+		};
+		D14BE04D1646145C0094A23F /* SliderVolumen */ = {
+			isa = PBXGroup;
+			children = (
+				D14BE04E1646C3810094A23F /* VolumenSlider.h */,
+				D14BE04F1646C3810094A23F /* VolumenSlider.m */,
+			);
+			name = SliderVolumen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +349,7 @@
 				CE9FEA4F163DE64A001DBBA9 /* TocadiscosViewController.m in Sources */,
 				CE9FEA53163DE68B001DBBA9 /* NuevaCancionViewController.m in Sources */,
 				D14BE01F1645CE5F0094A23F /* ProgressMusicBar.m in Sources */,
+				D14BE0501646C3810094A23F /* VolumenSlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

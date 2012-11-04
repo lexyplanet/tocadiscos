@@ -19,7 +19,6 @@
 
 @implementation TocadiscosViewController
 
-@synthesize _sliderVolumen;
 @synthesize _sliderStereo;
 @synthesize _sliderRate;
 @synthesize reproductor;
@@ -59,6 +58,10 @@
     sliderVolumenRotacion = CGAffineTransformRotate(sliderVolumenRotacion, -(M_PI / 2));
     self._sliderStereo.transform = sliderVolumenRotacion;
     
+    //Personaliza el slider
+    [self.sliderVolumen personalizar];
+    
+    /*
     //Personalizamos el slider de volumen
     UIImage *minImageV = [UIImage imageNamed:@"ControlVolumenHorizontal-02.png"];
     UIImage *maxImageV = [UIImage imageNamed:@"ControlVolumenHorizontal-02.png"];
@@ -79,6 +82,7 @@
     CGAffineTransform sliderStereoRotacion = CGAffineTransformIdentity;
     sliderStereoRotacion = CGAffineTransformRotate(sliderStereoRotacion, -(M_PI / 2));
     self._sliderVolumen.transform = sliderStereoRotacion;
+     */
     
     /* -------------------------------------------
      Cambio por: Beto

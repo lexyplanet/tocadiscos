@@ -111,14 +111,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="xHj-XB-737">
-                                <rect key="frame" x="219" y="304" width="107" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="minimumTrackTintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                <connections>
-                                    <action selector="cambioVolumen:" destination="x4e-py-0JL" eventType="valueChanged" id="gdV-D8-hGR"/>
-                                </connections>
-                            </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" id="MvA-BB-u41">
                                 <rect key="frame" x="146" y="360" width="92" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -155,6 +147,13 @@
                                 <rect key="frame" x="23" y="184" width="30" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="pgV-Ee-G2K" customClass="VolumenSlider">
+                                <rect key="frame" x="213" y="304" width="118" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="cambioVolumen:" destination="x4e-py-0JL" eventType="valueChanged" id="YM7-8F-YQR"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -170,12 +169,12 @@
                     <connections>
                         <outlet property="_sliderRate" destination="MvA-BB-u41" id="gc6-in-jc0"/>
                         <outlet property="_sliderStereo" destination="FQv-tK-Bu7" id="Hma-k7-nCF"/>
-                        <outlet property="_sliderVolumen" destination="xHj-XB-737" id="hcX-bA-z51"/>
                         <outlet property="barraProgreso" destination="xvM-if-8jq" id="8at-xW-B9u"/>
                         <outlet property="imagenAguja" destination="Zer-mJ-XQb" id="GNr-kg-uC4"/>
                         <outlet property="imagenDisco" destination="ypT-m6-bqr" id="8Ue-Yr-NLI"/>
                         <outlet property="pauseButton" destination="ud6-nj-n00" id="Tkx-Gx-rTm"/>
                         <outlet property="playButton" destination="VIW-oy-0qD" id="DU8-Zj-DMi"/>
+                        <outlet property="sliderVolumen" destination="pgV-Ee-G2K" id="6gV-ar-H11"/>
                         <outlet property="stopButton" destination="grL-4d-2q4" id="jUJ-Ro-Sdq"/>
                         <outlet property="tiempoQueTranscurre" destination="Nxa-gz-VSR" id="OOB-Q4-9LR"/>
                         <outlet property="tiempoTotal" destination="9ZN-p2-ZSD" id="I4h-SM-beE"/>
@@ -284,16 +283,19 @@
                 <relationship kind="action" name="cambioVolumen:"/>
                 <relationship kind="outlet" name="_sliderRate" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="_sliderStereo" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="_sliderVolumen" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="barraProgreso" candidateClass="ProgressMusicBar"/>
                 <relationship kind="outlet" name="imagenAguja" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="imagenDisco" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sliderVolumen" candidateClass="VolumenSlider"/>
                 <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="tiempoQueTranscurre" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tiempoTotal" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="VolumenSlider" superclassName="UISlider">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VolumenSlider.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
