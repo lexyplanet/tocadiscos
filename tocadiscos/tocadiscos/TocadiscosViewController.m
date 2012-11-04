@@ -58,6 +58,7 @@
     animacion = [[Animacion alloc] init];
     //Inicializa el objeto de la clase PlayerPicker
     playerPicker = [[PlayerPicker alloc] init];
+    
     /*********************************************/
     
     
