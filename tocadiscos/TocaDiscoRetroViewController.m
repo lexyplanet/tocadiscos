@@ -81,10 +81,21 @@
     
     if(pausado){
         [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.0];
+        //[self.playButton setImage:[UIImage imageNamed:@"Pause.png"] forState:UIControlStateNormal];
         [playerPicker playButton ];
+        //[self.reproductor pause];
         pausado=NO;
     }else{
-    pausado=YES;
+        
+        pausado=YES;
+        //[self.playButton setImage:[UIImage imageNamed:@"play-on.png"] forState:UIControlStateNormal];
+    
+    //Pone el botón del play en color verde.
+    //[self.playButton setImage:[UIImage imageNamed:@"BotonPlayVerde.png"] forState:UIControlStateNormal];
+    //Apaga el botón pause y stop
+    //[self.pauseButton setImage:NO forState:UIControlStateNormal];
+    //[self.stopButton setImage:NO forState:UIControlStateNormal];
+    
     /********* PEDRO 3/11/2012 *********/
     //Sonido clic
     [sonido setSonido:@"clic" andExtension:@"mp3"];
@@ -113,7 +124,8 @@
     /**********************************/
     
     //Comienza a sonar la canción
-    [playerPicker playButton];
+        [playerPicker playButton];
+    //[self.reproductor play];
     
     /******************************** VERSION ADRIAN PROGRESS BAR Y LABELS *********************/
     /*float duracionAudio = [self.reproductor duration];
@@ -177,16 +189,27 @@
 
 - (IBAction)Stop:(id)sender {
     //Pone el botón del stop en color verde.
+    [self.stopButton setImage:[UIImage imageNamed:@"stop-off.png"] forState:UIControlStateNormal];
+    //Apaga el botón play y pause
+    [self.playButton setImage:NO forState:UIControlStateNormal];
+    [self.pauseButton setImage:NO forState:UIControlStateNormal];
+    
     [animacion inicioAnimacion:1.0];
+    self.reproductor.currentTime = 0;
+    timeActualFloat = self.reproductor.currentTime;
     [disco pararGiro];
     [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
     [animacion finAnimacion];
+    
+    //[self.reproductor stop];
     [playerPicker stopButton];
 }
 
 
 - (IBAction)cambioVolumen:(id)sender {
     [playerPicker volumen: sender];
+    //self.reproductor.volume = ((UISlider *) sender).value;
+    //NSLog(@"%f", self.reproductor.volume);
 }
 
 

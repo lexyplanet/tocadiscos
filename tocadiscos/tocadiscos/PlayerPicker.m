@@ -99,8 +99,8 @@
     NSTimeInterval tiempoDelAudio = [self.reproductor currentTime];     //Tiempo actual del audio
     NSTimeInterval duracionTotalDelAudio = [self.reproductor duration]; //Tiempo total del audio
     float progreso = tiempoDelAudio / duracionTotalDelAudio;            //Progreso de la cancion
-    //[barraProgreso setProgress: progreso];                          //Ajusta el componente al progreso calculado
-    //NSLog(@"%f", self.barraProgreso.progress);
+    //[barraProgreso setProgress: progreso];
+    //Ajusta el componente al progreso calculado
     
     //Obteniendo los minutos
     float minutos = floor(tiempoDelAudio/60);

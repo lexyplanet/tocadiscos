@@ -13,7 +13,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "82"
          endingLineNumber = "82"
-         landmarkName = "-moveAguja:aumenta:"
+         landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -21,12 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "tocadiscos/TocadiscosViewController.m"
-         timestampString = "373703088.086871"
+         timestampString = "373715502.072351"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "178"
-         endingLineNumber = "178"
-         landmarkName = "-Pausa:"
+         startingLineNumber = "161"
+         endingLineNumber = "161"
+         landmarkName = "-Play:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TocaDiscoRetroViewController.m"
-         timestampString = "373711232.728484"
+         timestampString = "373715502.072351"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "101"
-         endingLineNumber = "101"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
          landmarkName = "-Play:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TocaDiscoRetroViewController.m"
-         timestampString = "373711232.728484"
+         timestampString = "373715502.072351"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "102"
-         endingLineNumber = "102"
+         startingLineNumber = "91"
+         endingLineNumber = "91"
          landmarkName = "-Play:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -95,15 +95,15 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TocaDiscoRetroViewController.m"
-         timestampString = "373712919.051116"
+         timestampString = "373715502.072351"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "151"
-         endingLineNumber = "151"
+         startingLineNumber = "139"
+         endingLineNumber = "139"
          landmarkName = "-Play:"
          landmarkType = "5">
       </FileBreakpoint>
