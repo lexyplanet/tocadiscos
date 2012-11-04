@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 LexyPlanet. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 @interface Disco : NSObject
