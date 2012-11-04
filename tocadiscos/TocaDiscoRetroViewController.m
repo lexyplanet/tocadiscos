@@ -82,13 +82,13 @@
     if(pausado){
         [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.0];
         //[self.playButton setImage:[UIImage imageNamed:@"Pause.png"] forState:UIControlStateNormal];
-        [playerPicker playButton ];
+        [playerPicker pauseButton];
         //[self.reproductor pause];
         pausado=NO;
     }else{
         
-        pausado=YES;
-        //[self.playButton setImage:[UIImage imageNamed:@"play-on.png"] forState:UIControlStateNormal];
+    pausado=YES;
+    //[self.playButton setImage:[UIImage imageNamed:@"play-on.png"] forState:UIControlStateNormal];
     
     //Pone el botón del play en color verde.
     //[self.playButton setImage:[UIImage imageNamed:@"BotonPlayVerde.png"] forState:UIControlStateNormal];
@@ -110,7 +110,7 @@
     //[self startSpin];
     [disco inicioGiro:discoImageView];
     
-    [animacion finAnimacion];
+    
     
     //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
     //[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:time]];
@@ -150,7 +150,8 @@
         
         //[playerPicker songCurrent:self.tiempoQueTranscurre];
     /******************************************************************************/
-}
+    }
+    [animacion finAnimacion];
 }
 
 /******************************* ACTUALIZA PROGRESSBAR (ADRIAN) ************************************/
