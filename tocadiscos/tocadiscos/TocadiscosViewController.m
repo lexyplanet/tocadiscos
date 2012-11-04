@@ -50,7 +50,8 @@
     
     self.imagenAguja.layer.anchorPoint = CGPointMake(.5, .26); //Le decimos donde queremos anclar la imagen
     self.imagenAguja.frame = aguja; //Le asignamos los nuevos parametros a la imagen original de la aguja
-    
+    //oculto la barra de progreso
+    self.barraProgreso.hidden = YES;
     
     /* fin Cambio por: Beto. ----------------------- */
     
@@ -149,10 +150,14 @@
         [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.4]];
         
         /**********************************/
+         
         [self.reproductor play];
         pausado=YES;
         
         /******************************** VERSION ADRIAN PROGRESS BAR Y LABELS *********************/
+        //aparece la barra de progreso
+        self.barraProgreso.hidden = NO;
+        
         float duracionAudio = [self.reproductor duration];
         
         //Obteniendo los minutos
@@ -312,7 +317,8 @@
     [self moveAguja:@"right" aumenta:0.0];
 
     [UIView commitAnimations];
-    
+    //vuelvo a ocultar la barra de progreso
+    self.barraProgreso.hidden = YES;
     
     [self.reproductor stop];
 }

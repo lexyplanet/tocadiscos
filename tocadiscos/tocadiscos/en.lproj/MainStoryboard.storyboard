@@ -122,7 +122,7 @@
                                     <action selector="Stop:" destination="x4e-py-0JL" eventType="touchUpInside" id="0PT-3A-xAi"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="FHy-5l-a1G">
+                            <progressView opaque="NO" contentMode="scaleToFill" id="FHy-5l-a1G">
                                 <rect key="frame" x="108" y="213" width="158" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
