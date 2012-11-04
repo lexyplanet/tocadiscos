@@ -10,11 +10,11 @@
             <objects>
                 <viewController storyboardIdentifier="tocadiscos" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x4e-py-0JL" customClass="TocadiscosViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CKX-w5-hs4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg.png" id="5rN-2y-o5d">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="disco.png" id="7lQ-pf-ol3">
@@ -104,7 +104,7 @@
             <objects>
                 <viewController id="bWI-a9-5j9" customClass="NuevaCancionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GMu-4K-5fR">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg2.png" id="3df-0N-RrJ">
@@ -216,6 +216,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
