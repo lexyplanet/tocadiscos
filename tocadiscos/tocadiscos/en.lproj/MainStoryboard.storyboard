@@ -122,19 +122,23 @@
                                     <action selector="Stop:" destination="x4e-py-0JL" eventType="touchUpInside" id="0PT-3A-xAi"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="FHy-5l-a1G">
+                                <rect key="frame" x="108" y="213" width="158" height="9"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="0t4-uV-S6a">
-                        <barButtonItem key="rightBarButtonItem" image="CarpetaMusica.png" width="11" style="done" id="Sea-C4-n8l" userLabel="Bar Button Item ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="CarpetaMusica.png" width="11" style="done" id="Sea-C4-n8l" userLabel="Bar Button Item ">
                             <inset key="imageInsets" minX="-15" minY="-4" maxX="-17" maxY="0.0"/>
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="bWI-a9-5j9" kind="modal" identifier="goToCanciones" modalTransitionStyle="flipHorizontal" id="QS2-RD-ZhU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="barraProgreso" destination="FHy-5l-a1G" id="oA1-BS-CMh"/>
                         <outlet property="imagenAguja" destination="bHn-ia-2aJ" id="LSF-py-p1S"/>
                         <outlet property="imagenDisco" destination="7lQ-pf-ol3" id="isg-G9-BjZ"/>
                         <outlet property="tiempoQueTranscurre" destination="Xir-CV-mFg" id="ygX-JE-QFn"/>
