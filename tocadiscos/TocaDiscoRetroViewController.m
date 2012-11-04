@@ -78,6 +78,7 @@
     //Animación
     float time = 1.00;
     [animacion inicioAnimacion:time];
+    [self.stopButton setImage:[UIImage imageNamed:@"stop-on.png"] forState:UIControlStateNormal];
     
     if(pausado){
         [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.0];
@@ -192,8 +193,8 @@
     //Pone el botón del stop en color verde.
     [self.stopButton setImage:[UIImage imageNamed:@"stop-off.png"] forState:UIControlStateNormal];
     //Apaga el botón play y pause
-    [self.playButton setImage:NO forState:UIControlStateNormal];
-    [self.pauseButton setImage:NO forState:UIControlStateNormal];
+    //[self.playButton setImage:NO forState:UIControlStateNormal];
+    //[self.pauseButton setImage:NO forState:UIControlStateNormal];
     
     [animacion inicioAnimacion:1.0];
     self.reproductor.currentTime = 0;
