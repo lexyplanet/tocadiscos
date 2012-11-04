@@ -93,7 +93,10 @@
     posUltimaCancion= row;
     
     self.cancionSeleccionada = [[NSBundle mainBundle] pathForResource: cancion_elegida ofType:@"mp3"];
+    //SELECCIÓN NOMBRE CANCION
     self.nombreCancionSeleccionada = [NSString stringWithFormat:@"%@", [self.canciones objectAtIndex:row]];
+    //SELECCIÓN NOMBRE CANCION
+
 }
 
 
@@ -101,7 +104,10 @@
 - (IBAction) hecho:(id)sender
 {
     [self.delegate nuevaCancion: self.cancionSeleccionada];
+    //SELECCIÓN NOMBRE CANCION
     [self.delegate nuevaCancionSeleccionada:self.nombreCancionSeleccionada];
+    //SELECCIÓN NOMBRE CANCION
+
     
     // [self.delegate].posUltimaCancion = self.pickerMusicItem.;
     //[self.delegate].tiempoQueTranscurre = 0;

@@ -37,12 +37,20 @@
 @property (strong, nonatomic) IBOutlet UIProgressView *barraProgreso;
 
 @property (nonatomic, strong) AVAudioPlayer * reproductor;
+
+//SELECCIÓN NOMBRE CANCION
 @property (strong, nonatomic) IBOutlet UILabel *etiqueta;
+//SELECCIÓN NOMBRE CANCION
+
 @property (strong, nonatomic) IBOutlet UIImageView *imagenDisco;
 @property (strong, nonatomic) IBOutlet UIImageView *imagenAguja;
 
 @property(nonatomic, strong) NSString* cancionActual;
+
+//SELECCIÓN NOMBRE CANCION
 @property(nonatomic, strong) NSString* nombreCancionActual;
+//SELECCIÓN NOMBRE CANCION
+
 
 - (IBAction)Play:(id)sender;
 - (IBAction)Pausa:(id)sender;

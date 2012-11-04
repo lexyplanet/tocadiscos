@@ -114,7 +114,11 @@
     
     //Hay una canción por defecto hasta que se use la selección.
     self.cancionActual = [[NSBundle mainBundle] pathForResource:@"Estopa. La primavera" ofType:@"mp3"];
+
+    //SELECCIÓN NOMBRE CANCION
     self.etiqueta.text=@"Estopa. La primavera";
+    //SELECCIÓN NOMBRE CANCION
+
     
     NSURL * url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
     self.reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
@@ -317,12 +321,13 @@
     
 }
 
+    //SELECCIÓN NOMBRE CANCION
 - (void) nuevaCancionSeleccionada: (NSString *) cancionSelec{
     self.nombreCancionActual = cancionSelec;
     self.etiqueta.text=self.nombreCancionActual;
 
-
 }
+    //SELECCIÓN NOMBRE CANCION
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
