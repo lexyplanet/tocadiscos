@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="1WW-dw-f7K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G56" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="1WW-dw-f7K">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
@@ -133,8 +133,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.050000000000000003" id="xvM-if-8jq">
-                                <rect key="frame" x="82" y="266" width="150" height="9"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" id="xvM-if-8jq" customClass="ProgressMusicBar">
+                                <rect key="frame" x="65" y="266" width="184" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Nxa-gz-VSR">
@@ -171,7 +171,7 @@
                         <outlet property="_sliderRate" destination="MvA-BB-u41" id="gc6-in-jc0"/>
                         <outlet property="_sliderStereo" destination="FQv-tK-Bu7" id="Hma-k7-nCF"/>
                         <outlet property="_sliderVolumen" destination="xHj-XB-737" id="hcX-bA-z51"/>
-                        <outlet property="barraProgreso" destination="xvM-if-8jq" id="TwG-Zs-GiC"/>
+                        <outlet property="barraProgreso" destination="xvM-if-8jq" id="8at-xW-B9u"/>
                         <outlet property="imagenAguja" destination="Zer-mJ-XQb" id="GNr-kg-uC4"/>
                         <outlet property="imagenDisco" destination="ypT-m6-bqr" id="8Ue-Yr-NLI"/>
                         <outlet property="pauseButton" destination="ud6-nj-n00" id="Tkx-Gx-rTm"/>
@@ -261,6 +261,41 @@
         <image name="Disco.png" width="306" height="306"/>
         <image name="Tocadiscos.png" width="460" height="388"/>
     </resources>
+    <classes>
+        <class className="NuevaCancionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NuevaCancionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="hecho:"/>
+                <relationship kind="outlet" name="hechoBarButtonItem" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="pickerMusicItem" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="ProgressMusicBar" superclassName="UIProgressView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProgressMusicBar.h"/>
+        </class>
+        <class className="TocadiscosViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TocadiscosViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Pausa:"/>
+                <relationship kind="action" name="Play:"/>
+                <relationship kind="action" name="Stop:"/>
+                <relationship kind="action" name="cambioPan:"/>
+                <relationship kind="action" name="cambioRate:"/>
+                <relationship kind="action" name="cambioVolumen:"/>
+                <relationship kind="outlet" name="_sliderRate" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="_sliderStereo" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="_sliderVolumen" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="barraProgreso" candidateClass="ProgressMusicBar"/>
+                <relationship kind="outlet" name="imagenAguja" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="imagenDisco" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tiempoQueTranscurre" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tiempoTotal" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

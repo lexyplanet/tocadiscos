@@ -23,7 +23,7 @@
 @synthesize _sliderStereo;
 @synthesize _sliderRate;
 @synthesize reproductor;
-@synthesize barraProgreso; //ADRIAN
+//@synthesize barraProgreso; //ADRIAN
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -133,6 +133,7 @@
     
     /******************************** INICIALIZACION DE VARIABLE DE STATUS DE PAUSE (ADRIAN) *********************/
     pausado = NO;
+    //self.barraProgreso = [[ProgressMusicBar alloc] init];
     /*******************************************************************************************/
    
 }
@@ -226,19 +227,18 @@
         self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
     }
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressBar:) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
     /******************************************************************************/
 }
 
 /******************************* ACTUALIZA PROGRESSBAR (ADRIAN) ************************************/
 #pragma mark - UpdateProgressBar
-- (void)updateProgressBar:(NSTimer *)timer
+- (void)updateProgress:(NSTimer *)timer
 {
     NSTimeInterval tiempoDelAudio = [self.reproductor currentTime];     //Tiempo actual del audio
     NSTimeInterval duracionTotalDelAudio = [self.reproductor duration]; //Tiempo total del audio
-    float progreso = tiempoDelAudio / duracionTotalDelAudio;            //Progreso de la cancion
-    [self.barraProgreso setProgress: progreso];                          //Ajusta el componente al progreso calculado
-    //NSLog(@"%f", self.barraProgreso.progress);
+    
+    [self.barraProgreso updateProgressBarWithTime:tiempoDelAudio andEnd:duracionTotalDelAudio];
     
     //Obteniendo los minutos
     float minutos = floor(tiempoDelAudio/60);
@@ -345,6 +345,8 @@
     moverAguja = CGAffineTransformMakeRotation(-0.01);
     self.imagenAguja.transform = moverAguja;
     [UIView commitAnimations];
+    
+    [self.timer invalidate];
     
     
     [self.reproductor stop];

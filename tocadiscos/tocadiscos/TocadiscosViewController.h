@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "NuevaCancionViewController.h"
+#import "ProgressMusicBar.h"
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 
@@ -33,7 +34,8 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *tiempoQueTranscurre;
 @property (strong, nonatomic) IBOutlet UILabel *tiempoTotal;
-@property (strong, nonatomic) IBOutlet UIProgressView *barraProgreso;
+//@property (strong, nonatomic) ProgressMusicBar *barraProgreso;
+@property (strong, nonatomic) IBOutlet ProgressMusicBar *barraProgreso;
 
 @property (nonatomic, strong) AVAudioPlayer * reproductor;
 //@property (strong, nonatomic) IBOutlet UILabel *etiqueta;
