@@ -46,6 +46,9 @@
     [reproductor play];
 }
 
+-(void) pauseButton{
+    [reproductor pause];
+}
 -(void) stopButton{
     reproductor.currentTime=0;
     [reproductor stop];
@@ -74,14 +77,10 @@
     
     //Inserta el tiempo total de la cancion.
     //Si los segundos son menores a 10 formatea el numero a mostrar
-    if(segundos < 10)
-    {
-        //Ajuste del Label del tiempo transcurrido
-        return [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
-    } else {
-        //Ajuste del Label del tiempo transcurrido
-        return [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
-    }
+    
+    //Ajuste del Label del tiempo transcurrido
+    return [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
+    
     
     /*self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressBar:) userInfo:nil repeats:YES];*/
     /******************************************************************************/

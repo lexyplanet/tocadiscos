@@ -29,6 +29,7 @@
 @property(nonatomic, strong) NSTimer *timer; //ADRIAN
 
 -(void) playButton;
+-(void) pauseButton;
 
 -(void) stopButton;
 -(void) nextButton:(id)sender;
