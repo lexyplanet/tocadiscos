@@ -37,50 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //Personalizamos el slider de Stereo
-    UIImage *minImage = [UIImage imageNamed:@"ControlStereoHorizontal-03.png"];
-    UIImage *maxImage = [UIImage imageNamed:@"ControlStereoHorizontal-03.png"];
-    UIImage *thumbImage = [UIImage imageNamed:@"BotonVolumenHorizontal-04.png"];
-    
-    minImage = [minImage stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
-    maxImage = [maxImage stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
-    
-    [_sliderStereo setMinimumTrackImage:minImage forState:UIControlStateNormal];
-    [_sliderStereo setMaximumTrackImage:maxImage forState:UIControlStateNormal];
-    [_sliderStereo setThumbImage:thumbImage forState:UIControlStateNormal];
-    
-    minImage = nil;
-    maxImage = nil;
-    thumbImage = nil;
-        
-    //Giramos el slider de Stereo
-    CGAffineTransform sliderVolumenRotacion = CGAffineTransformIdentity;
-    sliderVolumenRotacion = CGAffineTransformRotate(sliderVolumenRotacion, -(M_PI / 2));
-    self._sliderStereo.transform = sliderVolumenRotacion;
-    
-    //Personalizamos el slider de volumen
-    UIImage *minImageV = [UIImage imageNamed:@"ControlVolumenHorizontal-02.png"];
-    UIImage *maxImageV = [UIImage imageNamed:@"ControlVolumenHorizontal-02.png"];
-    UIImage *thumbImageV = [UIImage imageNamed:@"BotonVolumenHorizontal-04.png"];
-    
-    minImageV = [minImageV stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
-    maxImageV = [maxImageV stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
-    
-    [_sliderVolumen setMinimumTrackImage:minImageV forState:UIControlStateNormal];
-    [_sliderVolumen setMaximumTrackImage:maxImageV forState:UIControlStateNormal];
-    [_sliderVolumen setThumbImage:thumbImageV forState:UIControlStateNormal];
-    
-    minImageV = nil;
-    maxImageV = nil;
-    thumbImageV = nil;
-    
-    //Giramos el slider de volumen
-    CGAffineTransform sliderStereoRotacion = CGAffineTransformIdentity;
-    sliderStereoRotacion = CGAffineTransformRotate(sliderStereoRotacion, -(M_PI / 2));
-    self._sliderVolumen.transform = sliderStereoRotacion;
-    
-    /* -------------------------------------------
+        /* -------------------------------------------
      Cambio por: Beto
      Tipo movimiento: Giro de la aguja.
      
@@ -88,8 +45,8 @@
      Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro
      */
     CGRect aguja = self.imagenAguja.frame; // Asignamos la variable aguja que trae las propiedades de la imagenAguja
-    aguja.origin.x = 190; // Posicionamos la imagen de x
-    aguja.origin.y = 4; //Posicionamos la imagen de y
+    aguja.origin.x = 230; // Posicionamos la imagen de x
+    aguja.origin.y = 23; //Posicionamos la imagen de y
     
     self.imagenAguja.layer.anchorPoint = CGPointMake(.5, .26); //Le decimos donde queremos anclar la imagen
     self.imagenAguja.frame = aguja; //Le asignamos los nuevos parametros a la imagen original de la aguja
@@ -97,21 +54,6 @@
     
     /* fin Cambio por: Beto. ----------------------- */
     
-    //Personalizamos el slider de velocidad
-    UIImage *minImageVe = [UIImage imageNamed:@"ControlVelocidadHorizontal-02.png"];
-    UIImage *maxImageVe = [UIImage imageNamed:@"ControlVelocidadHorizontal-02.png"];
-    UIImage *thumbImageVe = [UIImage imageNamed:@"BotonControlVelocidadHorizontal-03.png"];
-    
-    minImageVe = [minImageVe stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
-    maxImageVe = [maxImageVe stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
-    
-    [_sliderRate setMinimumTrackImage:minImageVe forState:UIControlStateNormal];
-    [_sliderRate setMaximumTrackImage:maxImageVe forState:UIControlStateNormal];
-    [_sliderRate setThumbImage:thumbImageVe forState:UIControlStateNormal];
-    
-    minImageVe = nil;
-    maxImageVe = nil;
-    thumbImageVe = nil;
     NSError * error;
     
     self.cancionActual = [[NSBundle mainBundle] pathForResource:@"Estopa. La primavera" ofType:@"mp3"];
@@ -119,18 +61,11 @@
     NSURL * url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
     self.reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
     
-    self.reproductor.pan = 0;
+
     self.reproductor.volume = 0.5;
     
-    self.reproductor.enableRate = YES;
-    self.reproductor.rate = 1;
     [self.reproductor prepareToPlay];
-   
-    //Se oculta las imagenes asignadas a los botones del tocadiscos (play, pause, stop)
-    /*[self.playButton setImage:NO forState:UIControlStateNormal];
-    [self.pauseButton setImage:NO forState:UIControlStateNormal];
-    [self.stopButton setImage:NO forState:UIControlStateNormal];
-    */
+    
     /******************************** INICIALIZACION DE VARIABLE DE STATUS DE PAUSE (ADRIAN) *********************/
     pausado = NO;
     /*******************************************************************************************/
@@ -145,119 +80,106 @@
 
 
 - (IBAction)Play:(id)sender {
-    //Pone el botón del play en color verde.
-    /*[self.playButton setImage:[UIImage imageNamed:@"BotonPlayVerde.png"] forState:UIControlStateNormal];
-     */
-    //Apaga el botón pause y stop
-    /*[self.pauseButton setImage:NO forState:UIControlStateNormal];
-    [self.stopButton setImage:NO forState:UIControlStateNormal];
-    */
-    /********* PEDRO 1/11/2012 *********/
-    //Hace el sonido de movimiento del brazo de la aguja
-    SystemSoundID soundID;
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"clic" ofType:@"mp3"];
-    AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)[NSURL fileURLWithPath:path], &soundID);
-    AudioServicesPlaySystemSound(soundID);
-    
-    //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.25]];
-    /*********************************/
-    
-    
+    //Comienza a sonar la canción
     //Animación
     float time = 1.00;
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:time];
     [UIView setAnimationBeginsFromCurrentState:YES];
+    
+    if(pausado){
+        [self moveAguja:@"right" aumenta:0];
+        [self.reproductor pause];
+        [self stopSpin];
+        pausado=NO;
+    }
+    else{
+        //Pone el botón del play en color verde.
+        /*[self.playButton setImage:[UIImage imageNamed:@"BotonPlayVerde.png"] forState:UIControlStateNormal];
+         */
+        //Apaga el botón pause y stop
+        /*[self.pauseButton setImage:NO forState:UIControlStateNormal];
+         [self.stopButton setImage:NO forState:UIControlStateNormal];
+         */
         
-    //Gira el brazo de la aguja
-    CGAffineTransform moverAguja = self.imagenAguja.transform;
-    moverAguja = CGAffineTransformMakeRotation(+0.4);
-    self.imagenAguja.transform = moverAguja;
-    
-    [self startSpin];
-    
-    [UIView commitAnimations];
-    
-    
-    
-    /* Asignacion de los valores actuales del reproductor para que no se pierdan a la hora de reproducir la nueva instancia */
-    panActualFloat = self.reproductor.pan;
-    volumenActualFloat = self.reproductor.volume;
-    rateActualFloat = self.reproductor.rate;
-    
-    /* Asigna la nueva instancia al reproductor con los nuevos valores */
-    NSError * error;
-    NSURL *url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
-    self.reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
-    
-    self.reproductor.pan = panActualFloat;
-    self.reproductor.volume = volumenActualFloat;
-    
-    /* Se vuelve a ajustar la propiedad EnableRate a YES para que la nueva instancia realize el Rate
-     ya que por default una nueva instancia tiene un valor de NO asi que si asignamos una nueva instancia de AVAudioPlayer
-     y despues lo reproducimos, si queremos cambiar el rate éste no lo hará (que es lo que pasaba) */
-    self.reproductor.enableRate = YES;
-    
-    self.reproductor.rate = rateActualFloat;
-    self.reproductor.currentTime = timeActualFloat;
-    //[self.reproductor prepareToPlay];
-    
         
-    
-    
-    //[UIView commitAnimations];
-    
-    //[self startSpin];
-    
-    /* tiempoQueTranscurre.text = [[NSString alloc] initWithFormat: @"%4.2f", self.reproductor.currentTime];
-     
-     tiempoTotal.text = [[NSString alloc] initWithFormat:@"%4.2f", self.reproductor.duration];
-     barraProgreso = [[UIProgressView alloc] init];*/
-    
-    //Codigo Adiconado por: Beto-------------
-    
-    [self moveAguja:@"left" aumenta:.4]; //Mando llamara a la función en la cual le digo que se mueva hacia la dirección derecha
-    /*-----------------------------------*/
-    
-    //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:time]];
-    
-    /********* PEDRO 1/11/2012 *********/
-    //Simula el sonido del contacto de la aguja sobre el vinilo
-    SystemSoundID viniloSoundID;
-    NSString *pathVinilo = [[NSBundle mainBundle] pathForResource:@"Vinilo" ofType:@"mp3"];
-    AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)[NSURL fileURLWithPath:pathVinilo], &viniloSoundID);
-    AudioServicesPlaySystemSound(viniloSoundID);
-    //Introduce una pausa para que la canción empiece después del sonido de la aguja sobre el vinilo
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.4]];
-    /**********************************/
-    
-    //Comienza a sonar la canción
-    [self.reproductor play];
-    
-    /******************************** VERSION ADRIAN PROGRESS BAR Y LABELS *********************/
-    float duracionAudio = [self.reproductor duration];
-    
-    //Obteniendo los minutos
-    float minutos = floor(duracionAudio/60);
-    //Obteniendo los segundos del audio restando los minutos que lleva
-    float segundos = duracionAudio - (minutos*60);
-    
-    //Inserta el tiempo total de la cancion.
-    //Si los segundos son menores a 10 formatea el numero a mostrar
-    if(segundos < 10)
-    {
-        //Ajuste del Label del tiempo transcurrido
-        self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
-    } else {
-        //Ajuste del Label del tiempo transcurrido
-        self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
+        
+        /* Asignacion de los valores actuales del reproductor para que no se pierdan a la hora de reproducir la nueva instancia */
+        
+        //volumenActualFloat = self.reproductor.volume;
+        
+        
+        
+        /* Se vuelve a ajustar la propiedad EnableRate a YES para que la nueva instancia realize el Rate
+         ya que por default una nueva instancia tiene un valor de NO asi que si asignamos una nueva instancia de AVAudioPlayer
+         y despues lo reproducimos, si queremos cambiar el rate éste no lo hará (que es lo que pasaba) */
+
+        
+        //[self.reproductor prepareToPlay];
+        
+        //Codigo Adiconado por: Beto-------------
+        //Mando llamara a la función en la cual le digo que se mueva hacia la dirección derecha
+        /*-----------------------------------*/
+        
+        //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
+        /********* PEDRO 1/11/2012 *********/
+        //Hace el sonido de movimiento del brazo de la aguja
+        
+        [self startSpin];
+        
+        SystemSoundID soundID;
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"clic" ofType:@"mp3"];
+        AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)[NSURL fileURLWithPath:path], &soundID);
+        AudioServicesPlaySystemSound(soundID);
+
+        //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
+        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.25]];
+                        [self moveAguja:@"left" aumenta:.4];
+        /*********************************/
+        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:time]];
+        
+        /********* PEDRO 1/11/2012 *********/
+        //Simula el sonido del contacto de la aguja sobre el vinilo
+
+        SystemSoundID viniloSoundID;
+        NSString *pathVinilo = [[NSBundle mainBundle] pathForResource:@"Vinilo" ofType:@"mp3"];
+        AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)[NSURL fileURLWithPath:pathVinilo], &viniloSoundID);
+        AudioServicesPlaySystemSound(viniloSoundID);
+        //Introduce una pausa para que la canción empiece después del sonido de la aguja sobre el vinilo
+        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.4]];
+        
+        /**********************************/
+        [self.reproductor play];
+        pausado=YES;
+        
+        /******************************** VERSION ADRIAN PROGRESS BAR Y LABELS *********************/
+        float duracionAudio = [self.reproductor duration];
+        
+        //Obteniendo los minutos
+        float minutos = floor(duracionAudio/60);
+        //Obteniendo los segundos del audio restando los minutos que lleva
+        float segundos = duracionAudio - (minutos*60);
+        
+        //Inserta el tiempo total de la cancion.
+        //Si los segundos son menores a 10 formatea el numero a mostrar
+        if(segundos < 10)
+        {
+            //Ajuste del Label del tiempo transcurrido
+            self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
+        } else {
+            //Ajuste del Label del tiempo transcurrido
+            self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
+        }
+        
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressBar:) userInfo:nil repeats:YES];
+        /******************************************************************************/
     }
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressBar:) userInfo:nil repeats:YES];
-    /******************************************************************************/
+    
+    
+    [UIView commitAnimations];
 }
+
 /**********************************************************************************/
 -(void) moveAguja:(NSString*)direccion aumenta:(float)aumenta{
     /*
@@ -367,9 +289,6 @@
     //Codigo Adicionado Por: Beto. LLamamos al metodo para regresarlo a su estado original.
     [self moveAguja:@"right" aumenta:0.0];
     
-    CGAffineTransform moverAguja = self.imagenAguja.transform;
-    moverAguja = CGAffineTransformMakeRotation(-0.01);
-    self.imagenAguja.transform = moverAguja;
     [UIView commitAnimations];
     [self.reproductor pause];
 }
@@ -391,9 +310,7 @@
     
     //Codigo Adicionado Por: Beto. LLamamos al metodo para regresarlo a su estado original.
     [self moveAguja:@"right" aumenta:0.0];
-    CGAffineTransform moverAguja = self.imagenAguja.transform;
-    moverAguja = CGAffineTransformMakeRotation(-0.01);
-    self.imagenAguja.transform = moverAguja;
+
     [UIView commitAnimations];
     
     

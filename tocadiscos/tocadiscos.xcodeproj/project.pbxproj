@@ -19,6 +19,7 @@
 		299575471645C1D800D96964 /* pre.png in Resources */ = {isa = PBXBuildFile; fileRef = 299575461645C1D800D96964 /* pre.png */; };
 		299575491645C98400D96964 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 299575481645C98400D96964 /* bg2.png */; };
 		2995754B1645D3A200D96964 /* sombra.png in Resources */ = {isa = PBXBuildFile; fileRef = 2995754A1645D3A200D96964 /* sombra.png */; };
+		5306FAD71646337E005605F3 /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306FAD61646337E005605F3 /* Pause.png */; };
 		CE9A3E241642E58800F1DC66 /* clic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9A3E221642E58800F1DC66 /* clic.mp3 */; };
 		CE9A3E2B1642E79B00F1DC66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */; };
 		CE9FE9D0163DDB7D001DBBA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FE9CF163DDB7D001DBBA9 /* UIKit.framework */; };
@@ -52,6 +53,7 @@
 		299575461645C1D800D96964 /* pre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pre.png; sourceTree = "<group>"; };
 		299575481645C98400D96964 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
 		2995754A1645D3A200D96964 /* sombra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sombra.png; sourceTree = "<group>"; };
+		5306FAD61646337E005605F3 /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
 		CE9A3E221642E58800F1DC66 /* clic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clic.mp3; sourceTree = "<group>"; };
 		CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CE9FE9CB163DDB7D001DBBA9 /* tocadiscos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tocadiscos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 		2995751B1645B79D00D96964 /* imagenes */ = {
 			isa = PBXGroup;
 			children = (
+				5306FAD61646337E005605F3 /* Pause.png */,
 				299575331645BB1000D96964 /* bg.png */,
 				2995753E1645BB2700D96964 /* brazo.png */,
 				299575341645BB1000D96964 /* btn-play.png */,
@@ -281,6 +284,7 @@
 				299575471645C1D800D96964 /* pre.png in Resources */,
 				299575491645C98400D96964 /* bg2.png in Resources */,
 				2995754B1645D3A200D96964 /* sombra.png in Resources */,
+				5306FAD71646337E005605F3 /* Pause.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

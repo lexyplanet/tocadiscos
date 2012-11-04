@@ -27,6 +27,8 @@
     IBOutlet UISlider *_sliderRate; //para personalizar un slider de rate
     BOOL animating; //esta variable ayuda a saber si esta animando o corriendo el bucle.
     BOOL pausado;   //Variable para el status de Pause ADRIAN
+    BOOL stoped;  //Variable para el status de Parado Beto
+    
 }
 @property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar un slider
 @property (strong, nonatomic) IBOutlet UISlider *_sliderStereo; //para personalizar otro slider
