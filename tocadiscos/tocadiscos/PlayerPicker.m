@@ -41,4 +41,9 @@
     [botonStop apagarStop:nuevoStopButton];
 }
 
+- (void) playReproductor
+{
+    
+}
+
 @end
