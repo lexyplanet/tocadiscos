@@ -27,11 +27,7 @@
     float volumenActualFloat;
     float rateActualFloat;
     float timeActualFloat;
-    
-    IBOutlet UISlider *_sliderVolumen;//para personalizar un slider de Volumen
-    
-    IBOutlet UISlider *_sliderStereo;//para personalizar un slider de Stereo
-    IBOutlet UISlider *_sliderRate; //para personalizar un slider de rate
+
     BOOL pausado;   //Variable para el status de Pause ADRIAN
     
     //Creacón de objetos
@@ -42,21 +38,22 @@
     Disco *disco;
     Animacion *animacion;
     PlayerPicker *playerPicker;
-    TocadiscosSlider* sliderRetro;
 }
 
+//PROPERTIES
+//Sliders
+@property (strong, nonatomic) IBOutlet TocadiscosSlider *panSlider; //para personalizar otro slider
 
-@property (strong, nonatomic) IBOutlet UISlider *_sliderStereo; //para personalizar otro slider
+@property (strong, nonatomic) IBOutlet TocadiscosSlider *volumenSlider; //para personalizar otro slider
+@property (strong, nonatomic) IBOutlet TocadiscosSlider *rateSlider; //para personalizar Slider rate
 
-@property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar otro slider
+//Información canción
+@property (strong, nonatomic) IBOutlet UILabel *tiempoTranscurridoLabel;
+@property (strong, nonatomic) IBOutlet UILabel *tiempoTotalLabel;
+@property (strong, nonatomic) IBOutlet UIProgressView *cancionProgressView;
 
-@property (strong, nonatomic) IBOutlet UISlider *_sliderRate; //para personalizar Slider rate
-
-@property (strong, nonatomic) IBOutlet UILabel *tiempoQueTranscurre;
-@property (strong, nonatomic) IBOutlet UILabel *tiempoTotal;
-@property (strong, nonatomic) IBOutlet UIProgressView *barraProgreso;
-
-@property (nonatomic, strong) AVAudioPlayer *reproductor; //PLAYERPICKER
+//Reproductor AudioPlayer
+@property (nonatomic, strong) AVAudioPlayer *reproductorAudioPlayer; //PLAYERPICKER
 @property (strong, nonatomic) IBOutlet UIImageView *discoImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *brazoAgujaImageView; //GIROBRAZO
 
@@ -68,6 +65,8 @@
 @property (nonatomic, strong) IBOutlet UIButton *pauseButton; //PLAYERPICKER
 @property (nonatomic, strong) IBOutlet UIButton *stopButton; //PLAYERPICKER
 
+
+//ACTIONS
 - (IBAction)Play:(id)sender;
 - (IBAction)Pausa:(id)sender;
 - (IBAction)Stop:(id)sender;
@@ -75,8 +74,18 @@
 - (IBAction)cambioPan:(id)sender;
 - (IBAction)cambioRate:(id)sender;
 
-- (void)updateProgressBar:(NSTimer *)timer; //BORRAR - SOLO PARA QUITAR MENSAJES WARNING
-- (void) nuevaCancion: (NSString *) cancion;
 
+//METHODS
+/* - (void)viewDidUnload;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
+- (BOOL)shouldAutorotateToInterfaceOrientation;
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender; */
+
+
+- (void) updateProgressBar:(NSTimer *) timer; //BORRAR - SOLO PARA QUITAR MENSAJES WARNING
+- (void) nuevaCancion: (NSString *) cancion;
 
 @end

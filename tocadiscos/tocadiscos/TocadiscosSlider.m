@@ -19,10 +19,10 @@
     return self;
 }
 
-- (void)personalizar:(UISlider*)Slider:(NSString*)archivothumb
-        andImagenMin:(NSString*)archivoImageMin
-        andImagenMax:(NSString*)archivoImageMax
-         andVertical:(BOOL)vertical
+- (void)personalizarSlider:(NSString*)archivothumb
+              andImagenMin:(NSString*)archivoImageMin
+              andImagenMax:(NSString*)archivoImageMax
+               andVertical:(BOOL)vertical
 {
     UIImage *minImageV = [UIImage imageNamed:archivoImageMin];
     UIImage *maxImageV = [UIImage imageNamed:archivoImageMax];

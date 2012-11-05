@@ -150,18 +150,18 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="_sliderRate" destination="Eiz-04-Lf4" id="Qtd-1l-kJ2"/>
-                        <outlet property="_sliderStereo" destination="Los-Bb-gX7" id="plb-7U-z7b"/>
-                        <outlet property="_sliderVolumen" destination="RJ7-bd-Lwu" id="5rR-hl-Zhg"/>
-                        <outlet property="barraProgreso" destination="jLk-hT-5mf" id="nzA-pf-r5p"/>
                         <outlet property="brazoAgujaImageView" destination="wyF-V5-qC0" id="W2I-pW-BZW"/>
+                        <outlet property="cancionProgressView" destination="jLk-hT-5mf" id="iQQ-gy-VcM"/>
                         <outlet property="discoImageView" destination="la1-In-508" id="bph-gu-mEh"/>
+                        <outlet property="panSlider" destination="Los-Bb-gX7" id="jvX-qO-330"/>
                         <outlet property="pauseButton" destination="Eas-Re-8sB" id="2zT-cg-6fL"/>
                         <outlet property="playButton" destination="S4s-le-aeY" id="Swg-0i-CPX"/>
+                        <outlet property="rateSlider" destination="Eiz-04-Lf4" id="sff-6j-2EL"/>
                         <outlet property="sliderVolumen" destination="RJ7-bd-Lwu" id="wn5-RX-aBg"/>
                         <outlet property="stopButton" destination="kbH-vV-MbD" id="Uk8-pe-BWv"/>
-                        <outlet property="tiempoQueTranscurre" destination="gyE-ky-N6h" id="jsz-hs-V8H"/>
-                        <outlet property="tiempoTotal" destination="6tK-dQ-8TI" id="xfx-Im-KEV"/>
+                        <outlet property="tiempoTotalLabel" destination="6tK-dQ-8TI" id="cWh-ou-0KP"/>
+                        <outlet property="tiempoTranscurridoLabel" destination="gyE-ky-N6h" id="N7D-hh-5go"/>
+                        <outlet property="volumenSlider" destination="RJ7-bd-Lwu" id="C4P-0B-cn6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2W-6n-WZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
