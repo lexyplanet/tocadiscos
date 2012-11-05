@@ -37,9 +37,9 @@
     botonPause = [[BotonesRetro alloc] init];
     botonStop = [[BotonesRetro alloc] init];
     
-    //[botonPlay apagarPlay:nuevoPlayButton];
-    //[botonPause apagarPause:nuevoPauseButton];
-    //[botonStop apagarStop:nuevoStopButton];
+    [botonPlay apagarPlay:nuevoPlayButton];
+    [botonPause apagarPause:nuevoPauseButton];
+    [botonStop apagarStop:nuevoStopButton];
 }
 
 -(void) playButton

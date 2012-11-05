@@ -54,8 +54,9 @@
     //Personalización de los sliders
     [panSlider personalizarSlider:@"ControlStereoHorizontal-03.png" andImagenMin:@"ControlStereoHorizontal-03.png" andImagenMax:@"BotonVolumenHorizontal-04.png" andVertical:YES];
     
-    [rateSlider personalizarSlider:@"ControlVelocidadHorizontal-02.png" andImagenMin:@"ControlVelocidadHorizontal-02.png" andImagenMax:@"BotonControlVelocidadHorizontal-03.png" andVertical:YES];
+    [volumenSlider personalizarSlider:@"ControlVelocidadHorizontal-02.png" andImagenMin:@"ControlVelocidadHorizontal-02.png" andImagenMax:@"BotonControlVelocidadHorizontal-04.png" andVertical:YES];
     
+    [rateSlider personalizarSlider:@"ControlVelocidadHorizontal-02.png" andImagenMin:@"ControlVelocidadHorizontal-02.png" andImagenMax:@"BotonControlVelocidadHorizontal-03.png" andVertical:NO];
     
     
     /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro */
@@ -103,7 +104,7 @@
 - (IBAction)Play:(id)sender
 {
     //Pone el botón del play en color verde.
-    [self.playButton setImage:[UIImage imageNamed:@"BotonPlayVerde.png"] forState:UIControlStateNormal];
+    [playButton setImage:[UIImage imageNamed:@"BotonPlayVerde.png"] forState:UIControlStateNormal];
     //Apaga el botón pause y stop
     [self.pauseButton setImage:NO forState:UIControlStateNormal];
     [self.stopButton setImage:NO forState:UIControlStateNormal];
