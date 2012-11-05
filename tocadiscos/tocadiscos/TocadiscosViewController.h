@@ -17,6 +17,7 @@
 #import "Animacion.h"
 #import "PlayerPicker.h"
 #import "BotonesRetro.h"
+#import "SliderRetro.h"
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 {
@@ -26,7 +27,8 @@
     float rateActualFloat;
     float timeActualFloat;
     
-    IBOutlet UISlider *_sliderVolumen;//para personalizar un slider de Volumen
+    //IBOutlet UISlider *_sliderVolumen;//para personalizar un slider de Volumen
+    
     IBOutlet UISlider *_sliderStereo;//para personalizar un slider de Stereo
     IBOutlet UISlider *_sliderRate; //para personalizar un slider de rate
     //BOOL animating; //esta variable ayuda a saber si esta animando o corriendo el bucle.GIRODISCO
@@ -46,10 +48,15 @@
     Animacion *animacion;
     //Objeto para crear el player que selecciona las canciones mediante el Picker
     PlayerPicker *playerPicker;
+    SliderRetro* sliderRetro;
     /*************************************/
 }
-@property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar un slider
+
+
 @property (strong, nonatomic) IBOutlet UISlider *_sliderStereo; //para personalizar otro slider
+
+@property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar otro slider
+
 @property (strong, nonatomic) IBOutlet UISlider *_sliderRate; //para personalizar Slider rate
 
 @property (strong, nonatomic) IBOutlet UILabel *tiempoQueTranscurre;
@@ -77,8 +84,8 @@
 
 //Agregue estas 3 funciones que controlan el bucle.
 /*-(void)spin; //Ejecuta el bucle o animación GIRODISCO
--(void)startSpin;//Inicia el bucle o animación GIRODISCO
--(void)stopSpin;//Para el bucle o animación GIRODISCO */
+ -(void)startSpin;//Inicia el bucle o animación GIRODISCO
+ -(void)stopSpin;//Para el bucle o animación GIRODISCO */
 //-----------
 
 @end

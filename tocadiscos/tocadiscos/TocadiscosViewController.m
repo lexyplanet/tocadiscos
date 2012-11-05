@@ -21,7 +21,7 @@
 
 @implementation TocadiscosViewController
 
-@synthesize _sliderVolumen;
+
 @synthesize _sliderStereo;
 @synthesize _sliderRate;
 @synthesize reproductor;
@@ -58,6 +58,8 @@
     animacion = [[Animacion alloc] init];
     //Inicializa el objeto de la clase PlayerPicker
     playerPicker = [[PlayerPicker alloc] init];
+    
+    sliderRetro= [[SliderRetro alloc] init];
     /*********************************************/
     
     
@@ -76,35 +78,17 @@
     minImage = nil;
     maxImage = nil;
     thumbImage = nil;
-        
+    
     //Giramos el slider de Stereo
     CGAffineTransform sliderVolumenRotacion = CGAffineTransformIdentity;
     sliderVolumenRotacion = CGAffineTransformRotate(sliderVolumenRotacion, -(M_PI / 2));
     self._sliderStereo.transform = sliderVolumenRotacion;
     
-    //Personalizamos el slider de volumen
-    UIImage *minImageV = [UIImage imageNamed:@"ControlVolumenHorizontal-02.png"];
-    UIImage *maxImageV = [UIImage imageNamed:@"ControlVolumenHorizontal-02.png"];
-    UIImage *thumbImageV = [UIImage imageNamed:@"BotonVolumenHorizontal-04.png"];
-    
-    minImageV = [minImageV stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
-    maxImageV = [maxImageV stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
-    
-    [_sliderVolumen setMinimumTrackImage:minImageV forState:UIControlStateNormal];
-    [_sliderVolumen setMaximumTrackImage:maxImageV forState:UIControlStateNormal];
-    [_sliderVolumen setThumbImage:thumbImageV forState:UIControlStateNormal];
-    
-    minImageV = nil;
-    maxImageV = nil;
-    thumbImageV = nil;
-    
-    //Giramos el slider de volumen
-    CGAffineTransform sliderStereoRotacion = CGAffineTransformIdentity;
-    sliderStereoRotacion = CGAffineTransformRotate(sliderStereoRotacion, -(M_PI / 2));
-    self._sliderVolumen.transform = sliderStereoRotacion;
+    [sliderRetro personalizar:self._sliderVolumen];
     
     /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro
      */
+    
     [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
     
     //Personalizamos el slider de velocidad
@@ -123,30 +107,13 @@
     maxImageVe = nil;
     thumbImageVe = nil;
     
-    /*NSError * error;
-    
-    self.cancionActual = [[NSBundle mainBundle] pathForResource:@"dePeli" ofType:@"mp3"];
-    
-    NSURL * url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
-    self.reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
-    
-    self.reproductor.pan = 0;
-    self.reproductor.volume = 0.5;
-    
-    self.reproductor.enableRate = YES;
-    self.reproductor.rate = 1;
-    [self.reproductor prepareToPlay];*/
-   
-    //Se oculta las imagenes asignadas a los botones del tocadiscos (play, pause, stop)
-    /*[self.playButton setImage:NO forState:UIControlStateNormal];
-    [self.pauseButton setImage:NO forState:UIControlStateNormal];
-    [self.stopButton setImage:NO forState:UIControlStateNormal]; */
     [playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
     
     /******************************** INICIALIZACION DE VARIABLE DE STATUS DE PAUSE (ADRIAN) *********************/
+    
     pausado = NO;
     /*******************************************************************************************/
-   
+    
     
 }
 
@@ -175,7 +142,7 @@
     //Animación
     float time = 1.00;
     [animacion inicioAnimacion:time];
-        
+    
     //Gira el brazo de la aguja
     [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.4];
     
@@ -206,7 +173,7 @@
     
     self.reproductor.rate = rateActualFloat;
     self.reproductor.currentTime = timeActualFloat;
-  
+    
     
     
     //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
@@ -222,6 +189,7 @@
     
     //Comienza a sonar la canción
     [self.reproductor play];
+    
     
     /******************************** VERSION ADRIAN PROGRESS BAR Y LABELS *********************/
     float duracionAudio = [self.reproductor duration];
@@ -277,33 +245,6 @@
         //Ajuste del Label del tiempo transcurrido
         self.tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
     }
-}
-
-- (IBAction)Pausa:(id)sender {
-    //Pone el botón del pause en color verde.
-    [self.pauseButton setImage:[UIImage imageNamed:@"BotonPauseVerde.png"] forState:UIControlStateNormal];
-    //Apaga el botón play y stop
-    [self.playButton setImage:NO forState:UIControlStateNormal];
-    [self.stopButton setImage:NO forState:UIControlStateNormal];
-    
-    /********************* MODIFICACIÓN ADRIÁN *****************/
-    if (pausado) {
-        [self.reproductor play];
-        pausado = NO;
-        return;
-    }
-     /***********************************************************/
-    
-    [animacion inicioAnimacion:1.0];
-    timeActualFloat = self.reproductor.currentTime;
-
-    [disco pararGiro];
-
-    [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
-    
-    [animacion finAnimacion];
-    
-    [self.reproductor pause];
 }
 
 - (IBAction)Stop:(id)sender {
@@ -378,11 +319,10 @@
 }
 
 /*Adrian: Invoqué el metodo IBAction ya definido ya que contiene toda la animacion y play de la cancion*/
+
 - (void) nuevaCancion: (NSString *) cancion;
 {
     self.cancionActual = cancion;
-    
-    
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -394,7 +334,6 @@
         nuevaCancionViewController.delegate = self;
         
     }
-    
 }
 
 @end

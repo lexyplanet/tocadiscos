@@ -215,10 +215,11 @@
             </objects>
             <point key="canvasLocation" x="25" y="-617"/>
         </scene>
-        <!--Tocadiscos View Controller-->
+        <!--View Controller-->
         <scene sceneID="Moc-S1-uX9">
             <objects>
-                <viewController id="XHD-zP-ck8" customClass="TocadiscosViewController" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f97-pz-xct" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="tocadiscosClean" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XHD-zP-ck8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q9n-Yq-zSl">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -264,7 +265,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KTg-ay-lcP">
-                                <rect key="frame" x="15" y="160" width="42" height="21"/>
+                                <rect key="frame" x="15" y="160" width="42" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -278,7 +279,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dt3-V5-lmU">
-                                <rect key="frame" x="150" y="330" width="68" height="67"/>
+                                <rect key="frame" x="148" y="330" width="68" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="play-on.png">
@@ -288,16 +289,10 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="Play:" destination="XHD-zP-ck8" eventType="touchUpInside" id="uBc-2g-WHP"/>
-                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" id="DMv-IK-AJr">
                                 <rect key="frame" x="38" y="283" width="252" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="cambioVolumen:" destination="XHD-zP-ck8" eventType="valueChanged" id="4Po-wP-G32"/>
-                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="80Z-8z-4Ha">
                                 <rect key="frame" x="101" y="347" width="35" height="33"/>
@@ -310,9 +305,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="Stop:" destination="XHD-zP-ck8" eventType="touchUpInside" id="C77-39-cZ5"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -325,18 +317,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="brazoAgujaImageView" destination="qW6-ud-ZAP" id="tYH-Uc-DF4"/>
-                        <outlet property="discoImageView" destination="WQs-SR-83v" id="5PM-JF-JAS"/>
-                        <outlet property="playButton" destination="dt3-V5-lmU" id="qDd-Dd-oLU"/>
-                        <outlet property="stopButton" destination="80Z-8z-4Ha" id="kNX-cN-8lJ"/>
-                        <outlet property="tiempoQueTranscurre" destination="Rmt-oe-7Ep" id="Pi1-Kt-XBo"/>
-                        <outlet property="tiempoTotal" destination="KTg-ay-lcP" id="etn-jR-nfe"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f97-pz-xct" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-543" y="-979"/>
+            <point key="canvasLocation" x="-521" y="-1413"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9B9-Sc-SbR">
@@ -375,44 +358,12 @@
         <image name="pre.png" width="20" height="12"/>
         <image name="stop-on.png" width="48" height="50"/>
     </resources>
-    <classes>
-        <class className="NuevaCancionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NuevaCancionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="hecho:"/>
-                <relationship kind="outlet" name="hechoBarButtonItem" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="pickerMusicItem" candidateClass="UIPickerView"/>
-            </relationships>
-        </class>
-        <class className="TocadiscosViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TocadiscosViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Pausa:"/>
-                <relationship kind="action" name="Play:"/>
-                <relationship kind="action" name="Stop:"/>
-                <relationship kind="action" name="cambioPan:"/>
-                <relationship kind="action" name="cambioRate:"/>
-                <relationship kind="action" name="cambioVolumen:"/>
-                <relationship kind="outlet" name="_sliderRate" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="_sliderStereo" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="_sliderVolumen" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="barraProgreso" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="brazoAgujaImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="discoImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tiempoQueTranscurre" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tiempoTotal" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dIH-qc-ark"/>
+        <segue reference="7Bd-PF-qww"/>
     </inferredMetricsTieBreakers>
 </document>

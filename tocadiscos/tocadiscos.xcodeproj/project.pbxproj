@@ -32,6 +32,10 @@
 		CE7438FB1647BC9000CF2C8C /* stop-on.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7438EC1647BC9000CF2C8C /* stop-on.png */; };
 		CE7438FC1647BC9000CF2C8C /* Tocadiscos.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7438ED1647BC9000CF2C8C /* Tocadiscos.png */; };
 		CE7438FE1647BE1E00CF2C8C /* disco_Clean.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7438FD1647BE1E00CF2C8C /* disco_Clean.png */; };
+		CE74390B1647C5FE00CF2C8C /* SliderRetro.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74390A1647C5FE00CF2C8C /* SliderRetro.m */; };
+		CE74390E1647C69400CF2C8C /* ProgressMusicBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74390D1647C69400CF2C8C /* ProgressMusicBar.m */; };
+		CE7439111647C73E00CF2C8C /* PlayerMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7439101647C73E00CF2C8C /* PlayerMedia.m */; };
+		CE74391B1647D41800CF2C8C /* TocadiscosCleanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74391A1647D41800CF2C8C /* TocadiscosCleanViewController.m */; };
 		CE743E3016453340006B60BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE743E2F16453340006B60BD /* QuartzCore.framework */; };
 		CE743E35164549BA006B60BD /* Disco.m in Sources */ = {isa = PBXBuildFile; fileRef = CE743E34164549BA006B60BD /* Disco.m */; };
 		CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE755F8E163F24F800DA58B8 /* Aguja2.png */; };
@@ -105,6 +109,14 @@
 		CE7438EC1647BC9000CF2C8C /* stop-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-on.png"; sourceTree = "<group>"; };
 		CE7438ED1647BC9000CF2C8C /* Tocadiscos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tocadiscos.png; sourceTree = "<group>"; };
 		CE7438FD1647BE1E00CF2C8C /* disco_Clean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disco_Clean.png; sourceTree = "<group>"; };
+		CE7439091647C5FE00CF2C8C /* SliderRetro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderRetro.h; sourceTree = "<group>"; };
+		CE74390A1647C5FE00CF2C8C /* SliderRetro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderRetro.m; sourceTree = "<group>"; };
+		CE74390C1647C69400CF2C8C /* ProgressMusicBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressMusicBar.h; sourceTree = "<group>"; };
+		CE74390D1647C69400CF2C8C /* ProgressMusicBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressMusicBar.m; sourceTree = "<group>"; };
+		CE74390F1647C73E00CF2C8C /* PlayerMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerMedia.h; sourceTree = "<group>"; };
+		CE7439101647C73E00CF2C8C /* PlayerMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerMedia.m; sourceTree = "<group>"; };
+		CE7439191647D41800CF2C8C /* TocadiscosCleanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TocadiscosCleanViewController.h; sourceTree = "<group>"; };
+		CE74391A1647D41800CF2C8C /* TocadiscosCleanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TocadiscosCleanViewController.m; sourceTree = "<group>"; };
 		CE743E2F16453340006B60BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE743E33164549BA006B60BD /* Disco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Disco.h; sourceTree = "<group>"; };
 		CE743E34164549BA006B60BD /* Disco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Disco.m; sourceTree = "<group>"; };
@@ -210,6 +222,42 @@
 			name = Animacion;
 			sourceTree = "<group>";
 		};
+		CE7438FF1647C16C00CF2C8C /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				CE7439091647C5FE00CF2C8C /* SliderRetro.h */,
+				CE74390A1647C5FE00CF2C8C /* SliderRetro.m */,
+			);
+			name = Slider;
+			sourceTree = "<group>";
+		};
+		CE7439001647C19000CF2C8C /* ProgressMusicBar */ = {
+			isa = PBXGroup;
+			children = (
+				CE74390C1647C69400CF2C8C /* ProgressMusicBar.h */,
+				CE74390D1647C69400CF2C8C /* ProgressMusicBar.m */,
+			);
+			name = ProgressMusicBar;
+			sourceTree = "<group>";
+		};
+		CE7439021647C1D400CF2C8C /* PlayerMedia */ = {
+			isa = PBXGroup;
+			children = (
+				CE74390F1647C73E00CF2C8C /* PlayerMedia.h */,
+				CE7439101647C73E00CF2C8C /* PlayerMedia.m */,
+			);
+			name = PlayerMedia;
+			sourceTree = "<group>";
+		};
+		CE7439181647D3F800CF2C8C /* TocadiscosCleanViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				CE7439191647D41800CF2C8C /* TocadiscosCleanViewController.h */,
+				CE74391A1647D41800CF2C8C /* TocadiscosCleanViewController.m */,
+			);
+			name = TocadiscosCleanViewControler;
+			sourceTree = "<group>";
+		};
 		CE743E321645496B006B60BD /* Disco */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +316,7 @@
 				CE9FE9DF163DDB7E001DBBA9 /* AppDelegate.m */,
 				CE9FE9E7163DDB7E001DBBA9 /* MainStoryboard.storyboard */,
 				CE9FEA50163DE650001DBBA9 /* TocadiscosViewController */,
+				CE7439181647D3F800CF2C8C /* TocadiscosCleanViewControler */,
 				CE9FEA54163DE694001DBBA9 /* NuevaCancionViewController */,
 				CEADD36C16447EA200815EC5 /* Sonido */,
 				CEADD37016448EA800815EC5 /* Retardo */,
@@ -275,7 +324,10 @@
 				CE743E321645496B006B60BD /* Disco */,
 				CE73E15416456D0F00015FBA /* Animacion */,
 				CE73CEDF1645726D00E398BE /* PlayerPicker */,
+				CE7439021647C1D400CF2C8C /* PlayerMedia */,
+				CE7439001647C19000CF2C8C /* ProgressMusicBar */,
 				CE73CEE41645790A00E398BE /* Botones */,
+				CE7438FF1647C16C00CF2C8C /* Slider */,
 				CE9FE9D6163DDB7E001DBBA9 /* Supporting Files */,
 			);
 			path = tocadiscos;
@@ -508,6 +560,10 @@
 				CE73E15816456D3500015FBA /* Animacion.m in Sources */,
 				CE73CEE31645729E00E398BE /* PlayerPicker.m in Sources */,
 				CE73CEE71645794000E398BE /* BotonesRetro.m in Sources */,
+				CE74390B1647C5FE00CF2C8C /* SliderRetro.m in Sources */,
+				CE74390E1647C69400CF2C8C /* ProgressMusicBar.m in Sources */,
+				CE7439111647C73E00CF2C8C /* PlayerMedia.m in Sources */,
+				CE74391B1647D41800CF2C8C /* TocadiscosCleanViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

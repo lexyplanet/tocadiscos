@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 LexyPlanet. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import "BotonesRetro.h"
@@ -25,6 +26,15 @@
             andPauseButton: (UIButton*)nuevoPauseButton
              andStopButton: (UIButton*)nuevoStopButton;
 
-- (void) playReproductor;
+@property(nonatomic, strong) NSTimer *timer; //ADRIAN
+
+-(void) playButton;
+-(void) pauseButton;
+-(void) stopButton;
+-(void) nextButton:(id)sender;
+-(void) forwardButton:(id)sender;
+-(void) volumen:(id)sender;
+-(void) songCurrent: (UILabel*) tiempoQueTranscurre;
+-(NSString*) songTime;
 
 @end
