@@ -22,19 +22,20 @@
 @property (nonatomic, strong) AVAudioPlayer *reproductor;
 @property(nonatomic, strong) NSString* cancionActual;
 
+@property(nonatomic, strong) NSTimer *timer; //ADRIAN
+
 - (void) iniciaReproductor: (UIButton*)nuevoPlayButton
             andPauseButton: (UIButton*)nuevoPauseButton
              andStopButton: (UIButton*)nuevoStopButton;
-
-@property(nonatomic, strong) NSTimer *timer; //ADRIAN
-
 -(void) playButton;
 -(void) pauseButton;
 -(void) stopButton;
 -(void) nextButton:(id)sender;
 -(void) forwardButton:(id)sender;
 -(void) volumen:(id)sender;
--(void) songCurrent: (UILabel*) tiempoQueTranscurre;
 -(NSString*) songTime;
+-(void) songCurrent: (UILabel*) tiempoQueTranscurre;
+
+- (void)updateProgressBar:(NSTimer *)timer tiempoQueTranscurre:(UILabel*)tiempoQueTranscurre;
 
 @end

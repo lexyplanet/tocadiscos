@@ -74,18 +74,4 @@
 - (IBAction)cambioPan:(id)sender;
 - (IBAction)cambioRate:(id)sender;
 
-
-//METHODS
-/* - (void)viewDidUnload;
-- (void)viewWillAppear:(BOOL)animated;
-- (void)viewDidAppear:(BOOL)animated;
-- (void)viewWillDisappear:(BOOL)animated;
-- (void)viewDidDisappear:(BOOL)animated;
-- (BOOL)shouldAutorotateToInterfaceOrientation;
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender; */
-
-
-- (void) updateProgressBar:(NSTimer *) timer; //BORRAR - SOLO PARA QUITAR MENSAJES WARNING
-- (void) nuevaCancion: (NSString *) cancion;
-
 @end

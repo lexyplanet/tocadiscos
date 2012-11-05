@@ -42,32 +42,39 @@
     //[botonStop apagarStop:nuevoStopButton];
 }
 
--(void) playButton{
+-(void) playButton
+{
     [reproductor play];
 }
 
--(void) pauseButton{
+-(void) pauseButton
+{
     [reproductor pause];
 }
 
--(void) stopButton{
+-(void) stopButton
+{
     reproductor.currentTime=0;
     [reproductor stop];
 }
 
--(void) nextButton:(id)sender{
+-(void) nextButton:(id)sender
+{
     
 }
 
--(void) forwardButton:(id)sender{
+-(void) forwardButton:(id)sender
+{
     
 }
 
--(void) volumen:(id)sender{
+-(void) volumen:(id)sender
+{
     reproductor.volume = ((UISlider *) sender).value;
 }
 
--(NSString*) songTime{
+-(NSString*) songTime
+{
     /******************************** VERSION ADRIAN PROGRESS BAR Y LABELS *********************/
     float duracionAudio = [self.reproductor duration];
     
@@ -120,5 +127,6 @@
     //Ajuste del Label del tiempo transcurrido
     tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
 }
+
 
 @end

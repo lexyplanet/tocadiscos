@@ -72,7 +72,5 @@
 - (IBAction)Pausa:(id)sender;
 - (IBAction)Stop:(id)sender;
 - (IBAction)cambioVolumen:(id)sender;
-- (IBAction)cambioPan:(id)sender;
-- (IBAction)cambioRate:(id)sender;
 
 @end

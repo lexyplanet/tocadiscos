@@ -7,9 +7,9 @@
 //
 
 #import "TocadiscosViewController.h"
-//#import "NuevaCancionViewController.h"
-//#import "Sonido.h"
-//#import "Retardo.h"
+#import "NuevaCancionViewController.h"
+#import "Sonido.h"
+#import "Retardo.h"
 
 
 @interface TocadiscosViewController ()
@@ -56,6 +56,8 @@
     
     [rateSlider personalizarSlider:@"ControlVelocidadHorizontal-02.png" andImagenMin:@"ControlVelocidadHorizontal-02.png" andImagenMax:@"BotonControlVelocidadHorizontal-03.png" andVertical:YES];
     
+    
+    
     /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro */
     [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
     
@@ -70,6 +72,32 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Métodos heredados de la clase ViewController
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear:animated];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
 
 #pragma mark - IBActions
 - (IBAction)Play:(id)sender
@@ -152,6 +180,21 @@
     /******************************************************************************/
 }
 
+- (IBAction)Pausa:(id)sender {
+    //Pone el botón del pause en color verde.
+    [self.pauseButton setImage:[UIImage imageNamed:@"BotonPauseVerde.png"] forState:UIControlStateNormal];
+    //Apaga el botón play y stop
+    [self.playButton setImage:NO forState:UIControlStateNormal];
+    [self.stopButton setImage:NO forState:UIControlStateNormal];
+    
+    /********************* MODIFICACIÓN ADRIÁN *****************/
+    if (pausado) {
+        //[self.reproductor play];
+        pausado = NO;
+        return;
+    }
+}
+
 - (IBAction)Stop:(id)sender
 {
     //Pone el botón del stop en color verde.
@@ -199,31 +242,7 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
 
 /******************************* ACTUALIZA PROGRESSBAR (ADRIAN) ************************************/
 #pragma mark - UpdateProgressBar

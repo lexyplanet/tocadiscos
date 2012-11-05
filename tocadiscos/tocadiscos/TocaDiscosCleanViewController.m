@@ -152,6 +152,21 @@
     }
 }
 
+- (IBAction)Pausa:(id)sender {
+    //Pone el botón del pause en color verde.
+    [self.pauseButton setImage:[UIImage imageNamed:@"BotonPauseVerde.png"] forState:UIControlStateNormal];
+    //Apaga el botón play y stop
+    [self.playButton setImage:NO forState:UIControlStateNormal];
+    [self.stopButton setImage:NO forState:UIControlStateNormal];
+    
+    /********************* MODIFICACIÓN ADRIÁN *****************/
+    if (pausado) {
+        //[self.reproductor play];
+        pausado = NO;
+        return;
+    }
+}
+
 /******************************* ACTUALIZA PROGRESSBAR (ADRIAN) ************************************/
 #pragma mark - UpdateProgressBar
 /*- (void)updateProgressBar:(NSTimer *)timer
