@@ -8,6 +8,7 @@
         <!--Tocadiscos View Controller-->
         <scene sceneID="lIV-HM-cCg">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G2W-6n-WZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="tocadiscos" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4cE-ct-c0a" customClass="TocadiscosViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MSj-PA-BTh">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
@@ -164,13 +165,13 @@
                         <outlet property="tiempoTotal" destination="6tK-dQ-8TI" id="xfx-Im-KEV"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G2W-6n-WZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-543" y="-263"/>
         </scene>
         <!--Nueva Cancion View Controller-->
         <scene sceneID="MxW-RN-RBw">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGM-OA-spj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="hdl-C1-uAv" customClass="NuevaCancionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c6e-6c-Ed3">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
@@ -211,15 +212,14 @@
                         <outlet property="view" destination="c6e-6c-Ed3" id="bae-QG-O39"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hGM-OA-spj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="25" y="-617"/>
         </scene>
-        <!--View Controller-->
+        <!--Tocadiscos Clean View Controller-->
         <scene sceneID="Moc-S1-uX9">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f97-pz-xct" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="tocadiscosClean" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XHD-zP-ck8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tocadiscosClean" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XHD-zP-ck8" customClass="TocadiscosCleanViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q9n-Yq-zSl">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -324,6 +324,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9B9-Sc-SbR">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3w0-bf-9Ky" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="5fD-Ml-VoY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IQ3-JO-ei1">
@@ -335,7 +336,6 @@
                         <segue destination="4cE-ct-c0a" kind="relationship" relationship="rootViewController" id="Hqe-OL-BOS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3w0-bf-9Ky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1040" y="-263"/>
         </scene>
@@ -364,6 +364,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="7Bd-PF-qww"/>
+        <segue reference="dIH-qc-ark"/>
     </inferredMetricsTieBreakers>
 </document>
