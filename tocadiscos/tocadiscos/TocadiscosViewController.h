@@ -17,7 +17,7 @@
 #import "Animacion.h"
 #import "PlayerPicker.h"
 #import "BotonesRetro.h"
-#import "SliderRetro.h"
+#import "TocadiscosSlider.h"
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 {
@@ -42,7 +42,7 @@
     Disco *disco;
     Animacion *animacion;
     PlayerPicker *playerPicker;
-    SliderRetro* sliderRetro;
+    TocadiscosSlider* sliderRetro;
 }
 
 

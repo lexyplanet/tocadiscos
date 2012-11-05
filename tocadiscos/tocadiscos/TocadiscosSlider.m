@@ -1,14 +1,14 @@
 //
-//  SliderImageView.m
+//  TocadiscosSlider.m
 //  tocadiscos
 //
 //  Created by Lion User on 05/11/12.
 //  Copyright (c) 2012 LexyPlanet. All rights reserved.
 //
 
-#import "SliderImageView.h"
+#import "TocadiscosSlider.h"
 
-@implementation SliderImageView
+@implementation TocadiscosSlider
 
 - (id)initWithFrame:(CGRect)frame
 {

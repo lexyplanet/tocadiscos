@@ -1,5 +1,5 @@
 //
-//  SliderImageView.h
+//  TocadiscosSlider.h
 //  tocadiscos
 //
 //  Created by Lion User on 05/11/12.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SliderImageView : UIImageView
+@interface TocadiscosSlider : UISlider
 
 - (void)personalizar:(UISlider*)Slider:(NSString*)archivothumb
         andImagenMin:(NSString*)archivoImageMin

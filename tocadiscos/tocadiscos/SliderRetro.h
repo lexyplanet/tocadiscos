@@ -15,6 +15,6 @@
         andImagenMax:(NSString*)archivoImageMax
         andVertical:(BOOL)vertical;
 
-;
+
 
 @end

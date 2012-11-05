@@ -53,7 +53,7 @@
     disco = [[Disco alloc] init];
     animacion = [[Animacion alloc] init];
     playerPicker = [[PlayerPicker alloc] init];
-    sliderRetro= [[SliderRetro alloc] init];
+    sliderRetro= [[TocadiscosSlider alloc] init];
     
     
     //Personalizamos el slider de Stereo
