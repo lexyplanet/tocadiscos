@@ -21,7 +21,7 @@
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 {
-    //REPRODUCTOR ESTILO RETRO
+        //REPRODUCTOR ESTILO RETRO
     /* Variables Auxiliares para el ajuste de valores en el reproductor al momento de cambiar de cancion */
     float panActualFloat;
     float volumenActualFloat;
@@ -43,7 +43,6 @@
 //PROPERTIES
 //Sliders
 @property (strong, nonatomic) IBOutlet TocadiscosSlider *panSlider; //para personalizar otro slider
-
 @property (strong, nonatomic) IBOutlet TocadiscosSlider *volumenSlider; //para personalizar otro slider
 @property (strong, nonatomic) IBOutlet TocadiscosSlider *rateSlider; //para personalizar Slider rate
 
