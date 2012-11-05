@@ -1,5 +1,5 @@
 //
-//  SliderRetro.h
+//  SliderImageView.h
 //  tocadiscos
 //
 //  Created by Lion User on 05/11/12.
@@ -8,13 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SliderRetro : UISlider
+@interface SliderImageView : UIImageView
 
 - (void)personalizar:(UISlider*)Slider:(NSString*)archivothumb
         andImagenMin:(NSString*)archivoImageMin
         andImagenMax:(NSString*)archivoImageMax
-        andVertical:(BOOL)vertical;
-
-;
+         andVertical:(BOOL)vertical;
 
 @end

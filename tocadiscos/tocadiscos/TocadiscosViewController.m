@@ -46,22 +46,14 @@
 {
     [super viewDidLoad];
     
-    /*************** PEDRO 3-11-2012 **************/
-    //Inicializa el objeto de la clase Sonido
+    //Inicialización de objetos
     sonido = [[Sonido alloc] init];
-    //Inicializa el objeto de la clase Retardo
     retardo = [[Retardo alloc] init];
-    //Inicializa el objeto de la clase GiroBrazo
     brazo = [[GiroBrazo alloc] init];
-    //Inicializa el objeto de la clase Disco
     disco = [[Disco alloc] init];
-    //Inicializa el objeto de la clase Animación
     animacion = [[Animacion alloc] init];
-    //Inicializa el objeto de la clase PlayerPicker
     playerPicker = [[PlayerPicker alloc] init];
-    
     sliderRetro= [[SliderRetro alloc] init];
-    /*********************************************/
     
     
     //Personalizamos el slider de Stereo

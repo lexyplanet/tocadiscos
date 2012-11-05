@@ -21,36 +21,28 @@
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 {
-    //REPRODUCTOR 
+    //REPRODUCTOR ESTILO RETRO
     /* Variables Auxiliares para el ajuste de valores en el reproductor al momento de cambiar de cancion */
     float panActualFloat;
     float volumenActualFloat;
     float rateActualFloat;
     float timeActualFloat;
     
-    //IBOutlet UISlider *_sliderVolumen;//para personalizar un slider de Volumen
+    IBOutlet UISlider *_sliderVolumen;//para personalizar un slider de Volumen
     
     IBOutlet UISlider *_sliderStereo;//para personalizar un slider de Stereo
     IBOutlet UISlider *_sliderRate; //para personalizar un slider de rate
-    //BOOL animating; //esta variable ayuda a saber si esta animando o corriendo el bucle.GIRODISCO
     BOOL pausado;   //Variable para el status de Pause ADRIAN
     
-    /********* PEDRO 3-11-2012 *************/
-    //Objeto para escuchar un sonido
+    //Creacón de objetos
     Sonido *sonido;
-    //Objeto para crear un retardo en la ejecución del programa
     Retardo *retardo;
-    //Objeto para realizar el giro del brazo de la aguja
     GiroBrazo *brazo;
     NSString *nombreImagenBrazo;
-    //Objeto para hacer girar el disco
     Disco *disco;
-    //Objeto para crear animaciones
     Animacion *animacion;
-    //Objeto para crear el player que selecciona las canciones mediante el Picker
     PlayerPicker *playerPicker;
     SliderRetro* sliderRetro;
-    /*************************************/
 }
 
 
@@ -86,10 +78,5 @@
 - (void)updateProgressBar:(NSTimer *)timer; //BORRAR - SOLO PARA QUITAR MENSAJES WARNING
 - (void) nuevaCancion: (NSString *) cancion;
 
-//Agregue estas 3 funciones que controlan el bucle.
-/*-(void)spin; //Ejecuta el bucle o animación GIRODISCO
- -(void)startSpin;//Inicia el bucle o animación GIRODISCO
- -(void)stopSpin;//Para el bucle o animación GIRODISCO */
-//-----------
 
 @end

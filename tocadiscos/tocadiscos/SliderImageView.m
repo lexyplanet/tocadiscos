@@ -1,14 +1,14 @@
 //
-//  SliderRetro.m
+//  SliderImageView.m
 //  tocadiscos
 //
 //  Created by Lion User on 05/11/12.
 //  Copyright (c) 2012 LexyPlanet. All rights reserved.
 //
 
-#import "SliderRetro.h"
+#import "SliderImageView.h"
 
-@implementation SliderRetro
+@implementation SliderImageView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -45,12 +45,12 @@
 }
 
 /*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect
- {
- // Drawing code
- }
- */
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect
+{
+    // Drawing code
+}
+*/
 
 @end

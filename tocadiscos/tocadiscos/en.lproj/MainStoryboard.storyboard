@@ -80,7 +80,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" id="Los-Bb-gX7">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" id="Los-Bb-gX7" customClass="SliderRetro">
                                 <rect key="frame" x="-8" y="304" width="108" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -93,7 +93,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="RJ7-bd-Lwu" customClass="VolumenSlider">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="RJ7-bd-Lwu" customClass="SliderRetro">
                                 <rect key="frame" x="219" y="304" width="107" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -101,7 +101,7 @@
                                     <action selector="cambioVolumen:" destination="4cE-ct-c0a" eventType="valueChanged" id="Pwn-tX-VpC"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" id="Eiz-04-Lf4">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" id="Eiz-04-Lf4" customClass="SliderRetro">
                                 <rect key="frame" x="146" y="360" width="92" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -384,6 +384,9 @@
                 <relationship kind="outlet" name="pickerMusicItem" candidateClass="UIPickerView"/>
             </relationships>
         </class>
+        <class className="SliderRetro" superclassName="UISlider">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SliderRetro.h"/>
+        </class>
         <class className="TocadiscosCleanViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TocadiscosCleanViewController.h"/>
             <relationships>
@@ -434,6 +437,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dIH-qc-ark"/>
+        <segue reference="7Bd-PF-qww"/>
     </inferredMetricsTieBreakers>
 </document>
