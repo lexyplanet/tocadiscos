@@ -24,6 +24,7 @@
 
 @synthesize _sliderStereo;
 @synthesize _sliderRate;
+@synthesize _sliderVolumen;
 @synthesize reproductor;
 @synthesize barraProgreso; //ADRIAN
 @synthesize brazoAgujaImageView; //GIROBRAZO
@@ -124,7 +125,8 @@
 }
 
 
-- (IBAction)Play:(id)sender {
+- (IBAction)Play:(id)sender
+{
     //Pone el botón del play en color verde.
     [self.playButton setImage:[UIImage imageNamed:@"BotonPlayVerde.png"] forState:UIControlStateNormal];
     //Apaga el botón pause y stop
@@ -247,7 +249,8 @@
     }
 }
 
-- (IBAction)Stop:(id)sender {
+- (IBAction)Stop:(id)sender
+{
     //Pone el botón del stop en color verde.
     [self.stopButton setImage:[UIImage imageNamed:@"BotonStopVerde.png"] forState:UIControlStateNormal];
     //Apaga el botón play y pause
@@ -266,16 +269,19 @@
 
 
 
-- (IBAction)cambioVolumen:(id)sender {
+- (IBAction)cambioVolumen:(id)sender
+{
     self.reproductor.volume = ((UISlider *) sender).value;
     //NSLog(@"%f", self.reproductor.volume);
 }
 
-- (IBAction)cambioPan:(id)sender {
+- (IBAction)cambioPan:(id)sender
+{
     self.reproductor.pan = ((UISlider *) sender).value;
 }
 
-- (IBAction)cambioRate:(id)sender {
+- (IBAction)cambioRate:(id)sender
+{
     NSLog(@"%f", ((UISlider *) sender).value);
     self.reproductor.rate = ((UISlider *) sender).value;
 }
@@ -320,7 +326,7 @@
 
 /*Adrian: Invoqué el metodo IBAction ya definido ya que contiene toda la animacion y play de la cancion*/
 
-- (void) nuevaCancion: (NSString *) cancion;
+- (void) nuevaCancion: (NSString *) cancion
 {
     self.cancionActual = cancion;
 }

@@ -36,7 +36,6 @@
 		CE74390E1647C69400CF2C8C /* ProgressMusicBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74390D1647C69400CF2C8C /* ProgressMusicBar.m */; };
 		CE7439111647C73E00CF2C8C /* PlayerMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7439101647C73E00CF2C8C /* PlayerMedia.m */; };
 		CE74391B1647D41800CF2C8C /* TocadiscosCleanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74391A1647D41800CF2C8C /* TocadiscosCleanViewController.m */; };
-		CE7439221647D6E800CF2C8C /* TocadiscosRetroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7439211647D6E800CF2C8C /* TocadiscosRetroViewController.m */; };
 		CE743E3016453340006B60BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE743E2F16453340006B60BD /* QuartzCore.framework */; };
 		CE743E35164549BA006B60BD /* Disco.m in Sources */ = {isa = PBXBuildFile; fileRef = CE743E34164549BA006B60BD /* Disco.m */; };
 		CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE755F8E163F24F800DA58B8 /* Aguja2.png */; };
@@ -118,8 +117,6 @@
 		CE7439101647C73E00CF2C8C /* PlayerMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerMedia.m; sourceTree = "<group>"; };
 		CE7439191647D41800CF2C8C /* TocadiscosCleanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TocadiscosCleanViewController.h; sourceTree = "<group>"; };
 		CE74391A1647D41800CF2C8C /* TocadiscosCleanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TocadiscosCleanViewController.m; sourceTree = "<group>"; };
-		CE7439201647D6E800CF2C8C /* TocadiscosRetroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TocadiscosRetroViewController.h; sourceTree = "<group>"; };
-		CE7439211647D6E800CF2C8C /* TocadiscosRetroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TocadiscosRetroViewController.m; sourceTree = "<group>"; };
 		CE743E2F16453340006B60BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE743E33164549BA006B60BD /* Disco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Disco.h; sourceTree = "<group>"; };
 		CE743E34164549BA006B60BD /* Disco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Disco.m; sourceTree = "<group>"; };
@@ -318,7 +315,7 @@
 				CE9FE9DE163DDB7E001DBBA9 /* AppDelegate.h */,
 				CE9FE9DF163DDB7E001DBBA9 /* AppDelegate.m */,
 				CE9FE9E7163DDB7E001DBBA9 /* MainStoryboard.storyboard */,
-				CE9FEA50163DE650001DBBA9 /* TocadiscosViewRetroController */,
+				CE9FEA50163DE650001DBBA9 /* TocadiscosViewController */,
 				CE7439181647D3F800CF2C8C /* TocadiscosCleanViewControler */,
 				CE9FEA54163DE694001DBBA9 /* NuevaCancionViewController */,
 				CEADD36C16447EA200815EC5 /* Sonido */,
@@ -406,15 +403,13 @@
 			name = Canciones;
 			sourceTree = "<group>";
 		};
-		CE9FEA50163DE650001DBBA9 /* TocadiscosViewRetroController */ = {
+		CE9FEA50163DE650001DBBA9 /* TocadiscosViewController */ = {
 			isa = PBXGroup;
 			children = (
 				CE9FEA4D163DE64A001DBBA9 /* TocadiscosViewController.h */,
 				CE9FEA4E163DE64A001DBBA9 /* TocadiscosViewController.m */,
-				CE7439201647D6E800CF2C8C /* TocadiscosRetroViewController.h */,
-				CE7439211647D6E800CF2C8C /* TocadiscosRetroViewController.m */,
 			);
-			name = TocadiscosViewRetroController;
+			name = TocadiscosViewController;
 			sourceTree = "<group>";
 		};
 		CE9FEA54163DE694001DBBA9 /* NuevaCancionViewController */ = {
@@ -569,7 +564,6 @@
 				CE74390E1647C69400CF2C8C /* ProgressMusicBar.m in Sources */,
 				CE7439111647C73E00CF2C8C /* PlayerMedia.m in Sources */,
 				CE74391B1647D41800CF2C8C /* TocadiscosCleanViewController.m in Sources */,
-				CE7439221647D6E800CF2C8C /* TocadiscosRetroViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

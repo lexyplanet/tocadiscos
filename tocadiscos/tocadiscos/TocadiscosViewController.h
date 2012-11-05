@@ -21,6 +21,7 @@
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 {
+    //REPRODUCTOR 
     /* Variables Auxiliares para el ajuste de valores en el reproductor al momento de cambiar de cancion */
     float panActualFloat;
     float volumenActualFloat;
@@ -81,6 +82,9 @@
 - (IBAction)cambioVolumen:(id)sender;
 - (IBAction)cambioPan:(id)sender;
 - (IBAction)cambioRate:(id)sender;
+
+- (void)updateProgressBar:(NSTimer *)timer; //BORRAR - SOLO PARA QUITAR MENSAJES WARNING
+- (void) nuevaCancion: (NSString *) cancion;
 
 //Agregue estas 3 funciones que controlan el bucle.
 /*-(void)spin; //Ejecuta el bucle o animación GIRODISCO
