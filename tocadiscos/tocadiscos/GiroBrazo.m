@@ -3,7 +3,7 @@
 //  tocadiscos
 //
 //  Created by Lion User on 03/11/12.
-//  Copyright (c) 2012 LexyPlanet. All rights reserved.
+//  Copyright (c) 2012 LexyPlanet. All rights reserved...
 //
 
 #import "GiroBrazo.h"
