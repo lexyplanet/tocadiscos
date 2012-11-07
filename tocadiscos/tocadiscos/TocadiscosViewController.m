@@ -137,8 +137,14 @@
             
             [animacion finAnimacion];
             
+            
+            //volumenActualFloat = reproductorAudioPlayer.volume;
+            
+            reproductorAudioPlayer.volume = volumenActualFloat;
+            
             //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
             [retardo tiempoEspera:time];
+            
             
             //Simula el sonido del contacto de la aguja sobre el vinilo
             [sonido setSonido:@"Vinilo" andExtension:@"mp3"];

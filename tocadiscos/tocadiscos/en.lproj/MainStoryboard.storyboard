@@ -158,7 +158,7 @@
                         <outlet property="brazoAgujaImageView" destination="wyF-V5-qC0" id="W2I-pW-BZW"/>
                         <outlet property="cancionProgressView" destination="jLk-hT-5mf" id="iQQ-gy-VcM"/>
                         <outlet property="discoImageView" destination="la1-In-508" id="bph-gu-mEh"/>
-                        <outlet property="panSlider" destination="Los-Bb-gX7" id="jvX-qO-330"/>
+                        <outlet property="panSlider" destination="Los-Bb-gX7" id="x1G-8R-gkd"/>
                         <outlet property="pauseButton" destination="Eas-Re-8sB" id="2zT-cg-6fL"/>
                         <outlet property="playButton" destination="S4s-le-aeY" id="Swg-0i-CPX"/>
                         <outlet property="rateSlider" destination="Eiz-04-Lf4" id="sff-6j-2EL"/>

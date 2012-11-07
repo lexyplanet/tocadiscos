@@ -70,4 +70,6 @@
 - (IBAction)Pausa:(id)sender;
 - (IBAction)Stop:(id)sender;
 
+
+
 @end
