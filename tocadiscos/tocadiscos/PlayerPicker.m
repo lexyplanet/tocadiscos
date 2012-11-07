@@ -32,7 +32,7 @@
     
     [reproductor prepareToPlay];
     
-    //Se oculta las imagenes asignadas a los botones del tocadiscos (play, pause, stop)
+    //Oculta las imagenes asignadas a los botones del tocadiscos (play, pause, stop)
     [playButton apagar];
     [pauseButton apagar];
     [stopButton apagar];
