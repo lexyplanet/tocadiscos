@@ -203,7 +203,6 @@
     [playerPicker rate:rateSlider];
 }
 
-
 /******************************* ACTUALIZA PROGRESSBAR (ADRIAN) ************************************/
 #pragma mark - UpdateProgressBar
 - (void)updateProgressBar:(NSTimer *)timer
