@@ -10,7 +10,7 @@
             <objects>
                 <viewController storyboardIdentifier="tocadiscos" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4cE-ct-c0a" customClass="TocadiscosViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MSj-PA-BTh">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Tocadiscos.png" id="x2U-hL-OcR">
@@ -29,7 +29,7 @@
                                 <rect key="frame" x="17" y="248" width="286" height="166"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="S4s-le-aeY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="S4s-le-aeY" customClass="Boton">
                                 <rect key="frame" x="65" y="310" width="67" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
@@ -44,7 +44,7 @@
                                     <action selector="Play:" destination="4cE-ct-c0a" eventType="touchUpInside" id="Hnx-fX-Fkt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Eas-Re-8sB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Eas-Re-8sB" customClass="Boton">
                                 <rect key="frame" x="130" y="310" width="53" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -59,7 +59,7 @@
                                     <action selector="Pausa:" destination="4cE-ct-c0a" eventType="touchUpInside" id="uL5-7K-fPb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kbH-vV-MbD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kbH-vV-MbD" customClass="Boton">
                                 <rect key="frame" x="181" y="310" width="68" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -141,6 +141,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="oKs-1m-9LQ">
+                        <barButtonItem key="leftBarButtonItem" title="Smart" id="Be4-3t-lYf">
+                            <connections>
+                                <segue destination="XHD-zP-ck8" kind="modal" id="VQF-ZH-IbL"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="CarpetaMusica.png" width="11" style="done" id="Gob-96-ddw">
                             <inset key="imageInsets" minX="-15" minY="-4" maxX="-17" maxY="0.0"/>
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -166,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2W-6n-WZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-543" y="-263"/>
+            <point key="canvasLocation" x="-499" y="-263"/>
         </scene>
         <!--Nueva Cancion View Controller-->
         <scene sceneID="MxW-RN-RBw">
@@ -224,11 +229,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg.png" id="FLH-el-jGH">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="disco_Clean.png" id="WQs-SR-83v">
-                                <rect key="frame" x="40" y="7" width="199" height="200"/>
+                                <rect key="frame" x="45" y="62" width="199" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="brazo.png" id="qW6-ud-ZAP">
@@ -314,6 +319,17 @@
                                     <action selector="Stop:" destination="XHD-zP-ck8" eventType="touchUpInside" id="L2P-aX-h2G"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="xYd-nk-fEJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Fashion" id="7Bc-5y-ZgB">
+                                        <connections>
+                                            <segue destination="4cE-ct-c0a" kind="modal" id="5zO-BB-Rvd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -336,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f97-pz-xct" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-543" y="-985"/>
+            <point key="canvasLocation" x="-479" y="-1033"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9B9-Sc-SbR">
@@ -381,6 +397,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="5zO-BB-Rvd"/>
         <segue reference="7Bd-PF-qww"/>
     </inferredMetricsTieBreakers>
 </document>

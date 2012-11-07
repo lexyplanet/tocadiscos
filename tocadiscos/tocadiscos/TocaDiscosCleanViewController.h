@@ -16,7 +16,6 @@
 #import "Disco.h"
 #import "Animacion.h"
 #import "PlayerPicker.h"
-#import "BotonesRetro.h"
 
 @interface TocadiscosCleanViewController : UIViewController <NuevaCancionDelegate>
 {
@@ -44,12 +43,10 @@
     Animacion *animacion;
     //Objeto para crear el player que selecciona las canciones mediante el Picker
     PlayerPicker *playerPicker;
-    //OBjeto para crear los botones.
-    BotonesRetro *botonesRetro;
     /*************************************/
 }
 
-@property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar un slider
+//@property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar un slider
 @property (strong, nonatomic) IBOutlet UISlider *_sliderStereo; //para personalizar otro slider
 
 @property (strong, nonatomic) IBOutlet UILabel *tiempoQueTranscurre;

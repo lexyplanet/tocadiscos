@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CE720D3916450E5200A63A1F /* GiroBrazo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE720D3816450E5200A63A1F /* GiroBrazo.m */; };
-		CE73CEE71645794000E398BE /* BotonesRetro.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73CEE61645794000E398BE /* BotonesRetro.m */; };
 		CE73E15816456D3500015FBA /* Animacion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73E15716456D3500015FBA /* Animacion.m */; };
 		CE7438D01647B99500CF2C8C /* dePeli.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE7438CB1647B99500CF2C8C /* dePeli.mp3 */; };
 		CE7438D11647B99500CF2C8C /* downbeat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE7438CC1647B99500CF2C8C /* downbeat.mp3 */; };
@@ -40,7 +39,8 @@
 		CE9A3E241642E58800F1DC66 /* clic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9A3E221642E58800F1DC66 /* clic.mp3 */; };
 		CE9A3E2B1642E79B00F1DC66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */; };
 		CE9AFD671647F47A009F02D5 /* TocadiscosSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9AFD661647F47A009F02D5 /* TocadiscosSlider.m */; };
-		CE9CDAD616481EF3009204CA /* PlayerPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73CEE21645729E00E398BE /* PlayerPicker.m */; };
+		CE9DDD5F1649DA7900F0DE6C /* Boton.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9DDD5E1649DA7900F0DE6C /* Boton.m */; };
+		CE9DDD621649DDFB00F0DE6C /* PlayerPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73CEE21645729E00E398BE /* PlayerPicker.m */; };
 		CE9FE9D0163DDB7D001DBBA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FE9CF163DDB7D001DBBA9 /* UIKit.framework */; };
 		CE9FE9D2163DDB7D001DBBA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FE9D1163DDB7D001DBBA9 /* Foundation.framework */; };
 		CE9FE9D4163DDB7D001DBBA9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9FE9D3163DDB7D001DBBA9 /* CoreGraphics.framework */; };
@@ -84,8 +84,6 @@
 		CE720D3816450E5200A63A1F /* GiroBrazo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiroBrazo.m; sourceTree = "<group>"; };
 		CE73CEE11645729E00E398BE /* PlayerPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerPicker.h; sourceTree = "<group>"; };
 		CE73CEE21645729E00E398BE /* PlayerPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerPicker.m; sourceTree = "<group>"; };
-		CE73CEE51645794000E398BE /* BotonesRetro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BotonesRetro.h; sourceTree = "<group>"; };
-		CE73CEE61645794000E398BE /* BotonesRetro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BotonesRetro.m; sourceTree = "<group>"; };
 		CE73E15616456D3500015FBA /* Animacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animacion.h; sourceTree = "<group>"; };
 		CE73E15716456D3500015FBA /* Animacion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animacion.m; sourceTree = "<group>"; };
 		CE7438CB1647B99500CF2C8C /* dePeli.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dePeli.mp3; sourceTree = "<group>"; };
@@ -123,6 +121,8 @@
 		CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CE9AFD651647F47A009F02D5 /* TocadiscosSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TocadiscosSlider.h; sourceTree = "<group>"; };
 		CE9AFD661647F47A009F02D5 /* TocadiscosSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TocadiscosSlider.m; sourceTree = "<group>"; };
+		CE9DDD5D1649DA7900F0DE6C /* Boton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Boton.h; sourceTree = "<group>"; };
+		CE9DDD5E1649DA7900F0DE6C /* Boton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Boton.m; sourceTree = "<group>"; };
 		CE9FE9CB163DDB7D001DBBA9 /* tocadiscos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tocadiscos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9FE9CF163DDB7D001DBBA9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE9FE9D1163DDB7D001DBBA9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -204,13 +204,13 @@
 			name = PlayerPicker;
 			sourceTree = "<group>";
 		};
-		CE73CEE41645790A00E398BE /* Botones */ = {
+		CE73CEE41645790A00E398BE /* Boton */ = {
 			isa = PBXGroup;
 			children = (
-				CE73CEE51645794000E398BE /* BotonesRetro.h */,
-				CE73CEE61645794000E398BE /* BotonesRetro.m */,
+				CE9DDD5D1649DA7900F0DE6C /* Boton.h */,
+				CE9DDD5E1649DA7900F0DE6C /* Boton.m */,
 			);
-			name = Botones;
+			name = Boton;
 			sourceTree = "<group>";
 		};
 		CE73E15416456D0F00015FBA /* Animacion */ = {
@@ -326,7 +326,7 @@
 				CE73CEDF1645726D00E398BE /* PlayerPicker */,
 				CE7439021647C1D400CF2C8C /* PlayerMedia */,
 				CE7439001647C19000CF2C8C /* ProgressMusicBar */,
-				CE73CEE41645790A00E398BE /* Botones */,
+				CE73CEE41645790A00E398BE /* Boton */,
 				CE7438FF1647C16C00CF2C8C /* Slider */,
 				CE9FE9D6163DDB7E001DBBA9 /* Supporting Files */,
 			);
@@ -558,12 +558,12 @@
 				CE720D3916450E5200A63A1F /* GiroBrazo.m in Sources */,
 				CE743E35164549BA006B60BD /* Disco.m in Sources */,
 				CE73E15816456D3500015FBA /* Animacion.m in Sources */,
-				CE73CEE71645794000E398BE /* BotonesRetro.m in Sources */,
 				CE74390E1647C69400CF2C8C /* ProgressMusicBar.m in Sources */,
 				CE7439111647C73E00CF2C8C /* PlayerMedia.m in Sources */,
 				CE74391B1647D41800CF2C8C /* TocadiscosCleanViewController.m in Sources */,
 				CE9AFD671647F47A009F02D5 /* TocadiscosSlider.m in Sources */,
-				CE9CDAD616481EF3009204CA /* PlayerPicker.m in Sources */,
+				CE9DDD5F1649DA7900F0DE6C /* Boton.m in Sources */,
+				CE9DDD621649DDFB00F0DE6C /* PlayerPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

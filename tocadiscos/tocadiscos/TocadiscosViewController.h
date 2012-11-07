@@ -16,18 +16,16 @@
 #import "Disco.h"
 #import "Animacion.h"
 #import "PlayerPicker.h"
-#import "BotonesRetro.h"
+#import "Boton.h"
 #import "TocadiscosSlider.h"
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 {
-    //REPRODUCTOR ESTILO RETRO
-    /* Variables Auxiliares para el ajuste de valores en el reproductor al momento de cambiar de cancion */
     float panActualFloat;
     float volumenActualFloat;
     float rateActualFloat;
     float timeActualFloat;
-
+    
     BOOL pausado;   //Variable para el status de Pause ADRIAN
     
     //Creacón de objetos
@@ -61,9 +59,9 @@
 @property(nonatomic, strong) NSTimer *timer; //ADRIAN
 
 //Botones del tocadiscos
-@property (nonatomic, strong) IBOutlet UIButton *playButton; //PLAYERPICKER
-@property (nonatomic, strong) IBOutlet UIButton *pauseButton; //PLAYERPICKER
-@property (nonatomic, strong) IBOutlet UIButton *stopButton; //PLAYERPICKER
+@property (nonatomic, strong) IBOutlet Boton *playButton; //PLAYERPICKER
+@property (nonatomic, strong) IBOutlet Boton *pauseButton; //PLAYERPICKER
+@property (nonatomic, strong) IBOutlet Boton *stopButton; //PLAYERPICKER
 
 
 //ACTIONS

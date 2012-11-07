@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-#import "BotonesRetro.h"
+//#import "BotonesRetro.h"
+#import "Boton.h"
 
 @interface PlayerPicker : NSObject
 {
-    BotonesRetro *botonPlay;
+    /*BotonesRetro *botonPlay;
     BotonesRetro *botonPause;
-    BotonesRetro *botonStop;
+    BotonesRetro *botonStop;*/
 }
 
 
@@ -24,18 +25,16 @@
 
 @property(nonatomic, strong) NSTimer *timer; //ADRIAN
 
-- (void) iniciaReproductor: (UIButton*)nuevoPlayButton
-            andPauseButton: (UIButton*)nuevoPauseButton
-             andStopButton: (UIButton*)nuevoStopButton;
+- (void) iniciaReproductor: (Boton*)playButton
+            andPauseButton: (Boton*)pauseButton
+             andStopButton: (Boton*)stopButton;
 -(void) playButton;
 -(void) pauseButton;
 -(void) stopButton;
--(void) nextButton:(id)sender;
--(void) forwardButton:(id)sender;
 -(void) volumen:(id)sender;
--(NSString*) songTime;
--(void) songCurrent: (UILabel*) tiempoQueTranscurre;
+//-(NSString*) songTime;
+//-(void) songCurrent: (UILabel*)tiempoQueTranscurre;
 
-- (void)updateProgressBar:(NSTimer *)timer tiempoQueTranscurre:(UILabel*)tiempoQueTranscurre;
+//- (void)updateProgressBar:(NSTimer *)timer tiempoQueTranscurre:(UILabel*)tiempoQueTranscurre;
 
 @end

@@ -50,6 +50,7 @@
     disco = [[Disco alloc] init];
     animacion = [[Animacion alloc] init];
     playerPicker = [[PlayerPicker alloc] init];
+    //reproductorAudioPlayer = [[ReproductorAudioPlayer alloc] init];
     
     //Personalización de los sliders
     [panSlider personalizarSlider:@"ControlStereoHorizontal-03.png" andImagenMin:@"ControlStereoHorizontal-03.png" andImagenMax:@"BotonVolumenHorizontal-04.png" andVertical:YES];
@@ -63,6 +64,7 @@
     [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
     
     [playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
+    //[reproductorAudioPlayer iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
     
     pausado = NO;
 }
@@ -103,12 +105,6 @@
 #pragma mark - IBActions
 - (IBAction)Play:(id)sender
 {
-    //Pone el botón del play en color verde.
-    [playButton setImage:[UIImage imageNamed:@"BotonPlayVerde.png"] forState:UIControlStateNormal];
-    //Apaga el botón pause y stop
-    [self.pauseButton setImage:NO forState:UIControlStateNormal];
-    [self.stopButton setImage:NO forState:UIControlStateNormal];
-
     //Sonido clic
     [sonido setSonido:@"clic" andExtension:@"mp3"];
     //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
@@ -132,9 +128,9 @@
     //rateActualFloat = self.reproductor.rate;
     
     /* Asigna la nueva instancia al reproductor con los nuevos valores */
-    NSError * error;
+    /*NSError * error;
     NSURL *url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
-    self.reproductorAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
+    self.reproductorAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];*/
     
     self.reproductorAudioPlayer.pan = panActualFloat;
     self.reproductorAudioPlayer.volume = volumenActualFloat;
@@ -157,28 +153,6 @@
 
     //Comienza a sonar la canción
     [self.reproductorAudioPlayer play];
-    
-    /******************************** VERSION ADRIAN PROGRESS BAR Y LABELS *********************/
-    float duracionAudio = [self.reproductorAudioPlayer duration];
-    
-    //Obteniendo los minutos
-    float minutos = floor(duracionAudio/60);
-    //Obteniendo los segundos del audio restando los minutos que lleva
-    float segundos = duracionAudio - (minutos*60);
-    
-    //Inserta el tiempo total de la cancion.
-    //Si los segundos son menores a 10 formatea el numero a mostrar
-    if(segundos < 10)
-    {
-        //Ajuste del Label del tiempo transcurrido
-        self.tiempoTotalLabel.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
-    } else {
-        //Ajuste del Label del tiempo transcurrido
-        self.tiempoTotalLabel.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
-    }
-    
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressBar:) userInfo:nil repeats:YES];
-    /******************************************************************************/
 }
 
 - (IBAction)Pausa:(id)sender {

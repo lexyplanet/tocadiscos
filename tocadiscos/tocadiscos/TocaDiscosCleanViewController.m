@@ -14,7 +14,7 @@
 
 @implementation TocadiscosCleanViewController
 
-@synthesize _sliderVolumen;
+//@synthesize _sliderVolumen;
 @synthesize _sliderStereo;
 @synthesize reproductor;
 @synthesize barraProgreso; //ADRIAN
@@ -51,14 +51,12 @@
     animacion = [[Animacion alloc] init];
     //Inicializa el objeto de la clase PlayerPicker
     playerPicker = [[PlayerPicker alloc] init];
-    //Inicializa el objeto de la clase BotonesRetro
-    botonesRetro= [[BotonesRetro alloc]init];
     
     /*********************************************/
     
     [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:230 andPosicionY:38 andAnclajeX:0.5 andAnclajeY:0.26];
     
-    [playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
+    //[playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
     
     /******************************** INICIALIZACION DE VARIABLE DE STATUS DE PAUSE (ADRIAN) *********************/
     /*NSError * error;
@@ -68,7 +66,7 @@
      NSURL * url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
      self.reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];*/
     pausado = NO;
-    self.tiempoTotal.text=[playerPicker songTime];
+    //self.tiempoTotal.text=[playerPicker songTime];
     
 }
 
