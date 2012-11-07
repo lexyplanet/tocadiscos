@@ -7,7 +7,7 @@
 //
 
 #import "TocadiscosViewController.h"
-#import "NuevaCancionViewController.h"
+//#import "NuevaCancionViewController.h"
 #import "Sonido.h"
 #import "Retardo.h"
 
@@ -132,9 +132,9 @@
     //rateActualFloat = self.reproductor.rate;
     
     /* Asigna la nueva instancia al reproductor con los nuevos valores */
-    NSError * error;
-    NSURL *url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
-    self.reproductorAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
+  //  NSError * error;
+   // NSURL *url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
+   // self.reproductorAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
     
     self.reproductorAudioPlayer.pan = panActualFloat;
     self.reproductorAudioPlayer.volume = volumenActualFloat;
@@ -280,7 +280,7 @@
 
 
 /*Adrian: Invoqué el metodo IBAction ya definido ya que contiene toda la animacion y play de la cancion*/
-#pragma mark - nuevaCanción Piker
+/*#pragma mark - nuevaCanción Piker
 - (void) nuevaCancion: (NSString *) cancion
 {
     self.cancionActual = cancion;
@@ -295,6 +295,85 @@
         nuevaCancionViewController.delegate = self;
         
     }
+}*/
+
+- (void) nuevaCancion: (MPMediaItem *) cancion;
+{
+    self.cancionActual = cancion;
+    
 }
+
+// biblioteca musical
+#pragma mark - Media Picker
+
+//[self showMediaPicker: sender];
+
+- (IBAction)showMediaPicker:(id)sender
+{
+    MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes: MPMediaTypeAny];
+    
+    mediaPicker.delegate = self;
+    mediaPicker.allowsPickingMultipleItems = YES;
+    mediaPicker.prompt = @"Elige tus canciones";
+    
+    [self presentModalViewController:mediaPicker animated:YES];
+    //deprecated la funcion nueva es presentViewController:mediaPicker
+    
+}
+
+- (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection
+{
+    NSString *val_song;
+    NSString *val_artist;
+    NSNumber *val_duracion;
+    NSString *artist;
+    NSString *song;
+    NSNumber *duracion;
+    
+    
+	if (mediaItemCollection)
+    {
+        
+        [self.reproductorMediaPlayer setQueueWithItemCollection: mediaItemCollection];
+        NSInteger i;
+        for (i=0; i< mediaItemCollection.count ; i++)
+        {
+            MPMediaItem *currentItem = mediaItemCollection.items[i];
+            
+            if (currentItem)
+            {
+                artist = [currentItem valueForProperty: MPMediaItemPropertyArtist];
+                song = [currentItem valueForProperty: MPMediaItemPropertyTitle];
+                duracion = [currentItem valueForProperty:MPMediaItemPropertyPlaybackDuration];
+                
+                val_song = [NSString stringWithFormat:@"%@", song];
+                val_artist = [NSString stringWithFormat:@"%@", artist];
+                val_duracion = duracion;
+                //falta asignarlo a la duracion del reproductor si en este punto se cogen bien los valores avisar resto de grupo para cambio de float a NSNumber
+                
+                self.caratula = [UIImage imageNamed:@"noArtworkImage.png"];
+                
+                MPMediaItemArtwork *artwork = [currentItem valueForProperty: MPMediaItemPropertyArtwork];
+                
+                if (artwork) {
+                    self.caratula = [artwork imageWithSize: CGSizeMake (200, 200)];
+                }
+                MPMediaItem *vaasonar =mediaItemCollection.items[i];
+                [self.delegate nuevaCancion:vaasonar];
+                
+            }
+            
+            
+        }
+        
+    }
+}
+
+
+- (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker
+{
+    [self dismissModalViewControllerAnimated: YES];
+}
+
 
 @end

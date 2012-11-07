@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="5fD-Ml-VoY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="5fD-Ml-VoY">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Tocadiscos View Controller-->
@@ -141,12 +141,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="oKs-1m-9LQ">
-                        <barButtonItem key="rightBarButtonItem" image="CarpetaMusica.png" width="11" style="done" id="Gob-96-ddw">
-                            <inset key="imageInsets" minX="-15" minY="-4" maxX="-17" maxY="0.0"/>
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="hdl-C1-uAv" kind="modal" identifier="goToCanciones" modalTransitionStyle="flipHorizontal" id="7Bd-PF-qww"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Uty-Dp-QAY">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1KJ-qf-iQW">
+                                <rect key="frame" x="240" y="0.0" width="75" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Música">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showMediaPicker:" destination="4cE-ct-c0a" eventType="touchUpInside" id="dWQ-uo-SXc"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -375,12 +382,64 @@
         <image name="pre.png" width="20" height="12"/>
         <image name="stop-on.png" width="48" height="50"/>
     </resources>
+    <classes>
+        <class className="NuevaCancionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NuevaCancionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="hecho:"/>
+                <relationship kind="outlet" name="hechoBarButtonItem" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="pickerMusicItem" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="TocadiscosCleanViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TocadiscosCleanViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Pausa:"/>
+                <relationship kind="action" name="Play:"/>
+                <relationship kind="action" name="Stop:"/>
+                <relationship kind="action" name="cambioVolumen:"/>
+                <relationship kind="outlet" name="_sliderStereo" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="_sliderVolumen" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="barraProgreso" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="brazoAgujaImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="discoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tiempoQueTranscurre" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tiempoTotal" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TocadiscosSlider" superclassName="UISlider">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TocadiscosSlider.h"/>
+        </class>
+        <class className="TocadiscosViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TocadiscosViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Pausa:"/>
+                <relationship kind="action" name="Play:"/>
+                <relationship kind="action" name="Stop:"/>
+                <relationship kind="action" name="cambioPan:"/>
+                <relationship kind="action" name="cambioRate:"/>
+                <relationship kind="action" name="cambioVolumen:"/>
+                <relationship kind="outlet" name="brazoAgujaImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cancionProgressView" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="caratula" candidateClass="UIImage"/>
+                <relationship kind="outlet" name="discoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="panSlider" candidateClass="TocadiscosSlider"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rateSlider" candidateClass="TocadiscosSlider"/>
+                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tiempoTotalLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tiempoTranscurridoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="volumenSlider" candidateClass="TocadiscosSlider"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="7Bd-PF-qww"/>
-    </inferredMetricsTieBreakers>
 </document>
