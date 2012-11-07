@@ -16,14 +16,17 @@
 - (void) iniciaReproductor: (Boton*)playButton
             andPauseButton: (Boton*)pauseButton
              andStopButton: (Boton*)stopButton
+          andNombreCancion: (NSString*)cancion;
 {
     nuevaCancionlPicker = [[NuevaCancionViewController alloc] init];
-    NSError * error;
+    /*NSError * error;
     
     cancionActual = [[NSBundle mainBundle] pathForResource:@"el tiempo se nos va" ofType:@"mp3"];
     
     NSURL * url = [[NSURL alloc] initFileURLWithPath:cancionActual];
-    reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
+    reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];*/
+    
+    [self nuevaCancionReproductor:cancion];
     
     reproductor.pan = 0;
     reproductor.volume = 0.5;
@@ -60,6 +63,8 @@
      ya que por default una nueva instancia tiene un valor de NO asi que si asignamos una nueva instancia de AVAudioPlayer
      y despues lo reproducimos, si queremos cambiar el rate éste no lo hará (que es lo que pasaba) */
     reproductor.enableRate = YES;
+    
+    
     [reproductor play];
 }
 
@@ -85,7 +90,13 @@
 }
 -(void) rate:(id)sender
 {
-    reproductor.rate = ((TocadiscosSlider *) sender).value;
+    if ( (((TocadiscosSlider *) sender).value>0.6) && (((TocadiscosSlider *) sender).value<1.4) ) {
+        reproductor.rate = 1;
+    }
+    else
+    {
+        reproductor.rate = ((TocadiscosSlider *) sender).value;
+    }
 }
 
 
@@ -144,6 +155,20 @@
     //Ajuste del Label del tiempo transcurrido
     //tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
 //}
+
+/*Adrian: Invoqué el metodo IBAction ya definido ya que contiene toda la animacion y play de la cancion*/
+#pragma mark - nuevaCanción Piker
+- (void) nuevaCancionReproductor: (NSString*)nombreCancion
+{
+    //nuevaCancionlPicker = [[NuevaCancionViewController alloc] init];
+    NSError * error;
+    
+    cancionActual = [[NSBundle mainBundle] pathForResource:nombreCancion ofType:@"mp3"];
+    
+    NSURL * url = [[NSURL alloc] initFileURLWithPath:cancionActual];
+    reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
+}
+
 
 
 @end

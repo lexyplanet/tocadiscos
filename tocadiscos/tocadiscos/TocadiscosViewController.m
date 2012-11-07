@@ -62,7 +62,11 @@
     /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro */
     [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
     
-    [playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
+    if (cancionActual == Nil) {
+        cancionActual = @"el tiempo se nos va";
+    }
+    
+    [playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton andNombreCancion:cancionActual];
 
     pausado = NO;
 }
@@ -188,12 +192,15 @@
 }
 
 - (IBAction)cambioVolumen:(id)sender {
+    [playerPicker volumen:volumenSlider];
 }
 
 - (IBAction)cambioPan:(id)sender {
+    [playerPicker pan:panSlider];
 }
 
 - (IBAction)cambioRate:(id)sender {
+    [playerPicker rate:rateSlider];
 }
 
 

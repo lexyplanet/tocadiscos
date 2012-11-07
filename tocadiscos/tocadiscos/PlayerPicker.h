@@ -28,7 +28,8 @@
 
 - (void) iniciaReproductor: (Boton*)playButton
             andPauseButton: (Boton*)pauseButton
-             andStopButton: (Boton*)stopButton;
+             andStopButton: (Boton*)stopButton
+          andNombreCancion: (NSString*)cancion;
 
 -(BOOL) verificaCancionActual;
 
@@ -46,5 +47,7 @@
 //- (void)updateProgressBar:(NSTimer *)timer tiempoQueTranscurre:(UILabel*)tiempoQueTranscurre;
 
 //-(float) getVolumen;
+
+- (void) nuevaCancionReproductor: (NSString*)nombreCancion;
 
 @end
