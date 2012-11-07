@@ -9,15 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-//#import "BotonesRetro.h"
 #import "Boton.h"
 #import "TocadiscosSlider.h"
+#import "SeleccionAlertView.h"
+#import "NuevaCancionViewController.h"
 
 @interface PlayerPicker : NSObject
 {
-    /*BotonesRetro *botonPlay;
-    BotonesRetro *botonPause;
-    BotonesRetro *botonStop;*/
+    NuevaCancionViewController *nuevaCancionlPicker;
+    Boton *auxPlayButton;
 }
 
 
@@ -29,10 +29,17 @@
 - (void) iniciaReproductor: (Boton*)playButton
             andPauseButton: (Boton*)pauseButton
              andStopButton: (Boton*)stopButton;
+
+-(BOOL) verificaCancionActual;
+
 -(void) playButton;
 -(void) pauseButton;
 -(void) stopButton;
+
 -(void) volumen:(id)sender;
+-(void) pan:(id)sender;
+-(void) rate:(id)sender;
+
 //-(NSString*) songTime;
 //-(void) songCurrent: (UILabel*)tiempoQueTranscurre;
 

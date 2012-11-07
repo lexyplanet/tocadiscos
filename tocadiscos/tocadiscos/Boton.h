@@ -10,12 +10,8 @@
 
 @interface Boton : UIButton
 
-{
-    NSString *nombreImagen;
-}
-
 - (void) apagar;
 
-- (void) encender;
+- (void) encender:(NSString*)nombreImagen;
 
 @end

@@ -88,12 +88,12 @@
 /*Adrian Modifique el metodo solo añadiendo el volver al seleccionar la cancion*/
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    NSString *cancion_elegida = [NSString stringWithFormat:@"%@",[ self.canciones objectAtIndex:row]];
+    NSString *cancion_elegida = [NSString stringWithFormat:@"%@",[self.canciones objectAtIndex:row]];
     
-    if ([cancion_elegida isEqualToString:@"SELECCIONA CANCIÓN:"] ) {
-        UIAlertView *errorSeleccion = [[UIAlertView alloc] initWithTitle:@"RECUERDA" message:@"Elige la canción" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [errorSeleccion show];
-        self.cancionSeleccionada = @"SELECCIONA CANCIÓN:";
+    if ([cancion_elegida isEqualToString:[self.canciones objectAtIndex:0]]) {
+        SeleccionAlertView *error = [[SeleccionAlertView alloc] init];
+        [error seleccionCancion];
+        self.cancionSeleccionada = [self.canciones objectAtIndex:0];
     }
     else
     {
@@ -122,4 +122,15 @@
     [self setPickerMusicItem:nil];
     [super viewDidUnload];
 }
+
+- (NSString*) getCancion0
+{
+    return [self.canciones objectAtIndex:0];
+}
+
+- (NSString*) getCancionSeleccionada
+{
+    return self.cancionSeleccionada;
+}
+
 @end

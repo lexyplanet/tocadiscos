@@ -17,9 +17,10 @@
             andPauseButton: (Boton*)pauseButton
              andStopButton: (Boton*)stopButton
 {
+    nuevaCancionlPicker = [[NuevaCancionViewController alloc] init];
     NSError * error;
     
-    cancionActual = [[NSBundle mainBundle] pathForResource:@"dePeli" ofType:@"mp3"];
+    cancionActual = [[NSBundle mainBundle] pathForResource:@"el tiempo se nos va" ofType:@"mp3"];
     
     NSURL * url = [[NSURL alloc] initFileURLWithPath:cancionActual];
     reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
@@ -38,9 +39,27 @@
     [stopButton apagar];
 }
 
--(void) playButton
+-(BOOL) verificaCancionActual
 {
-    //reproductor.volume = [self volumen:];
+    
+    //Controlar el error de no seleccionar ninguna canción en el picker
+    if ([[nuevaCancionlPicker getCancionSeleccionada] isEqualToString:[nuevaCancionlPicker getCancion0]]) {
+        SeleccionAlertView *error = [[SeleccionAlertView alloc] init];
+        [error seleccionCancion];
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
+
+-(void) playButton;
+{
+    /* Se vuelve a ajustar la propiedad EnableRate a YES para que la nueva instancia realize el Rate
+     ya que por default una nueva instancia tiene un valor de NO asi que si asignamos una nueva instancia de AVAudioPlayer
+     y despues lo reproducimos, si queremos cambiar el rate éste no lo hará (que es lo que pasaba) */
+    reproductor.enableRate = YES;
     [reproductor play];
 }
 
@@ -60,6 +79,14 @@
     reproductor.volume = ((TocadiscosSlider *) sender).value;
 }
 
+-(void) pan:(id)sender
+{
+    reproductor.pan = ((TocadiscosSlider *) sender).value;
+}
+-(void) rate:(id)sender
+{
+    reproductor.rate = ((TocadiscosSlider *) sender).value;
+}
 
 
 //-(NSString*) songTime

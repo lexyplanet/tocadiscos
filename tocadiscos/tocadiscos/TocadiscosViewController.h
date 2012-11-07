@@ -25,7 +25,8 @@
     float volumenActualFloat;
     float rateActualFloat;
     float timeActualFloat;
-    
+    NSString *cancionActual;
+
     BOOL pausado;   //Variable para el status de Pause ADRIAN
     
     //Creacón de objetos
@@ -55,7 +56,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *discoImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *brazoAgujaImageView; //GIROBRAZO
 
-@property(nonatomic, strong) NSString* cancionActual; //PLAYERPICKER
+//@property(nonatomic, strong) NSString* cancionActual;
 @property(nonatomic, strong) NSTimer *timer; //ADRIAN
 
 //Botones del tocadiscos
@@ -68,8 +69,5 @@
 - (IBAction)Play:(id)sender;
 - (IBAction)Pausa:(id)sender;
 - (IBAction)Stop:(id)sender;
-- (IBAction)cambioVolumen:(id)sender;
-- (IBAction)cambioPan:(id)sender;
-- (IBAction)cambioRate:(id)sender;
 
 @end

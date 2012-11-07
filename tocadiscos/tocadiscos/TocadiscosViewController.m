@@ -64,7 +64,6 @@
     
     [playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
 
-    
     pausado = NO;
 }
 
@@ -101,122 +100,6 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-#pragma mark - IBActions
-- (IBAction)Play:(id)sender
-{
-    if ([self.cancionActual isEqualToString:@"SELECCIONA CANCIÓN:"]) {
-        UIAlertView *errorSeleccion = [[UIAlertView alloc] initWithTitle:@"RECUERDA" message:@"Elige la canción" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [errorSeleccion show];
-    }
-    else
-    {
-        
-    //Sonido clic
-    [sonido setSonido:@"clic" andExtension:@"mp3"];
-    //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
-    [retardo tiempoEspera:0.25];
-
-    //Animación
-    float time = 1.00;
-    [animacion inicioAnimacion:time];
-    
-    //Gira el brazo de la aguja
-    [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.4];
-    
-    //[self startSpin];
-    [disco inicioGiro:discoImageView];
-    
-    [animacion finAnimacion];
-    
-    /* Asignacion de los valores actuales del reproductor para que no se pierdan a la hora de reproducir la nueva instancia */
-    //panActualFloat = self.reproductor.pan;
-    //volumenActualFloat = self.reproductorAudioPlayer.volume;
-    
-    //rateActualFloat = self.reproductor.rate;
-    
-    /* Asigna la nueva instancia al reproductor con los nuevos valores */
-    self.reproductorAudioPlayer.pan = panActualFloat;
-    self.reproductorAudioPlayer.volume = volumenActualFloat;
-    
-    /* Se vuelve a ajustar la propiedad EnableRate a YES para que la nueva instancia realize el Rate
-     ya que por default una nueva instancia tiene un valor de NO asi que si asignamos una nueva instancia de AVAudioPlayer
-     y despues lo reproducimos, si queremos cambiar el rate éste no lo hará (que es lo que pasaba) */
-    self.reproductorAudioPlayer.enableRate = YES;
-    
-    self.reproductorAudioPlayer.rate = rateActualFloat;
-    self.reproductorAudioPlayer.currentTime = timeActualFloat;
-
-    //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
-    [retardo tiempoEspera:time];
-
-    //Simula el sonido del contacto de la aguja sobre el vinilo
-    [sonido setSonido:@"Vinilo" andExtension:@"mp3"];
-    //Introduce una pausa para que la canción empiece después del sonido de la aguja sobre el vinilo
-    [retardo tiempoEspera:0.4];
-
-    //Comienza a sonar la canción
-    //[self.reproductorAudioPlayer play];
-    
-    
-        [playerPicker playButton];
-    }
-    
-    
-}
-
-- (IBAction)Pausa:(id)sender {
-    //Pone el botón del pause en color verde.
-    [self.pauseButton setImage:[UIImage imageNamed:@"BotonPauseVerde.png"] forState:UIControlStateNormal];
-    //Apaga el botón play y stop
-    [self.playButton setImage:NO forState:UIControlStateNormal];
-    [self.stopButton setImage:NO forState:UIControlStateNormal];
-    
-    /********************* MODIFICACIÓN ADRIÁN *****************/
-    if (pausado) {
-        //[self.reproductor play];
-        pausado = NO;
-        return;
-    }
-}
-
-- (IBAction)Stop:(id)sender
-{
-    //Pone el botón del stop en color verde.
-    [self.stopButton setImage:[UIImage imageNamed:@"BotonStopVerde.png"] forState:UIControlStateNormal];
-    //Apaga el botón play y pause
-    [self.playButton setImage:NO forState:UIControlStateNormal];
-    [self.pauseButton setImage:NO forState:UIControlStateNormal];
-    
-    [animacion inicioAnimacion:1.0];
-    self.reproductorAudioPlayer.currentTime = 0;
-    timeActualFloat = self.reproductorAudioPlayer.currentTime;
-    [disco pararGiro];
-    [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
-    [animacion finAnimacion];
-    
-    [self.reproductorAudioPlayer stop];
-}
-
-
-
-- (IBAction)cambioVolumen:(id)sender
-{
-    //self.reproductorAudioPlayer.volume = ((UISlider *) sender).value;
-    [playerPicker volumen:volumenSlider];
-    //NSLog(@"%f", [playerPicker volumen:volumenSlider]);
-}
-
-- (IBAction)cambioPan:(id)sender
-{
-    self.reproductorAudioPlayer.pan = ((UISlider *) sender).value;
-}
-
-- (IBAction)cambioRate:(id)sender
-{
-    NSLog(@"%f", ((UISlider *) sender).value);
-    self.reproductorAudioPlayer.rate = ((UISlider *) sender).value;
-}
-
 - (void)viewDidUnload
 {
     [self setCancionProgressView:nil];
@@ -227,6 +110,76 @@
     // e.g. self.myOutlet = nil;
 }
 
+#pragma mark - IBActions
+- (IBAction)Play:(id)sender
+{
+    //Controlar el error de no seleccionar ninguna canción en el picker
+    if ([playerPicker verificaCancionActual])
+    {
+        if (!pausado) {
+            [playButton encender:@"BotonPlayVerde.png"];
+            [pauseButton apagar];
+            [stopButton apagar];
+            
+            //Sonido clic
+            [sonido setSonido:@"clic" andExtension:@"mp3"];
+            //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
+            [retardo tiempoEspera:0.25];
+            
+            //Animación
+            float time = 1.00;
+            [animacion inicioAnimacion:time];
+            
+            //Gira el brazo de la aguja
+            [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.4];
+            
+            [disco inicioGiro:discoImageView];
+            
+            [animacion finAnimacion];
+            
+            //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
+            [retardo tiempoEspera:time];
+            
+            //Simula el sonido del contacto de la aguja sobre el vinilo
+            [sonido setSonido:@"Vinilo" andExtension:@"mp3"];
+            //Introduce una pausa para que la canción empiece después del sonido de la aguja sobre el vinilo
+            [retardo tiempoEspera:0.4];
+            
+            [playerPicker playButton];
+        }
+        else
+        {
+            [playButton encender:@"BotonPlayVerde.png"];
+            [pauseButton apagar];
+            pausado = NO;
+            [playerPicker playButton];
+        }
+    }
+}
+
+- (IBAction)Pausa:(id)sender {
+    if (!pausado) {
+        [playButton apagar];
+        [pauseButton encender:@"BotonPauseVerde.png"];
+        [stopButton apagar];
+        [playerPicker pauseButton];
+        pausado = YES;
+    }
+}
+
+- (IBAction)Stop:(id)sender
+{
+    [playButton apagar];
+    [pauseButton apagar];
+    [stopButton encender:@"BotonStopVerde.png"];
+    [animacion inicioAnimacion:1.0];
+    [disco pararGiro];
+    [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
+    [retardo tiempoEspera:0.25];
+    [sonido setSonido:@"clic" andExtension:@"mp3"];
+    [animacion finAnimacion];
+    [playerPicker stopButton];
+}
 
 
 /******************************* ACTUALIZA PROGRESSBAR (ADRIAN) ************************************/
@@ -267,7 +220,7 @@
 #pragma mark - nuevaCanción Piker
 - (void) nuevaCancion: (NSString *) cancion
 {
-    self.cancionActual = cancion;
+    cancionActual = cancion;
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

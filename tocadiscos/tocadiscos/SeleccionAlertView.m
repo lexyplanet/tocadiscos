@@ -1,14 +1,14 @@
 //
-//  Boton.m
+//  SeleccionAlertView.m
 //  tocadiscos
 //
-//  Created by Lion User on 06/11/12.
+//  Created by Lion User on 07/11/12.
 //  Copyright (c) 2012 LexyPlanet. All rights reserved.
 //
 
-#import "Boton.h"
+#import "SeleccionAlertView.h"
 
-@implementation Boton
+@implementation SeleccionAlertView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -28,19 +28,10 @@
 }
 */
 
-#pragma mark- Funciones Tocadiscos
-
-- (void) apagar
+- (void) seleccionCancion
 {
-    [self setImage:NO forState:UIControlStateNormal];
+    UIAlertView *errorSeleccion = [[UIAlertView alloc] initWithTitle:@"RECUERDA" message:@"Elige la canción" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [errorSeleccion show];
 }
-
-
-- (void) encender:(NSString*)nombreImagen
-{
-    [self setImage:[UIImage imageNamed:nombreImagen] forState:UIControlStateNormal];
-}
-
-
 
 @end

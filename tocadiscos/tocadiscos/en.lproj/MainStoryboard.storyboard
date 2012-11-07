@@ -143,7 +143,7 @@
                     <navigationItem key="navigationItem" id="oKs-1m-9LQ">
                         <barButtonItem key="leftBarButtonItem" title="Smart" id="Be4-3t-lYf">
                             <connections>
-                                <segue destination="XHD-zP-ck8" kind="modal" id="VQF-ZH-IbL"/>
+                                <segue destination="XHD-zP-ck8" kind="modal" identifier="goToClean" modalTransitionStyle="coverVertical" id="VQF-ZH-IbL"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="CarpetaMusica.png" width="11" style="done" id="Gob-96-ddw">
@@ -224,11 +224,11 @@
             <objects>
                 <viewController storyboardIdentifier="tocadiscosClean" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XHD-zP-ck8" customClass="TocadiscosCleanViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q9n-Yq-zSl">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg.png" id="FLH-el-jGH">
-                                <rect key="frame" x="0.0" y="44" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="disco_Clean.png" id="WQs-SR-83v">
@@ -318,28 +318,30 @@
                                     <action selector="Stop:" destination="XHD-zP-ck8" eventType="touchUpInside" id="L2P-aX-h2G"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="xYd-nk-fEJ">
+                            <navigationBar contentMode="scaleToFill" id="FXb-Mu-pdT">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <barButtonItem title="Fashion" id="7Bc-5y-ZgB">
-                                        <connections>
-                                            <segue destination="4cE-ct-c0a" kind="modal" id="5zO-BB-Rvd"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <navigationItem title="Title" id="SSG-jS-hkl">
+                                        <barButtonItem key="leftBarButtonItem" title="Modern" id="31p-WH-c8S">
+                                            <connections>
+                                                <segue destination="4cE-ct-c0a" kind="modal" identifier="goToRetro" modalTransitionStyle="coverVertical" id="zKx-hJ-xSX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="CarpetaMusica.png" style="done" id="KTG-4W-VkN">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="hdl-C1-uAv" kind="modal" identifier="goToCanciones" modalTransitionStyle="flipHorizontal" id="KSo-JS-7CP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
-                            </toolbar>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="reb-Y5-JAk">
-                        <barButtonItem key="rightBarButtonItem" image="CarpetaMusica.png" style="done" id="6S6-QB-4SL">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <connections>
-                                <segue destination="hdl-C1-uAv" kind="modal" id="dIH-qc-ark"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="brazoAgujaImageView" destination="qW6-ud-ZAP" id="7xS-eP-H2f"/>
                         <outlet property="discoImageView" destination="WQs-SR-83v" id="npn-GI-phH"/>
@@ -396,7 +398,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5zO-BB-Rvd"/>
+        <segue reference="zKx-hJ-xSX"/>
         <segue reference="7Bd-PF-qww"/>
     </inferredMetricsTieBreakers>
 </document>

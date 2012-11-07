@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-
+#import "SeleccionAlertView.h"
 
 
 
@@ -32,6 +32,9 @@ NSInteger posUltimaCancion;
 
 - (IBAction) hecho:(id)sender;
 
+- (NSString*) getCancion0;
+
+- (NSString*) getCancionSeleccionada;
 
 
 @end
