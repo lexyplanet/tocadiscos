@@ -138,6 +138,7 @@
     self.reproductorAudioPlayer.pan = panActualFloat;
     self.reproductorAudioPlayer.volume = volumenActualFloat;
     
+        
     /* Se vuelve a ajustar la propiedad EnableRate a YES para que la nueva instancia realize el Rate
      ya que por default una nueva instancia tiene un valor de NO asi que si asignamos una nueva instancia de AVAudioPlayer
      y despues lo reproducimos, si queremos cambiar el rate éste no lo hará (que es lo que pasaba) */
