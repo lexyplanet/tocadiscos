@@ -49,24 +49,21 @@
     brazo = [[GiroBrazo alloc] init];
     disco = [[Disco alloc] init];
     animacion = [[Animacion alloc] init];
-    //playerPicker = [[PlayerPicker alloc] init];
-    
-    //Apagar botones
-    [playButton apagar];
+    playerPicker = [[PlayerPicker alloc] init];
     
     //Personalización de los sliders
-    [panSlider personalizarSlider:@"ControlStereoHorizontal-03.png" andImagenMin:@"ControlStereoHorizontal-03.png" andImagenMax:@"BotonVolumenHorizontal-04.png" andVertical:YES];
+    [panSlider personalizarSlider:@"BotonVolumenHorizontal-04.png" andImagenMin:@"ControlStereoHorizontal-03.png" andImagenMax:@"ControlStereoHorizontal-03.png" andVertical:YES];
     
-    [volumenSlider personalizarSlider:@"ControlVelocidadHorizontal-02.png" andImagenMin:@"ControlVelocidadHorizontal-02.png" andImagenMax:@"BotonControlVelocidadHorizontal-04.png" andVertical:YES];
+    [volumenSlider personalizarSlider:@"BotonVolumenHorizontal-04.png" andImagenMin:@"ControlVolumenHorizontal-02.png" andImagenMax:@"ControlVolumenHorizontal-02.png" andVertical:YES];
     
-    [rateSlider personalizarSlider:@"ControlVelocidadHorizontal-02.png" andImagenMin:@"ControlVelocidadHorizontal-02.png" andImagenMax:@"BotonControlVelocidadHorizontal-03.png" andVertical:NO];
+    [rateSlider personalizarSlider:@"BotonControlVelocidadHorizontal-03.png" andImagenMin:@"ControlVelocidadHorizontal-02.png" andImagenMax:@"ControlVelocidadHorizontal-02.png" andVertical:NO];
     
     
     /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro */
     [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
     
-    //[playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
-    //[reproductorAudioPlayer iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
+    [playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
+
     
     pausado = NO;
 }
@@ -107,6 +104,13 @@
 #pragma mark - IBActions
 - (IBAction)Play:(id)sender
 {
+    if ([self.cancionActual isEqualToString:@"SELECCIONA CANCIÓN:"]) {
+        UIAlertView *errorSeleccion = [[UIAlertView alloc] initWithTitle:@"RECUERDA" message:@"Elige la canción" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [errorSeleccion show];
+    }
+    else
+    {
+        
     //Sonido clic
     [sonido setSonido:@"clic" andExtension:@"mp3"];
     //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
@@ -126,14 +130,11 @@
     
     /* Asignacion de los valores actuales del reproductor para que no se pierdan a la hora de reproducir la nueva instancia */
     //panActualFloat = self.reproductor.pan;
-    volumenActualFloat = self.reproductorAudioPlayer.volume;
+    //volumenActualFloat = self.reproductorAudioPlayer.volume;
+    
     //rateActualFloat = self.reproductor.rate;
     
     /* Asigna la nueva instancia al reproductor con los nuevos valores */
-    /*NSError * error;
-    NSURL *url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
-    self.reproductorAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];*/
-    
     self.reproductorAudioPlayer.pan = panActualFloat;
     self.reproductorAudioPlayer.volume = volumenActualFloat;
     
@@ -154,7 +155,13 @@
     [retardo tiempoEspera:0.4];
 
     //Comienza a sonar la canción
-    [self.reproductorAudioPlayer play];
+    //[self.reproductorAudioPlayer play];
+    
+    
+        [playerPicker playButton];
+    }
+    
+    
 }
 
 - (IBAction)Pausa:(id)sender {
@@ -194,8 +201,9 @@
 
 - (IBAction)cambioVolumen:(id)sender
 {
-    self.reproductorAudioPlayer.volume = ((UISlider *) sender).value;
-    //NSLog(@"%f", self.reproductor.volume);
+    //self.reproductorAudioPlayer.volume = ((UISlider *) sender).value;
+    [playerPicker volumen:volumenSlider];
+    //NSLog(@"%f", [playerPicker volumen:volumenSlider]);
 }
 
 - (IBAction)cambioPan:(id)sender

@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 //#import "BotonesRetro.h"
 #import "Boton.h"
+#import "TocadiscosSlider.h"
 
 @interface PlayerPicker : NSObject
 {
@@ -36,5 +37,7 @@
 //-(void) songCurrent: (UILabel*)tiempoQueTranscurre;
 
 //- (void)updateProgressBar:(NSTimer *)timer tiempoQueTranscurre:(UILabel*)tiempoQueTranscurre;
+
+//-(float) getVolumen;
 
 @end

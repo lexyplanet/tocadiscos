@@ -40,6 +40,7 @@
 
 -(void) playButton
 {
+    //reproductor.volume = [self volumen:];
     [reproductor play];
 }
 
@@ -54,11 +55,12 @@
     [reproductor stop];
 }
 
-
 -(void) volumen:(id)sender
 {
-    reproductor.volume = ((UISlider *) sender).value;
+    reproductor.volume = ((TocadiscosSlider *) sender).value;
 }
+
+
 
 //-(NSString*) songTime
 //{

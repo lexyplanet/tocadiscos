@@ -50,7 +50,7 @@
     //Inicializa el objeto de la clase Animación
     animacion = [[Animacion alloc] init];
     //Inicializa el objeto de la clase PlayerPicker
-    playerPicker = [[PlayerPicker alloc] init];
+    //playerPicker = [[PlayerPicker alloc] init];
     
     /*********************************************/
     
@@ -79,7 +79,7 @@
     if(pausado){
         [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.0];
         //[self.playButton setImage:[UIImage imageNamed:@"Pause.png"] forState:UIControlStateNormal];
-        [playerPicker playButton ];
+        //[playerPicker playButton ];
         //[self.reproductor pause];
         pausado=NO;
     }else{
@@ -120,7 +120,7 @@
         /**********************************/
         
         //Comienza a sonar la canción
-        [playerPicker playButton];
+        //[playerPicker playButton];
         //[self.reproductor play];
         
         /******************************** VERSION ADRIAN PROGRESS BAR Y LABELS *********************/
@@ -214,12 +214,12 @@
     [animacion finAnimacion];
     
     //[self.reproductor stop];
-    [playerPicker stopButton];
+    //[playerPicker stopButton];
 }
 
 
 - (IBAction)cambioVolumen:(id)sender {
-    [playerPicker volumen: sender];
+    //[playerPicker volumen: sender];
     //self.reproductor.volume = ((UISlider *) sender).value;
     //NSLog(@"%f", self.reproductor.volume);
 }

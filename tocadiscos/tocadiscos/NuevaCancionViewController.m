@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.canciones = [[NSArray alloc] initWithObjects:@"Estopa. La primavera", @"Estopa. Cuerpo Triste",nil];
+    self.canciones = [[NSArray alloc] initWithObjects: @"SELECCIONA CANCIÓN:",@"dePeli", @"downbeat", @"el tiempo se nos va", @"Enganchado a ti", @"sinRumbo",nil];
     self.pickerMusicItem.tag = posUltimaCancion;
 }
 
@@ -90,9 +90,19 @@
 {
     NSString *cancion_elegida = [NSString stringWithFormat:@"%@",[ self.canciones objectAtIndex:row]];
     
-    posUltimaCancion= row;
+    if ([cancion_elegida isEqualToString:@"SELECCIONA CANCIÓN:"] ) {
+        UIAlertView *errorSeleccion = [[UIAlertView alloc] initWithTitle:@"RECUERDA" message:@"Elige la canción" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [errorSeleccion show];
+        self.cancionSeleccionada = @"SELECCIONA CANCIÓN:";
+    }
+    else
+    {
+        posUltimaCancion= row;
+        
+        self.cancionSeleccionada = [[NSBundle mainBundle] pathForResource: cancion_elegida ofType:@"mp3"];
+    }
     
-    self.cancionSeleccionada = [[NSBundle mainBundle] pathForResource: cancion_elegida ofType:@"mp3"];
+    
 }
 
 
