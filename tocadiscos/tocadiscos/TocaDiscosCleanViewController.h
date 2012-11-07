@@ -15,7 +15,7 @@
 #import "GiroBrazo.h"
 #import "Disco.h"
 #import "Animacion.h"
-#import "PlayerPicker.h"
+//#import "PlayerPicker.h"
 
 @interface TocadiscosCleanViewController : UIViewController <NuevaCancionDelegate>
 {
@@ -42,7 +42,7 @@
     //Objeto para crear animaciones
     Animacion *animacion;
     //Objeto para crear el player que selecciona las canciones mediante el Picker
-    PlayerPicker *playerPicker;
+    //PlayerPicker *playerPicker;
     /*************************************/
 }
 

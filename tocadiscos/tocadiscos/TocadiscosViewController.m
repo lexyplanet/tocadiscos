@@ -49,8 +49,10 @@
     brazo = [[GiroBrazo alloc] init];
     disco = [[Disco alloc] init];
     animacion = [[Animacion alloc] init];
-    playerPicker = [[PlayerPicker alloc] init];
-    //reproductorAudioPlayer = [[ReproductorAudioPlayer alloc] init];
+    //playerPicker = [[PlayerPicker alloc] init];
+    
+    //Apagar botones
+    [playButton apagar];
     
     //Personalización de los sliders
     [panSlider personalizarSlider:@"ControlStereoHorizontal-03.png" andImagenMin:@"ControlStereoHorizontal-03.png" andImagenMax:@"BotonVolumenHorizontal-04.png" andVertical:YES];
@@ -63,7 +65,7 @@
     /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro */
     [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
     
-    [playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
+    //[playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
     //[reproductorAudioPlayer iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
     
     pausado = NO;

@@ -15,7 +15,7 @@
 #import "GiroBrazo.h"
 #import "Disco.h"
 #import "Animacion.h"
-#import "PlayerPicker.h"
+//#import "PlayerPicker.h"
 #import "Boton.h"
 #import "TocadiscosSlider.h"
 
@@ -35,7 +35,7 @@
     NSString *nombreImagenBrazo;
     Disco *disco;
     Animacion *animacion;
-    PlayerPicker *playerPicker;
+    //PlayerPicker *playerPicker;
 }
 
 //PROPERTIES
