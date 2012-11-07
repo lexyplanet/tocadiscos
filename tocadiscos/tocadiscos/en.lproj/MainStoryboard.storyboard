@@ -84,7 +84,7 @@
                                 <rect key="frame" x="-8" y="304" width="108" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="cambioPan:" destination="4cE-ct-c0a" eventType="valueChanged" id="x6B-Li-jcT"/>
+                                    <action selector="cambioPan:" destination="4cE-ct-c0a" eventType="valueChanged" id="1u3-VF-nzK"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pan" lineBreakMode="tailTruncation" minimumFontSize="10" id="Ro7-SP-lAY">
@@ -98,14 +98,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <connections>
-                                    <action selector="cambioVolumen:" destination="4cE-ct-c0a" eventType="valueChanged" id="Pwn-tX-VpC"/>
+                                    <action selector="cambioVolumen:" destination="4cE-ct-c0a" eventType="valueChanged" id="ebN-4g-a1y"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" id="Eiz-04-Lf4" customClass="TocadiscosSlider">
                                 <rect key="frame" x="146" y="360" width="92" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="cambioRate:" destination="4cE-ct-c0a" eventType="valueChanged" id="Xes-lm-psb"/>
+                                    <action selector="cambioRate:" destination="4cE-ct-c0a" eventType="valueChanged" id="peF-ZL-rrl"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="E1V-BC-447">
@@ -158,14 +158,14 @@
                         <outlet property="brazoAgujaImageView" destination="wyF-V5-qC0" id="W2I-pW-BZW"/>
                         <outlet property="cancionProgressView" destination="jLk-hT-5mf" id="iQQ-gy-VcM"/>
                         <outlet property="discoImageView" destination="la1-In-508" id="bph-gu-mEh"/>
-                        <outlet property="panSlider" destination="Los-Bb-gX7" id="x1G-8R-gkd"/>
+                        <outlet property="panSlider" destination="Los-Bb-gX7" id="9nw-13-n5o"/>
                         <outlet property="pauseButton" destination="Eas-Re-8sB" id="2zT-cg-6fL"/>
                         <outlet property="playButton" destination="S4s-le-aeY" id="Swg-0i-CPX"/>
-                        <outlet property="rateSlider" destination="Eiz-04-Lf4" id="sff-6j-2EL"/>
+                        <outlet property="rateSlider" destination="Eiz-04-Lf4" id="Aje-ze-1y1"/>
                         <outlet property="stopButton" destination="kbH-vV-MbD" id="Uk8-pe-BWv"/>
                         <outlet property="tiempoTotalLabel" destination="6tK-dQ-8TI" id="cWh-ou-0KP"/>
                         <outlet property="tiempoTranscurridoLabel" destination="gyE-ky-N6h" id="N7D-hh-5go"/>
-                        <outlet property="volumenSlider" destination="RJ7-bd-Lwu" id="cUl-pd-6I6"/>
+                        <outlet property="volumenSlider" destination="RJ7-bd-Lwu" id="pEf-IT-XuV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2W-6n-WZa" userLabel="First Responder" sceneMemberID="firstResponder"/>

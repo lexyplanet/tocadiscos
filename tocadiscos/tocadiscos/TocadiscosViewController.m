@@ -140,7 +140,7 @@
             
             //volumenActualFloat = reproductorAudioPlayer.volume;
             
-            reproductorAudioPlayer.volume = volumenActualFloat;
+            //reproductorAudioPlayer.volume = volumenActualFloat;
             
             //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
             [retardo tiempoEspera:time];
@@ -185,6 +185,15 @@
     [sonido setSonido:@"clic" andExtension:@"mp3"];
     [animacion finAnimacion];
     [playerPicker stopButton];
+}
+
+- (IBAction)cambioVolumen:(id)sender {
+}
+
+- (IBAction)cambioPan:(id)sender {
+}
+
+- (IBAction)cambioRate:(id)sender {
 }
 
 
