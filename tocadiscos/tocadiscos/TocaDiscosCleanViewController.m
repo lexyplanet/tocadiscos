@@ -24,6 +24,12 @@
 @synthesize pauseButton;
 @synthesize stopButton;
 
+- (IBAction)volverRetro:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -224,8 +230,6 @@
     //NSLog(@"%f", self.reproductor.volume);
 }
 
-- (IBAction)volverRetro:(id)sender {
-}
 
 
 - (void)didReceiveMemoryWarning

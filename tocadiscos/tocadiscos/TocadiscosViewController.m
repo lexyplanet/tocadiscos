@@ -198,10 +198,10 @@
     [playerPicker rate:rateSlider];
 }
 
-- (IBAction)volverRetro:(id)sender
+/*- (IBAction)volverRetro:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
+}*/
 
 /******************************* ACTUALIZA PROGRESSBAR (ADRIAN) ************************************/
 #pragma mark - UpdateProgressBar

@@ -101,11 +101,8 @@
         
         self.cancionSeleccionada = [[NSBundle mainBundle] pathForResource: cancion_elegida ofType:@"mp3"];
     }
-    
-    
+
 }
-
-
 
 - (IBAction) hecho:(id)sender
 {

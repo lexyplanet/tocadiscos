@@ -77,7 +77,7 @@
 - (IBAction)cambioPan:(id)sender;
 - (IBAction)cambioRate:(id)sender;
 
-- (IBAction)volverRetro:(id)sender;
+//- (IBAction)volverRetro:(id)sender;
 
 
 @end
