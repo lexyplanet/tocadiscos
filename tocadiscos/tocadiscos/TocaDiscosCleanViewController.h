@@ -70,4 +70,7 @@
 - (IBAction)Stop:(id)sender;
 - (IBAction)cambioVolumen:(id)sender;
 
+- (IBAction)volverRetro:(id)sender;
+
+
 @end

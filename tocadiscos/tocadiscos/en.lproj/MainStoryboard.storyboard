@@ -10,7 +10,7 @@
             <objects>
                 <viewController storyboardIdentifier="tocadiscos" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4cE-ct-c0a" customClass="TocadiscosViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MSj-PA-BTh">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Tocadiscos.png" id="x2U-hL-OcR">
@@ -325,7 +325,7 @@
                                     <navigationItem title="Title" id="SSG-jS-hkl">
                                         <barButtonItem key="leftBarButtonItem" title="Modern" id="31p-WH-c8S">
                                             <connections>
-                                                <segue destination="4cE-ct-c0a" kind="modal" identifier="goToRetro" modalTransitionStyle="coverVertical" id="zKx-hJ-xSX"/>
+                                                <action selector="volverRetro:" destination="XHD-zP-ck8" id="lYD-qg-5SC"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="CarpetaMusica.png" style="done" id="KTG-4W-VkN">
@@ -392,13 +392,70 @@
         <image name="pre.png" width="20" height="12"/>
         <image name="stop-on.png" width="48" height="50"/>
     </resources>
+    <classes>
+        <class className="Boton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Boton.h"/>
+        </class>
+        <class className="NuevaCancionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NuevaCancionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="hecho:"/>
+                <relationship kind="outlet" name="hechoBarButtonItem" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="pickerMusicItem" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="TocadiscosCleanViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TocadiscosCleanViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Pausa:"/>
+                <relationship kind="action" name="Play:"/>
+                <relationship kind="action" name="Stop:"/>
+                <relationship kind="action" name="cambioVolumen:"/>
+                <relationship kind="action" name="volverRetro:"/>
+                <relationship kind="outlet" name="_sliderStereo" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="barraProgreso" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="brazoAgujaImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="discoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tiempoQueTranscurre" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tiempoTotal" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TocadiscosSlider" superclassName="UISlider">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TocadiscosSlider.h"/>
+        </class>
+        <class className="TocadiscosViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TocadiscosViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Pausa:"/>
+                <relationship kind="action" name="Play:"/>
+                <relationship kind="action" name="Stop:"/>
+                <relationship kind="action" name="cambioPan:"/>
+                <relationship kind="action" name="cambioRate:"/>
+                <relationship kind="action" name="cambioVolumen:"/>
+                <relationship kind="action" name="volverRetro:"/>
+                <relationship kind="outlet" name="brazoAgujaImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cancionProgressView" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="discoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="panSlider" candidateClass="TocadiscosSlider"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="Boton"/>
+                <relationship kind="outlet" name="playButton" candidateClass="Boton"/>
+                <relationship kind="outlet" name="rateSlider" candidateClass="TocadiscosSlider"/>
+                <relationship kind="outlet" name="stopButton" candidateClass="Boton"/>
+                <relationship kind="outlet" name="tiempoTotalLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tiempoTranscurridoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="volumenSlider" candidateClass="TocadiscosSlider"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zKx-hJ-xSX"/>
-        <segue reference="7Bd-PF-qww"/>
+        <segue reference="KSo-JS-7CP"/>
     </inferredMetricsTieBreakers>
 </document>

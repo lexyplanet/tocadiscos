@@ -38,6 +38,8 @@
     Animacion *animacion;
     PlayerPicker *playerPicker;
     
+    BOOL funcionandoPicker;
+    
 }
 
 //PROPERTIES
@@ -74,6 +76,8 @@
 - (IBAction)cambioVolumen:(id)sender;
 - (IBAction)cambioPan:(id)sender;
 - (IBAction)cambioRate:(id)sender;
+
+- (IBAction)volverRetro:(id)sender;
 
 
 @end

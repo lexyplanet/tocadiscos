@@ -50,6 +50,7 @@
     disco = [[Disco alloc] init];
     animacion = [[Animacion alloc] init];
     playerPicker = [[PlayerPicker alloc] init];
+    funcionandoPicker = YES;
     
     //Personalización de los sliders
     [panSlider personalizarSlider:@"BotonVolumenHorizontal-04.png" andImagenMin:@"ControlStereoHorizontal-03.png" andImagenMax:@"ControlStereoHorizontal-03.png" andVertical:YES];
@@ -66,10 +67,9 @@
         cancionActual = @"el tiempo se nos va";
     }
     
-    
-   
-    
-    [playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton andNombreCancion:cancionActual];
+    if (funcionandoPicker) {
+        [playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton andNombreCancion:cancionActual];
+    }
 
     pausado = NO;
 }
@@ -198,6 +198,10 @@
     [playerPicker rate:rateSlider];
 }
 
+- (IBAction)volverRetro:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 /******************************* ACTUALIZA PROGRESSBAR (ADRIAN) ************************************/
 #pragma mark - UpdateProgressBar
