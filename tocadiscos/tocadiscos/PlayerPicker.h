@@ -18,6 +18,7 @@
 {
     NuevaCancionViewController *nuevaCancionlPicker;
     Boton *auxPlayButton;
+    NSString *cancion0;
 }
 
 
@@ -31,9 +32,9 @@
              andStopButton: (Boton*)stopButton
           andNombreCancion: (NSString*)cancion;
 
--(BOOL) verificaCancionActual;
+-(BOOL) verificaCancionActual:(NSString*)cancion;
 
--(void) playButton;
+-(void) playButton:(NSString*)cancion;
 -(void) pauseButton;
 -(void) stopButton;
 

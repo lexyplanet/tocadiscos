@@ -22,6 +22,9 @@
 NSInteger posUltimaCancion;
 
 @interface NuevaCancionViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+{
+    NSString *cancion_elegida;
+}
 
 @property (nonatomic, strong) id <NuevaCancionDelegate> delegate;
 @property (nonatomic, strong) NSString *cancionSeleccionada;
@@ -31,10 +34,5 @@ NSInteger posUltimaCancion;
 
 
 - (IBAction) hecho:(id)sender;
-
-- (NSString*) getCancion0;
-
-- (NSString*) getCancionSeleccionada;
-
 
 @end

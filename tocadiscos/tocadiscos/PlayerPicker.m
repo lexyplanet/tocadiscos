@@ -19,12 +19,6 @@
           andNombreCancion: (NSString*)cancion;
 {
     nuevaCancionlPicker = [[NuevaCancionViewController alloc] init];
-    /*NSError * error;
-    
-    cancionActual = [[NSBundle mainBundle] pathForResource:@"el tiempo se nos va" ofType:@"mp3"];
-    
-    NSURL * url = [[NSURL alloc] initFileURLWithPath:cancionActual];
-    reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];*/
     
     [self nuevaCancionReproductor:cancion];
     
@@ -40,13 +34,16 @@
     [playButton apagar];
     [pauseButton apagar];
     [stopButton apagar];
+    
+    //Canción comodín del Picker para asegurarnos que ha seleccionado una canción el usuario
+    cancion0 = @"SELECCIONA CANCIÓN:";
 }
 
--(BOOL) verificaCancionActual
+-(BOOL) verificaCancionActual:(NSString*)cancion
 {
     
     //Controlar el error de no seleccionar ninguna canción en el picker
-    if ([[nuevaCancionlPicker getCancionSeleccionada] isEqualToString:[nuevaCancionlPicker getCancion0]]) {
+    if ([cancion isEqualToString:cancion0]) {
         SeleccionAlertView *error = [[SeleccionAlertView alloc] init];
         [error seleccionCancion];
         return NO;
@@ -55,15 +52,19 @@
     {
         return YES;
     }
+    
 }
 
--(void) playButton;
+-(void) playButton:(NSString*)cancion;
 {
     /* Se vuelve a ajustar la propiedad EnableRate a YES para que la nueva instancia realize el Rate
      ya que por default una nueva instancia tiene un valor de NO asi que si asignamos una nueva instancia de AVAudioPlayer
      y despues lo reproducimos, si queremos cambiar el rate éste no lo hará (que es lo que pasaba) */
     reproductor.enableRate = YES;
     
+    if (cancion != Nil) {
+        [self nuevaCancionReproductor:cancion];
+    }
     
     [reproductor play];
 }
@@ -80,8 +81,7 @@
 }
 
 -(void) volumen:(id)sender
-{
-    reproductor.volume = ((TocadiscosSlider *) sender).value;
+{    reproductor.volume = ((TocadiscosSlider *) sender).value;
 }
 
 -(void) pan:(id)sender
@@ -163,12 +163,15 @@
     //nuevaCancionlPicker = [[NuevaCancionViewController alloc] init];
     NSError * error;
     
+    if([nombreCancion hasSuffix:@".mp3"])
+    {
+        nombreCancion = [nombreCancion stringByDeletingPathExtension];
+    }
+
     cancionActual = [[NSBundle mainBundle] pathForResource:nombreCancion ofType:@"mp3"];
     
     NSURL * url = [[NSURL alloc] initFileURLWithPath:cancionActual];
     reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];
 }
-
-
 
 @end

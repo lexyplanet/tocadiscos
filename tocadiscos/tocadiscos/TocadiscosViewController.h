@@ -37,6 +37,7 @@
     Disco *disco;
     Animacion *animacion;
     PlayerPicker *playerPicker;
+    
 }
 
 //PROPERTIES

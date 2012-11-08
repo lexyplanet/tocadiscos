@@ -66,6 +66,9 @@
         cancionActual = @"el tiempo se nos va";
     }
     
+    
+   
+    
     [playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton andNombreCancion:cancionActual];
 
     pausado = NO;
@@ -118,7 +121,7 @@
 - (IBAction)Play:(id)sender
 {
     //Controlar el error de no seleccionar ninguna canción en el picker
-    if ([playerPicker verificaCancionActual])
+    if ([playerPicker verificaCancionActual:cancionActual])
     {
         if (!pausado) {
             [playButton encender:@"BotonPlayVerde.png"];
@@ -136,33 +139,25 @@
             
             //Gira el brazo de la aguja
             [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.4];
-            
             [disco inicioGiro:discoImageView];
-            
             [animacion finAnimacion];
-            
-            
-            //volumenActualFloat = reproductorAudioPlayer.volume;
-            
-            //reproductorAudioPlayer.volume = volumenActualFloat;
-            
+ 
             //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
             [retardo tiempoEspera:time];
-            
-            
+
             //Simula el sonido del contacto de la aguja sobre el vinilo
             [sonido setSonido:@"Vinilo" andExtension:@"mp3"];
             //Introduce una pausa para que la canción empiece después del sonido de la aguja sobre el vinilo
             [retardo tiempoEspera:0.4];
             
-            [playerPicker playButton];
+            [playerPicker playButton:cancionActual];
         }
         else
         {
             [playButton encender:@"BotonPlayVerde.png"];
             [pauseButton apagar];
             pausado = NO;
-            [playerPicker playButton];
+            [playerPicker playButton:Nil];
         }
     }
 }
@@ -242,14 +237,29 @@
 #pragma mark - nuevaCanción Piker
 - (void) nuevaCancion: (NSString *) cancion
 {
-    cancionActual = cancion;
+    //Pasamos el nombre de la canción eliminando su ruta y extensión
+    cancionActual = [cancion lastPathComponent];
+    if ([cancionActual hasSuffix:@".mp3"]) {
+        [cancionActual stringByDeletingPathExtension];
+    }
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    //Detiene la canción actual
+    [playButton apagar];
+    [pauseButton apagar];
+    [stopButton encender:@"BotonStopVerde.png"];
+    [animacion inicioAnimacion:1.0];
+    [disco pararGiro];
+    [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
+    [animacion finAnimacion];
+    [playerPicker stopButton];
+    
     
     if ([segue.identifier isEqualToString:@"goToCanciones"])
     {
+        
         NuevaCancionViewController * nuevaCancionViewController = (NuevaCancionViewController *) segue.destinationViewController;
         nuevaCancionViewController.delegate = self;
         
