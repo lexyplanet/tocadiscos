@@ -27,9 +27,9 @@
     float timeActualFloat;
     NSString *cancionActual;
 
-    BOOL pausado;   //Variable para el status de Pause ADRIAN
+    BOOL pausado;   //Variable para el status de Pause
     
-    //Creacón de objetos
+    //Creación de objetos
     Sonido *sonido;
     Retardo *retardo;
     GiroBrazo *brazo;
@@ -38,16 +38,15 @@
     Animacion *animacion;
     PlayerPicker *playerPicker;
     
-    BOOL funcionandoPicker;
+    BOOL funcionandoPicker; //Controla la selección de canciones del picker o del mediaPlayer.
     
 }
 
 //PROPERTIES
 //Sliders
-@property (strong, nonatomic) IBOutlet TocadiscosSlider *panSlider; //para personalizar otro slider
-
-@property (strong, nonatomic) IBOutlet TocadiscosSlider *volumenSlider; //para personalizar otro slider
-@property (strong, nonatomic) IBOutlet TocadiscosSlider *rateSlider; //para personalizar Slider rate
+@property (strong, nonatomic) IBOutlet TocadiscosSlider *panSlider;
+@property (strong, nonatomic) IBOutlet TocadiscosSlider *volumenSlider;
+@property (strong, nonatomic) IBOutlet TocadiscosSlider *rateSlider;
 
 //Información canción
 @property (strong, nonatomic) IBOutlet UILabel *tiempoTranscurridoLabel;
@@ -55,18 +54,16 @@
 @property (strong, nonatomic) IBOutlet UIProgressView *cancionProgressView;
 
 //Reproductor AudioPlayer
-@property (nonatomic, strong) AVAudioPlayer *reproductorAudioPlayer; //PLAYERPICKER
+//@property (nonatomic, strong) AVAudioPlayer *reproductorAudioPlayer;
 @property (strong, nonatomic) IBOutlet UIImageView *discoImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *brazoAgujaImageView; //GIROBRAZO
+@property (strong, nonatomic) IBOutlet UIImageView *brazoAgujaImageView;
 
-//@property(nonatomic, strong) NSString* cancionActual;
-@property(nonatomic, strong) NSTimer *timer; //ADRIAN
+@property(nonatomic, strong) NSTimer *timer;
 
 //Botones del tocadiscos
-@property (nonatomic, strong) IBOutlet Boton *playButton; //PLAYERPICKER
-@property (nonatomic, strong) IBOutlet Boton *pauseButton; //PLAYERPICKER
-@property (nonatomic, strong) IBOutlet Boton *stopButton; //PLAYERPICKER
-
+@property (nonatomic, strong) IBOutlet Boton *playButton;
+@property (nonatomic, strong) IBOutlet Boton *pauseButton;
+@property (nonatomic, strong) IBOutlet Boton *stopButton;
 
 //ACTIONS
 - (IBAction)Play:(id)sender;
@@ -76,8 +73,5 @@
 - (IBAction)cambioVolumen:(id)sender;
 - (IBAction)cambioPan:(id)sender;
 - (IBAction)cambioRate:(id)sender;
-
-//- (IBAction)volverRetro:(id)sender;
-
 
 @end

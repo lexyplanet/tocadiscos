@@ -21,7 +21,7 @@
 @synthesize panSlider;
 @synthesize rateSlider;
 @synthesize volumenSlider;
-@synthesize reproductorAudioPlayer;
+//@synthesize reproductorAudioPlayer;
 @synthesize cancionProgressView;
 @synthesize brazoAgujaImageView;
 @synthesize discoImageView;
@@ -63,14 +63,13 @@
     /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro */
     [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
     
-    if (cancionActual == Nil) {
+    if (cancionActual == nil) {
         cancionActual = @"el tiempo se nos va";
     }
     
     if (funcionandoPicker) {
         [playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton andNombreCancion:cancionActual];
     }
-
     pausado = NO;
 }
 
@@ -120,10 +119,17 @@
 #pragma mark - IBActions
 - (IBAction)Play:(id)sender
 {
+    BOOL continua=YES; //Controla si hay algún error del picker
     //Controlar el error de no seleccionar ninguna canción en el picker
-    if ([playerPicker verificaCancionActual:cancionActual])
+    if ( !funcionandoPicker || ![playerPicker verificaCancionActual:cancionActual] )
     {
-        if (!pausado) {
+        continua = NO;
+    }
+    
+    if (continua)
+    {
+        if (!pausado)
+        {
             [playButton encender:@"BotonPlayVerde.png"];
             [pauseButton apagar];
             [stopButton apagar];
@@ -150,14 +156,18 @@
             //Introduce una pausa para que la canción empiece después del sonido de la aguja sobre el vinilo
             [retardo tiempoEspera:0.4];
             
-            [playerPicker playButton:cancionActual];
-        }
+            if (funcionandoPicker) {
+                [playerPicker playButton:cancionActual];
+            }
+          }
         else
         {
             [playButton encender:@"BotonPlayVerde.png"];
             [pauseButton apagar];
             pausado = NO;
-            [playerPicker playButton:Nil];
+            if (funcionandoPicker) {
+                [playerPicker playButton:Nil];
+            }
         }
     }
 }
@@ -167,7 +177,9 @@
         [playButton apagar];
         [pauseButton encender:@"BotonPauseVerde.png"];
         [stopButton apagar];
-        [playerPicker pauseButton];
+        if (funcionandoPicker) {
+            [playerPicker pauseButton];
+        }
         pausado = YES;
     }
 }
@@ -183,57 +195,63 @@
     [retardo tiempoEspera:0.25];
     [sonido setSonido:@"clic" andExtension:@"mp3"];
     [animacion finAnimacion];
-    [playerPicker stopButton];
+    if (funcionandoPicker) {
+        [playerPicker stopButton];
+    }
+
 }
 
 - (IBAction)cambioVolumen:(id)sender {
-    [playerPicker volumen:volumenSlider];
+    if (funcionandoPicker) {
+        [playerPicker volumen:volumenSlider];
+    }
+
 }
 
 - (IBAction)cambioPan:(id)sender {
-    [playerPicker pan:panSlider];
+    if (funcionandoPicker) {
+        [playerPicker pan:panSlider];
+    }
+
 }
 
 - (IBAction)cambioRate:(id)sender {
-    [playerPicker rate:rateSlider];
+    if (funcionandoPicker) {
+        [playerPicker rate:rateSlider];
+    }
 }
-
-/*- (IBAction)volverRetro:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}*/
 
 /******************************* ACTUALIZA PROGRESSBAR (ADRIAN) ************************************/
 #pragma mark - UpdateProgressBar
 - (void)updateProgressBar:(NSTimer *)timer
 {
-    NSTimeInterval tiempoDelAudio = [self.reproductorAudioPlayer currentTime];     //Tiempo actual del audio
-    NSTimeInterval duracionTotalDelAudio = [self.reproductorAudioPlayer duration]; //Tiempo total del audio
-    float progreso = tiempoDelAudio / duracionTotalDelAudio;            //Progreso de la cancion
-    [self.cancionProgressView setProgress: progreso];                          //Ajusta el componente al progreso calculado
+    //NSTimeInterval tiempoDelAudio = [self.reproductorAudioPlayer currentTime];     //Tiempo actual del audio
+    //NSTimeInterval duracionTotalDelAudio = [self.reproductorAudioPlayer duration]; //Tiempo total del audio
+    //float progreso = tiempoDelAudio / duracionTotalDelAudio;            //Progreso de la cancion
+    //[self.cancionProgressView setProgress: progreso];                          //Ajusta el componente al progreso calculado
     //NSLog(@"%f", self.barraProgreso.progress);
     
     //Obteniendo los minutos
-    float minutos = floor(tiempoDelAudio/60);
+    //float minutos = floor(tiempoDelAudio/60);
     //Obteniendo los segundos del audio restando los minutos que lleva
-    float segundos = tiempoDelAudio - (minutos*60);
+    //float segundos = tiempoDelAudio - (minutos*60);
     
     //Evita que en el label aparezca el seg 60
-    if(segundos > 59)
+    /*if(segundos > 59)
     {
         segundos = 0.0;
         minutos += 1;
-    }
+    }*/
     
     //Si los segundos son menores a 10 formatea el numero a mostrar
-    if(segundos <= 9)
+    /*if(segundos <= 9)
     {
         //Ajuste del Label del tiempo transcurrido
         self.tiempoTranscurridoLabel.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
     } else {
         //Ajuste del Label del tiempo transcurrido
         self.tiempoTranscurridoLabel.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
-    }
+    }*/
 }
 
 
@@ -258,15 +276,14 @@
     [disco pararGiro];
     [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
     [animacion finAnimacion];
-    [playerPicker stopButton];
-    
+    if (funcionandoPicker) {
+        [playerPicker stopButton];
+    }
     
     if ([segue.identifier isEqualToString:@"goToCanciones"])
     {
-        
         NuevaCancionViewController * nuevaCancionViewController = (NuevaCancionViewController *) segue.destinationViewController;
         nuevaCancionViewController.delegate = self;
-        
     }
 }
 

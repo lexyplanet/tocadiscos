@@ -41,7 +41,6 @@
 
 -(BOOL) verificaCancionActual:(NSString*)cancion
 {
-    
     //Controlar el error de no seleccionar ninguna canción en el picker
     if ([cancion isEqualToString:cancion0]) {
         SeleccionAlertView *error = [[SeleccionAlertView alloc] init];
@@ -52,7 +51,6 @@
     {
         return YES;
     }
-    
 }
 
 -(void) playButton:(NSString*)cancion;
