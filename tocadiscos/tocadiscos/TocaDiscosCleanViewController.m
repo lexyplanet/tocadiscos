@@ -14,22 +14,16 @@
 
 @implementation TocadiscosCleanViewController
 
-//@synthesize _sliderVolumen;
-@synthesize _sliderStereo;
-@synthesize reproductor;
-@synthesize barraProgreso; //ADRIAN
-@synthesize brazoAgujaImageView; //GIROBRAZO
-@synthesize discoImageView; //DISCO
+@synthesize volumenSlider;
+@synthesize cancionProgressView;
+@synthesize brazoAgujaImageView;
+@synthesize discoImageView;
 @synthesize playButton;
-@synthesize pauseButton;
+//@synthesize pauseButton;
 @synthesize stopButton;
 
-- (IBAction)volverRetro:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
-
+#pragma mark - Métodos clase ViewController
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -42,200 +36,178 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
-    /*************** PEDRO 3-11-2012 **************/
-    //Inicializa el objeto de la clase Sonido
+    //Inicialización de objetos
     sonido = [[Sonido alloc] init];
-    //Inicializa el objeto de la clase Retardo
     retardo = [[Retardo alloc] init];
-    //Inicializa el objeto de la clase GiroBrazo
     brazo = [[GiroBrazo alloc] init];
-    //Inicializa el objeto de la clase Disco
     disco = [[Disco alloc] init];
-    //Inicializa el objeto de la clase Animación
     animacion = [[Animacion alloc] init];
-    //Inicializa el objeto de la clase PlayerPicker
-    //playerPicker = [[PlayerPicker alloc] init];
+    playerPicker = [[PlayerPicker alloc] init];
+    funcionandoPicker = YES;
     
-    /*********************************************/
+    /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro */
+    [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
     
-    [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:230 andPosicionY:38 andAnclajeX:0.5 andAnclajeY:0.26];
+    if (cancionActual == nil) {
+        cancionActual = @"El tiempo se nos va";
+    }
     
-    //[playerPicker iniciaReproductor:playButton andPauseButton:pauseButton andStopButton:stopButton];
-    
-    /******************************** INICIALIZACION DE VARIABLE DE STATUS DE PAUSE (ADRIAN) *********************/
-    /*NSError * error;
-     
-     self.cancionActual = [[NSBundle mainBundle] pathForResource:@"dePeli" ofType:@"mp3"];
-     
-     NSURL * url = [[NSURL alloc] initFileURLWithPath:self.cancionActual];
-     self.reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:url error: &error];*/
+    if (funcionandoPicker) {
+        [playerPicker iniciaReproductor:playButton andPauseButton:Nil andStopButton:stopButton andNombreCancion:cancionActual];
+    }
     pausado = NO;
-    //self.tiempoTotal.text=[playerPicker songTime];
-    
 }
 
+#pragma mark - Métodos heredados de la clase ViewController
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear:animated];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void)viewDidUnload
+{
+    [self setCancionProgressView:nil];
+    [self setDiscoImageView:nil];
+    [self setBrazoAgujaImageView:nil];
+    //[super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+#pragma mark - IBActions
 - (IBAction)Play:(id)sender {
     
-    //Animación
-    float time = 1.00;
-    [animacion inicioAnimacion:time];
+    BOOL continua=YES; //Controla si hay algún error del picker
+    //Controlar el error de no seleccionar ninguna canción en el picker
+    if ( !funcionandoPicker || ![playerPicker verificaCancionActual:cancionActual] )
+    {
+        continua = NO;
+    }
     
-    if(pausado){
-        [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.0];
-        //[self.playButton setImage:[UIImage imageNamed:@"Pause.png"] forState:UIControlStateNormal];
-        //[playerPicker playButton ];
-        //[self.reproductor pause];
-        pausado=NO;
-    }else{
-        
-        //[self.playButton setImage:[UIImage imageNamed:@"play-on.png"] forState:UIControlStateNormal];
-        
-        //Pone el botón del play en color verde.
-        //[self.playButton setImage:[UIImage imageNamed:@"BotonPlayVerde.png"] forState:UIControlStateNormal];
-        //Apaga el botón pause y stop
-        //[self.pauseButton setImage:NO forState:UIControlStateNormal];
-        //[self.stopButton setImage:NO forState:UIControlStateNormal];
-        
-        /********* PEDRO 3/11/2012 *********/
-        //Sonido clic
-        [sonido setSonido:@"clic" andExtension:@"mp3"];
-        //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
-        [retardo tiempoEspera:0.25];
-        /*********************************/
-        
-        
-        //Gira el brazo de la aguja
-        [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.4];
-        
-        //[self startSpin];
-        [disco inicioGiro:discoImageView];
-        
-        [animacion finAnimacion];
-        
-        //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
-        //[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:time]];
-        [retardo tiempoEspera:time];
-        
-        /********* PEDRO 1/11/2012 *********/
-        //Simula el sonido del contacto de la aguja sobre el vinilo
-        [sonido setSonido:@"Vinilo" andExtension:@"mp3"];
-        //Introduce una pausa para que la canción empiece después del sonido de la aguja sobre el vinilo
-        [retardo tiempoEspera:0.4];
-        /**********************************/
-        
-        //Comienza a sonar la canción
-        //[playerPicker playButton];
-        //[self.reproductor play];
-        
-        /******************************** VERSION ADRIAN PROGRESS BAR Y LABELS *********************/
-        /*float duracionAudio = [self.reproductor duration];
-         
-         //Obteniendo los minutos
-         float minutos = floor(duracionAudio/60);
-         //Obteniendo los segundos del audio restando los minutos que lleva
-         float segundos = duracionAudio - (minutos*60);
-         
-         //Inserta el tiempo total de la cancion.
-         //Si los segundos son menores a 10 formatea el numero a mostrar
-         if(segundos < 10)
-         {
-         //Ajuste del Label del tiempo transcurrido
-         self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
-         } else {
-         //Ajuste del Label del tiempo transcurrido
-         self.tiempoTotal.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
-         }
-         
-         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressBar:) userInfo:nil repeats:YES];*/
-        
-        //[playerPicker songCurrent:self.tiempoQueTranscurre];
-        /******************************************************************************/
-        pausado=YES;
+    if (continua)
+    {
+        if (!pausado)
+        {
+            [playButton encender:@"BotonPlayVerde.png"];
+            [stopButton apagar];
+            
+            //Sonido clic
+            [sonido setSonido:@"clic" andExtension:@"mp3"];
+            //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
+            [retardo tiempoEspera:0.25];
+            
+            //Animación
+            float time = 1.00;
+            [animacion inicioAnimacion:time];
+            
+            //Gira el brazo de la aguja
+            [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.4];
+            [disco inicioGiro:discoImageView];
+            [animacion finAnimacion];
+            
+            //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
+            [retardo tiempoEspera:time];
+            
+            //Simula el sonido del contacto de la aguja sobre el vinilo
+            [sonido setSonido:@"Vinilo" andExtension:@"mp3"];
+            //Introduce una pausa para que la canción empiece después del sonido de la aguja sobre el vinilo
+            [retardo tiempoEspera:0.4];
+            
+            if (funcionandoPicker) {
+                [playerPicker playButton:cancionActual];
+            }
+        }
+        else
+        {
+            [playButton encender:@"BotonPlayVerde.png"];
+            pausado = NO;
+            if (funcionandoPicker) {
+                [playerPicker playButton:Nil];
+            }
+        }
     }
 }
 
-- (IBAction)Pausa:(id)sender {
-    //Pone el botón del pause en color verde.
-    [self.pauseButton setImage:[UIImage imageNamed:@"BotonPauseVerde.png"] forState:UIControlStateNormal];
-    //Apaga el botón play y stop
-    [self.playButton setImage:NO forState:UIControlStateNormal];
-    [self.stopButton setImage:NO forState:UIControlStateNormal];
-    
-    /********************* MODIFICACIÓN ADRIÁN *****************/
-    if (pausado) {
-        //[self.reproductor play];
-        pausado = NO;
-        return;
-    }
-}
-
-/******************************* ACTUALIZA PROGRESSBAR (ADRIAN) ************************************/
-#pragma mark - UpdateProgressBar
-/*- (void)updateProgressBar:(NSTimer *)timer
- {
- NSTimeInterval tiempoDelAudio = [self.reproductor currentTime];     //Tiempo actual del audio
- NSTimeInterval duracionTotalDelAudio = [self.reproductor duration]; //Tiempo total del audio
- float progreso = tiempoDelAudio / duracionTotalDelAudio;            //Progreso de la cancion
- [self.barraProgreso setProgress: progreso];                          //Ajusta el componente al progreso calculado
- //NSLog(@"%f", self.barraProgreso.progress);
- 
- //Obteniendo los minutos
- float minutos = floor(tiempoDelAudio/60);
- //Obteniendo los segundos del audio restando los minutos que lleva
- float segundos = tiempoDelAudio - (minutos*60);
- 
- //Evita que en el label aparezca el seg 60
- if(segundos > 59)
- {
- segundos = 0.0;
- minutos += 1;
- }
- 
- //Si los segundos son menores a 10 formatea el numero a mostrar
- if(segundos <= 9)
- {
- //Ajuste del Label del tiempo transcurrido
- self.tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:0%0.0f", minutos, segundos];
- } else {
- //Ajuste del Label del tiempo transcurrido
- self.tiempoQueTranscurre.text = [NSString stringWithFormat:@"%0.0f:%0.0f", minutos, segundos];
- }
- }*/
-
+/*- (IBAction)Pausa:(id)sender {
+  
+}*/
 
 - (IBAction)Stop:(id)sender {
-    //Pone el botón del stop en color verde.
-    [self.stopButton setImage:[UIImage imageNamed:@"stop-off.png"] forState:UIControlStateNormal];
-    //Apaga el botón play y pause
-    [self.playButton setImage:NO forState:UIControlStateNormal];
-    [self.pauseButton setImage:NO forState:UIControlStateNormal];
-    
+    [playButton apagar];
+    [stopButton encender:@"BotonStopVerde.png"];
     [animacion inicioAnimacion:1.0];
-    self.reproductor.currentTime = 0;
-    timeActualFloat = self.reproductor.currentTime;
+    [disco pararGiro];
+    [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
+    [retardo tiempoEspera:0.25];
+    [sonido setSonido:@"clic" andExtension:@"mp3"];
+    [animacion finAnimacion];
+    if (funcionandoPicker) {
+        [playerPicker stopButton];
+    }
+}
+
+- (IBAction)cambioVolumen:(id)sender {
+    if (funcionandoPicker) {
+        [playerPicker volumen:volumenSlider];
+    }
+}
+
+- (IBAction)volverRetro:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+/*Invoqué el metodo IBAction ya definido ya que contiene toda la animacion y play de la cancion*/
+#pragma mark - nuevaCanción Piker
+- (void) nuevaCancion: (NSString *) cancion
+{
+    //Pasamos el nombre de la canción eliminando su ruta y extensión
+    cancionActual = [cancion lastPathComponent];
+    if ([cancionActual hasSuffix:@".mp3"]) {
+        [cancionActual stringByDeletingPathExtension];
+    }
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    //Detiene la canción actual
+    [playButton apagar];
+    [stopButton encender:@"BotonStopVerde.png"];
+    [animacion inicioAnimacion:1.0];
     [disco pararGiro];
     [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
     [animacion finAnimacion];
+    if (funcionandoPicker) {
+        [playerPicker stopButton];
+    }
     
-    //[self.reproductor stop];
-    //[playerPicker stopButton];
-}
-
-
-- (IBAction)cambioVolumen:(id)sender {
-    //[playerPicker volumen: sender];
-    //self.reproductor.volume = ((UISlider *) sender).value;
-    //NSLog(@"%f", self.reproductor.volume);
-}
-
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if ([segue.identifier isEqualToString:@"goToCanciones"])
+    {
+        NuevaCancionViewController * nuevaCancionViewController = (NuevaCancionViewController *) segue.destinationViewController;
+        nuevaCancionViewController.delegate = self;
+    }
 }
 
 @end

@@ -281,7 +281,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dt3-V5-lmU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dt3-V5-lmU" customClass="Boton">
                                 <rect key="frame" x="148" y="330" width="68" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -303,7 +303,7 @@
                                     <action selector="cambioVolumen:" destination="XHD-zP-ck8" eventType="valueChanged" id="Nru-OH-01I"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="80Z-8z-4Ha">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="80Z-8z-4Ha" customClass="Boton">
                                 <rect key="frame" x="101" y="347" width="35" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -347,8 +347,9 @@
                         <outlet property="discoImageView" destination="WQs-SR-83v" id="npn-GI-phH"/>
                         <outlet property="playButton" destination="dt3-V5-lmU" id="5ou-N9-ifg"/>
                         <outlet property="stopButton" destination="80Z-8z-4Ha" id="46z-Vc-8AM"/>
-                        <outlet property="tiempoQueTranscurre" destination="Rmt-oe-7Ep" id="vSl-dl-Z1E"/>
-                        <outlet property="tiempoTotal" destination="KTg-ay-lcP" id="Rba-08-bI9"/>
+                        <outlet property="tiempoTotalLabel" destination="KTg-ay-lcP" id="37F-ek-PBI"/>
+                        <outlet property="tiempoTranscurridoLabel" destination="Rmt-oe-7Ep" id="4WS-4i-6hc"/>
+                        <outlet property="volumenSlider" destination="DMv-IK-AJr" id="zyl-OG-e50"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f97-pz-xct" userLabel="First Responder" sceneMemberID="firstResponder"/>

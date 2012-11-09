@@ -21,7 +21,6 @@
 @synthesize panSlider;
 @synthesize rateSlider;
 @synthesize volumenSlider;
-//@synthesize reproductorAudioPlayer;
 @synthesize cancionProgressView;
 @synthesize brazoAgujaImageView;
 @synthesize discoImageView;
@@ -64,7 +63,7 @@
     [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
     
     if (cancionActual == nil) {
-        cancionActual = @"el tiempo se nos va";
+        cancionActual = @"El tiempo se nos va";
     }
     
     if (funcionandoPicker) {
@@ -198,14 +197,12 @@
     if (funcionandoPicker) {
         [playerPicker stopButton];
     }
-
 }
 
 - (IBAction)cambioVolumen:(id)sender {
     if (funcionandoPicker) {
         [playerPicker volumen:volumenSlider];
     }
-
 }
 
 - (IBAction)cambioPan:(id)sender {
@@ -255,7 +252,7 @@
 }
 
 
-/*Adrian: Invoqué el metodo IBAction ya definido ya que contiene toda la animacion y play de la cancion*/
+/*Invoqué el metodo IBAction ya definido ya que contiene toda la animacion y play de la cancion*/
 #pragma mark - nuevaCanción Piker
 - (void) nuevaCancion: (NSString *) cancion
 {

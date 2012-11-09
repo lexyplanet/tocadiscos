@@ -9,11 +9,6 @@
 /* Begin PBXBuildFile section */
 		CE720D3916450E5200A63A1F /* GiroBrazo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE720D3816450E5200A63A1F /* GiroBrazo.m */; };
 		CE73E15816456D3500015FBA /* Animacion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73E15716456D3500015FBA /* Animacion.m */; };
-		CE7438D01647B99500CF2C8C /* dePeli.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE7438CB1647B99500CF2C8C /* dePeli.mp3 */; };
-		CE7438D11647B99500CF2C8C /* downbeat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE7438CC1647B99500CF2C8C /* downbeat.mp3 */; };
-		CE7438D21647B99500CF2C8C /* el tiempo se nos va.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE7438CD1647B99500CF2C8C /* el tiempo se nos va.mp3 */; };
-		CE7438D31647B99500CF2C8C /* Enganchado a ti.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE7438CE1647B99500CF2C8C /* Enganchado a ti.mp3 */; };
-		CE7438D41647B99500CF2C8C /* sinRumbo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE7438CF1647B99500CF2C8C /* sinRumbo.mp3 */; };
 		CE7438EE1647BC9000CF2C8C /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7438DF1647BC9000CF2C8C /* bg.png */; };
 		CE7438EF1647BC9000CF2C8C /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7438E01647BC9000CF2C8C /* bg2.png */; };
 		CE7438F01647BC9000CF2C8C /* brazo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7438E11647BC9000CF2C8C /* brazo.png */; };
@@ -36,6 +31,8 @@
 		CE743E3016453340006B60BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE743E2F16453340006B60BD /* QuartzCore.framework */; };
 		CE743E35164549BA006B60BD /* Disco.m in Sources */ = {isa = PBXBuildFile; fileRef = CE743E34164549BA006B60BD /* Disco.m */; };
 		CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE755F8E163F24F800DA58B8 /* Aguja2.png */; };
+		CE908FAB164C8F3900116CC5 /* Into LexyPlanet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE908FA6164C8F3900116CC5 /* Into LexyPlanet.mp3 */; };
+		CE908FAC164C8F3900116CC5 /* Sin Rumbo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE908FA7164C8F3900116CC5 /* Sin Rumbo.mp3 */; };
 		CE9A3E241642E58800F1DC66 /* clic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9A3E221642E58800F1DC66 /* clic.mp3 */; };
 		CE9A3E2B1642E79B00F1DC66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */; };
 		CE9AFD671647F47A009F02D5 /* TocadiscosSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9AFD661647F47A009F02D5 /* TocadiscosSlider.m */; };
@@ -87,11 +84,6 @@
 		CE73CEE21645729E00E398BE /* PlayerPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerPicker.m; sourceTree = "<group>"; };
 		CE73E15616456D3500015FBA /* Animacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animacion.h; sourceTree = "<group>"; };
 		CE73E15716456D3500015FBA /* Animacion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animacion.m; sourceTree = "<group>"; };
-		CE7438CB1647B99500CF2C8C /* dePeli.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dePeli.mp3; sourceTree = "<group>"; };
-		CE7438CC1647B99500CF2C8C /* downbeat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = downbeat.mp3; sourceTree = "<group>"; };
-		CE7438CD1647B99500CF2C8C /* el tiempo se nos va.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "el tiempo se nos va.mp3"; sourceTree = "<group>"; };
-		CE7438CE1647B99500CF2C8C /* Enganchado a ti.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Enganchado a ti.mp3"; sourceTree = "<group>"; };
-		CE7438CF1647B99500CF2C8C /* sinRumbo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sinRumbo.mp3; sourceTree = "<group>"; };
 		CE7438DF1647BC9000CF2C8C /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		CE7438E01647BC9000CF2C8C /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
 		CE7438E11647BC9000CF2C8C /* brazo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brazo.png; sourceTree = "<group>"; };
@@ -118,6 +110,8 @@
 		CE743E33164549BA006B60BD /* Disco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Disco.h; sourceTree = "<group>"; };
 		CE743E34164549BA006B60BD /* Disco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Disco.m; sourceTree = "<group>"; };
 		CE755F8E163F24F800DA58B8 /* Aguja2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Aguja2.png; sourceTree = "<group>"; };
+		CE908FA6164C8F3900116CC5 /* Into LexyPlanet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Into LexyPlanet.mp3"; sourceTree = "<group>"; };
+		CE908FA7164C8F3900116CC5 /* Sin Rumbo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sin Rumbo.mp3"; sourceTree = "<group>"; };
 		CE9A3E221642E58800F1DC66 /* clic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clic.mp3; sourceTree = "<group>"; };
 		CE9A3E2A1642E79B00F1DC66 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CE9AFD651647F47A009F02D5 /* TocadiscosSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TocadiscosSlider.h; sourceTree = "<group>"; };
@@ -407,11 +401,8 @@
 		CE9FEA48163DE5A4001DBBA9 /* Canciones */ = {
 			isa = PBXGroup;
 			children = (
-				CE7438CB1647B99500CF2C8C /* dePeli.mp3 */,
-				CE7438CC1647B99500CF2C8C /* downbeat.mp3 */,
-				CE7438CD1647B99500CF2C8C /* el tiempo se nos va.mp3 */,
-				CE7438CE1647B99500CF2C8C /* Enganchado a ti.mp3 */,
-				CE7438CF1647B99500CF2C8C /* sinRumbo.mp3 */,
+				CE908FA6164C8F3900116CC5 /* Into LexyPlanet.mp3 */,
+				CE908FA7164C8F3900116CC5 /* Sin Rumbo.mp3 */,
 			);
 			name = Canciones;
 			sourceTree = "<group>";
@@ -531,11 +522,6 @@
 				CE755F8F163F24F800DA58B8 /* Aguja2.png in Resources */,
 				CE9A3E241642E58800F1DC66 /* clic.mp3 in Resources */,
 				CEA362E716430CB4006DBB4F /* Vinilo.mp3 in Resources */,
-				CE7438D01647B99500CF2C8C /* dePeli.mp3 in Resources */,
-				CE7438D11647B99500CF2C8C /* downbeat.mp3 in Resources */,
-				CE7438D21647B99500CF2C8C /* el tiempo se nos va.mp3 in Resources */,
-				CE7438D31647B99500CF2C8C /* Enganchado a ti.mp3 in Resources */,
-				CE7438D41647B99500CF2C8C /* sinRumbo.mp3 in Resources */,
 				CE7438EE1647BC9000CF2C8C /* bg.png in Resources */,
 				CE7438EF1647BC9000CF2C8C /* bg2.png in Resources */,
 				CE7438F01647BC9000CF2C8C /* brazo.png in Resources */,
@@ -552,6 +538,8 @@
 				CE7438FB1647BC9000CF2C8C /* stop-on.png in Resources */,
 				CE7438FC1647BC9000CF2C8C /* Tocadiscos.png in Resources */,
 				CE7438FE1647BE1E00CF2C8C /* disco_Clean.png in Resources */,
+				CE908FAB164C8F3900116CC5 /* Into LexyPlanet.mp3 in Resources */,
+				CE908FAC164C8F3900116CC5 /* Sin Rumbo.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

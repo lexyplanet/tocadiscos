@@ -21,12 +21,8 @@
 
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 {
-    float panActualFloat;
-    float volumenActualFloat;
-    float rateActualFloat;
-    float timeActualFloat;
     NSString *cancionActual;
-
+    
     BOOL pausado;   //Variable para el status de Pause
     
     //Creación de objetos

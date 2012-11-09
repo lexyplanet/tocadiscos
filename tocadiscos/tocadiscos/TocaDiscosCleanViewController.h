@@ -9,65 +9,60 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import "TocadiscosViewController.h"
 #import "NuevaCancionViewController.h"
 #import "Sonido.h"
 #import "Retardo.h"
 #import "GiroBrazo.h"
 #import "Disco.h"
 #import "Animacion.h"
-//#import "PlayerPicker.h"
+#import "PlayerPicker.h"
+#import "Boton.h"
+#import "TocadiscosSlider.h"
 
 @interface TocadiscosCleanViewController : UIViewController <NuevaCancionDelegate>
 {
-    /* Variables Auxiliares para el ajuste de valores en el reproductor al momento de cambiar de cancion */
-    float panActualFloat;
-    float volumenActualFloat;
-    float rateActualFloat;
-    float timeActualFloat;
+    TocadiscosViewController *tocadiscos;
     
-    //BOOL animating; //esta variable ayuda a saber si esta animando o corriendo el bucle.GIRODISCO
-    BOOL pausado;   //Variable para el status de Pause ADRIAN
-    BOOL stoped; //Variable para el status de Stop Beto
+    NSString *cancionActual;
     
-    /********* PEDRO 3-11-2012 *************/
-    //Objeto para escuchar un sonido
+    BOOL pausado;   //Variable para el status de Pause
+    
+    //Creación de objetos
     Sonido *sonido;
-    //Objeto para crear un retardo en la ejecución del programa
     Retardo *retardo;
-    //Objeto para realizar el giro del brazo de la aguja
     GiroBrazo *brazo;
     NSString *nombreImagenBrazo;
-    //Objeto para hacer girar el disco
     Disco *disco;
-    //Objeto para crear animaciones
     Animacion *animacion;
-    //Objeto para crear el player que selecciona las canciones mediante el Picker
-    //PlayerPicker *playerPicker;
-    /*************************************/
+    PlayerPicker *playerPicker;
+    
+    BOOL funcionandoPicker; //Controla la selección de canciones del picker o del mediaPlayer.
 }
 
-//@property (strong, nonatomic) IBOutlet UISlider *_sliderVolumen; //para personalizar un slider
-@property (strong, nonatomic) IBOutlet UISlider *_sliderStereo; //para personalizar otro slider
+//PROPERTIES
+//Sliders
 
-@property (strong, nonatomic) IBOutlet UILabel *tiempoQueTranscurre;
-@property (strong, nonatomic) IBOutlet UILabel *tiempoTotal;
-@property (strong, nonatomic) IBOutlet UIProgressView *barraProgreso;
+@property (strong, nonatomic) IBOutlet UISlider *volumenSlider;
 
-@property (nonatomic, strong) AVAudioPlayer *reproductor; //PLAYERPICKER
+@property (strong, nonatomic) IBOutlet UILabel *tiempoTranscurridoLabel;
+@property (strong, nonatomic) IBOutlet UILabel *tiempoTotalLabel;
+@property (strong, nonatomic) IBOutlet UIProgressView *cancionProgressView;
+
 @property (strong, nonatomic) IBOutlet UIImageView *discoImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *brazoAgujaImageView; //GIROBRAZO
+@property (strong, nonatomic) IBOutlet UIImageView *brazoAgujaImageView;
 
-@property(nonatomic, strong) NSString* cancionActual; //PLAYERPICKER
-@property(nonatomic, strong) NSTimer *timer; //ADRIAN
+@property(nonatomic, strong) NSTimer *timer;
 
 //Botones del tocadiscos
-@property (nonatomic, strong) IBOutlet UIButton *playButton; //PLAYERPICKER
-@property (nonatomic, strong) IBOutlet UIButton *pauseButton; //PLAYERPICKER
-@property (nonatomic, strong) IBOutlet UIButton *stopButton; //PLAYERPICKER
+@property (nonatomic, strong) IBOutlet Boton *playButton;
+//@property (nonatomic, strong) IBOutlet Boton *pauseButton;
+@property (nonatomic, strong) IBOutlet Boton *stopButton;
 
 - (IBAction)Play:(id)sender;
-- (IBAction)Pausa:(id)sender;
+//- (IBAction)Pausa:(id)sender;
 - (IBAction)Stop:(id)sender;
+
 - (IBAction)cambioVolumen:(id)sender;
 
 - (IBAction)volverRetro:(id)sender;
