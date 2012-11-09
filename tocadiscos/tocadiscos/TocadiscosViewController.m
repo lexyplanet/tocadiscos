@@ -129,7 +129,7 @@
     {
         if (!pausado)
         {
-            [playButton encender:@"BotonPlayVerde.png"];
+            [playButton encender:@"BotonPlayPulsado.png"];
             [pauseButton apagar];
             [stopButton apagar];
             
@@ -161,7 +161,7 @@
           }
         else
         {
-            [playButton encender:@"BotonPlayVerde.png"];
+            [playButton encender:@"BotonPlayPulsado.png"];
             [pauseButton apagar];
             pausado = NO;
             if (funcionandoPicker) {
@@ -174,7 +174,7 @@
 - (IBAction)Pausa:(id)sender {
     if (!pausado) {
         [playButton apagar];
-        [pauseButton encender:@"BotonPauseVerde.png"];
+        [pauseButton encender:@"BotonPausePulsado.png"];
         [stopButton apagar];
         if (funcionandoPicker) {
             [playerPicker pauseButton];
@@ -187,7 +187,7 @@
 {
     [playButton apagar];
     [pauseButton apagar];
-    [stopButton encender:@"BotonStopVerde.png"];
+    [stopButton encender:@"BotonStopPulsado.png"];
     [animacion inicioAnimacion:1.0];
     [disco pararGiro];
     [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
@@ -268,7 +268,7 @@
     //Detiene la canción actual
     [playButton apagar];
     [pauseButton apagar];
-    [stopButton encender:@"BotonStopVerde.png"];
+    [stopButton encender:@"BotonStopPulsado.png"];
     [animacion inicioAnimacion:1.0];
     [disco pararGiro];
     [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
