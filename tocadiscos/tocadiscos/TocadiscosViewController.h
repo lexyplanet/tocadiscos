@@ -41,7 +41,7 @@
     BOOL funcionandoPicker; //Controla la selección de canciones del picker o del mediaPlayer.
     
 }
-
+/////
 //PROPERTIES
 //Sliders
 @property (strong, nonatomic) IBOutlet TocadiscosSlider *panSlider;
