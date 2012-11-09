@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE63FCC7164C9A59006BAA70 /* Downbeat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE63FCC4164C9A59006BAA70 /* Downbeat.mp3 */; };
+		CE63FCC8164C9A59006BAA70 /* El tiempo se nos va.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE63FCC5164C9A59006BAA70 /* El tiempo se nos va.mp3 */; };
+		CE63FCC9164C9A59006BAA70 /* Enganchado a ti.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE63FCC6164C9A59006BAA70 /* Enganchado a ti.mp3 */; };
 		CE720D3916450E5200A63A1F /* GiroBrazo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE720D3816450E5200A63A1F /* GiroBrazo.m */; };
 		CE73E15816456D3500015FBA /* Animacion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73E15716456D3500015FBA /* Animacion.m */; };
 		CE7438EE1647BC9000CF2C8C /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7438DF1647BC9000CF2C8C /* bg.png */; };
@@ -78,6 +81,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE63FCC4164C9A59006BAA70 /* Downbeat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Downbeat.mp3; sourceTree = "<group>"; };
+		CE63FCC5164C9A59006BAA70 /* El tiempo se nos va.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "El tiempo se nos va.mp3"; sourceTree = "<group>"; };
+		CE63FCC6164C9A59006BAA70 /* Enganchado a ti.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Enganchado a ti.mp3"; sourceTree = "<group>"; };
 		CE720D3716450E5200A63A1F /* GiroBrazo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiroBrazo.h; sourceTree = "<group>"; };
 		CE720D3816450E5200A63A1F /* GiroBrazo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiroBrazo.m; sourceTree = "<group>"; };
 		CE73CEE11645729E00E398BE /* PlayerPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerPicker.h; sourceTree = "<group>"; };
@@ -401,6 +407,9 @@
 		CE9FEA48163DE5A4001DBBA9 /* Canciones */ = {
 			isa = PBXGroup;
 			children = (
+				CE63FCC4164C9A59006BAA70 /* Downbeat.mp3 */,
+				CE63FCC5164C9A59006BAA70 /* El tiempo se nos va.mp3 */,
+				CE63FCC6164C9A59006BAA70 /* Enganchado a ti.mp3 */,
 				CE908FA6164C8F3900116CC5 /* Into LexyPlanet.mp3 */,
 				CE908FA7164C8F3900116CC5 /* Sin Rumbo.mp3 */,
 			);
@@ -540,6 +549,9 @@
 				CE7438FE1647BE1E00CF2C8C /* disco_Clean.png in Resources */,
 				CE908FAB164C8F3900116CC5 /* Into LexyPlanet.mp3 in Resources */,
 				CE908FAC164C8F3900116CC5 /* Sin Rumbo.mp3 in Resources */,
+				CE63FCC7164C9A59006BAA70 /* Downbeat.mp3 in Resources */,
+				CE63FCC8164C9A59006BAA70 /* El tiempo se nos va.mp3 in Resources */,
+				CE63FCC9164C9A59006BAA70 /* Enganchado a ti.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
