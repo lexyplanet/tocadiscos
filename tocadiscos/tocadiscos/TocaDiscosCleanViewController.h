@@ -42,7 +42,6 @@
 
 //PROPERTIES
 //Sliders
-
 @property (strong, nonatomic) IBOutlet UISlider *volumenSlider;
 
 @property (strong, nonatomic) IBOutlet UILabel *tiempoTranscurridoLabel;
