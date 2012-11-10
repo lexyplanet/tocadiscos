@@ -187,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2W-6n-WZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-621" y="-337"/>
+            <point key="canvasLocation" x="-556" y="56"/>
         </scene>
         <!--Nueva Cancion View Controller-->
         <scene sceneID="MxW-RN-RBw">
@@ -200,6 +200,7 @@
                             <navigationBar autoresizesSubviews="NO" contentMode="top" id="jJT-U0-LN0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem id="kWy-eT-0f6">
                                         <barButtonItem key="leftBarButtonItem" title="Hecho" id="fNc-0f-4rH">
@@ -213,7 +214,6 @@
                             <pickerView tag="-4" contentMode="center" id="1bB-24-CSe">
                                 <rect key="frame" x="0.0" y="44" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
@@ -234,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGM-OA-spj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="-617"/>
+            <point key="canvasLocation" x="-12" y="-218"/>
         </scene>
         <!--Tocadiscos Clean View Controller-->
         <scene sceneID="Moc-S1-uX9">
@@ -343,7 +343,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="SSG-jS-hkl">
+                                    <navigationItem id="SSG-jS-hkl">
                                         <barButtonItem key="leftBarButtonItem" title="Modern" id="31p-WH-c8S">
                                             <connections>
                                                 <action selector="volverRetro:" destination="XHD-zP-ck8" id="uO0-uQ-ZQ6"/>
@@ -411,7 +411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f97-pz-xct" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-479" y="-1033"/>
+            <point key="canvasLocation" x="-556" y="-544"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9B9-Sc-SbR">
@@ -424,7 +424,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="4cE-ct-c0a" kind="relationship" relationship="rootViewController" id="Hqe-OL-BOS"/>
+                        <segue destination="4cE-ct-c0a" kind="relationship" relationship="rootViewController" id="PQD-Ou-5I3"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3w0-bf-9Ky" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -520,6 +520,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KSo-JS-7CP"/>
+        <segue reference="7Bd-PF-qww"/>
     </inferredMetricsTieBreakers>
 </document>
