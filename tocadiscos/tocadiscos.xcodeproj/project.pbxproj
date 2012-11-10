@@ -31,8 +31,6 @@
 		3C0D528A164D141B00AB5466 /* Aguja2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D5289164D141B00AB5466 /* Aguja2@2x.png */; };
 		3C0D528D164D154D00AB5466 /* Disco.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D528B164D154B00AB5466 /* Disco.png */; };
 		3C0D528E164D154D00AB5466 /* Disco@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D528C164D154C00AB5466 /* Disco@2x.png */; };
-		3C0D5290164D17B800AB5466 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D528F164D17B800AB5466 /* Default-568h@2x.png */; };
-		3C0D5292164D17BE00AB5466 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0D5291164D17BE00AB5466 /* Default@2x.png */; };
 		3C0D5295164D180600AB5466 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FE9E5163DDB7E001DBBA9 /* Default-568h@2x.png */; };
 		CA9640E1164DE9B900E5411D /* bg-botones@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA9640DE164DE9B400E5411D /* bg-botones@2x.png */; };
 		CA9640E2164DE9B900E5411D /* bg-vinilo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA9640DF164DE9B600E5411D /* bg-vinilo@2x.png */; };
@@ -96,7 +94,6 @@
 		CE9FE9DA163DDB7E001DBBA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE9FE9D8163DDB7E001DBBA9 /* InfoPlist.strings */; };
 		CE9FE9DC163DDB7E001DBBA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9FE9DB163DDB7E001DBBA9 /* main.m */; };
 		CE9FE9E0163DDB7E001DBBA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9FE9DF163DDB7E001DBBA9 /* AppDelegate.m */; };
-		CE9FE9E2163DDB7E001DBBA9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FE9E1163DDB7E001DBBA9 /* Default.png */; };
 		CE9FE9E9163DDB7E001DBBA9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9FE9E7163DDB7E001DBBA9 /* MainStoryboard.storyboard */; };
 		CE9FEA33163DE592001DBBA9 /* BotonControlVelocidadHorizontal-03.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA1D163DE592001DBBA9 /* BotonControlVelocidadHorizontal-03.png */; };
 		CE9FEA38163DE592001DBBA9 /* BotonStereo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9FEA22163DE592001DBBA9 /* BotonStereo.png */; };
@@ -142,9 +139,6 @@
 		3C0D5289164D141B00AB5466 /* Aguja2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aguja2@2x.png"; sourceTree = "<group>"; };
 		3C0D528B164D154B00AB5466 /* Disco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Disco.png; sourceTree = "<group>"; };
 		3C0D528C164D154C00AB5466 /* Disco@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Disco@2x.png"; sourceTree = "<group>"; };
-		3C0D528F164D17B800AB5466 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3C0D5291164D17BE00AB5466 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		3C0D5293164D17C200AB5466 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CA9640DE164DE9B400E5411D /* bg-botones@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-botones@2x.png"; sourceTree = "<group>"; };
 		CA9640DF164DE9B600E5411D /* bg-vinilo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-vinilo@2x.png"; sourceTree = "<group>"; };
 		CA9640E0164DE9B700E5411D /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
@@ -439,9 +433,6 @@
 		CE9FE9C0163DDB7D001DBBA9 = {
 			isa = PBXGroup;
 			children = (
-				3C0D5293164D17C200AB5466 /* Default.png */,
-				3C0D5291164D17BE00AB5466 /* Default@2x.png */,
-				3C0D528F164D17B800AB5466 /* Default-568h@2x.png */,
 				CE9FE9D5163DDB7E001DBBA9 /* tocadiscos */,
 				CE9FE9CE163DDB7D001DBBA9 /* Frameworks */,
 				CE9FE9CC163DDB7D001DBBA9 /* Products */,
@@ -635,7 +626,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9FE9DA163DDB7E001DBBA9 /* InfoPlist.strings in Resources */,
-				CE9FE9E2163DDB7E001DBBA9 /* Default.png in Resources */,
 				CE9FE9E9163DDB7E001DBBA9 /* MainStoryboard.storyboard in Resources */,
 				CE9FEA33163DE592001DBBA9 /* BotonControlVelocidadHorizontal-03.png in Resources */,
 				CE9FEA38163DE592001DBBA9 /* BotonStereo.png in Resources */,
@@ -691,8 +681,6 @@
 				3C0D528A164D141B00AB5466 /* Aguja2@2x.png in Resources */,
 				3C0D528D164D154D00AB5466 /* Disco.png in Resources */,
 				3C0D528E164D154D00AB5466 /* Disco@2x.png in Resources */,
-				3C0D5290164D17B800AB5466 /* Default-568h@2x.png in Resources */,
-				3C0D5292164D17BE00AB5466 /* Default@2x.png in Resources */,
 				3C0D5295164D180600AB5466 /* Default-568h@2x.png in Resources */,
 				CA9640E1164DE9B900E5411D /* bg-botones@2x.png in Resources */,
 				CA9640E2164DE9B900E5411D /* bg-vinilo@2x.png in Resources */,
