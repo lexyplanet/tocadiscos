@@ -19,8 +19,8 @@
 @synthesize brazoAgujaImageView;
 @synthesize discoImageView;
 @synthesize playButton;
-//@synthesize pauseButton;
 @synthesize stopButton;
+@synthesize soundButton;
 
 
 #pragma mark - Métodos clase ViewController
@@ -47,7 +47,7 @@
     funcionandoPicker = YES;
     
     /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro */
-    [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
+    [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:227 andPosicionY:66 andAnclajeX:0.5 andAnclajeY:0.26];
     
     if (cancionActual == nil) {
         cancionActual = @"El tiempo se nos va";
@@ -110,43 +110,51 @@
     {
         if (!pausado)
         {
-            [playButton encender:@"BotonPlayVerde.png"];
-            [stopButton apagar];
-            
-            //Sonido clic
-            [sonido setSonido:@"clic" andExtension:@"mp3"];
-            //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
-            [retardo tiempoEspera:0.25];
-            
-            //Animación
-            float time = 1.00;
-            [animacion inicioAnimacion:time];
-            
-            //Gira el brazo de la aguja
-            [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.4];
-            [disco inicioGiro:discoImageView];
-            [animacion finAnimacion];
-            
-            //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
-            [retardo tiempoEspera:time];
-            
-            //Simula el sonido del contacto de la aguja sobre el vinilo
-            [sonido setSonido:@"Vinilo" andExtension:@"mp3"];
-            //Introduce una pausa para que la canción empiece después del sonido de la aguja sobre el vinilo
-            [retardo tiempoEspera:0.4];
-            
-            if (funcionandoPicker) {
-                [playerPicker playButton:cancionActual];
+            [stopButton encender:@"stop-on@2x.png"];
+            [playButton encender:@"hover-pause@2x.png"];
+            if (funcionandoPicker) {                
+                if(pause){
+                    [playerPicker playButton:Nil];
+                    pause = NO;                    
+                }
+                else{
+                    //Sonido clic
+                    [sonido setSonido:@"clic" andExtension:@"mp3"];
+                    //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
+                    [retardo tiempoEspera:0.25];
+                    
+                    //Animación
+                    float time = 1.00;
+                    [animacion inicioAnimacion:time];
+                    
+                    //Gira el brazo de la aguja
+                    [brazo giroBrazo:brazoAgujaImageView andGradosGiro:0.4];
+                    [disco inicioGiro:discoImageView];
+                    [animacion finAnimacion];
+                    
+                    //Introduce una pausa para que la aguja se coloque en su posición sobre el disco
+                    [retardo tiempoEspera:time];
+                    
+                    //Simula el sonido del contacto de la aguja sobre el vinilo
+                    [sonido setSonido:@"Vinilo" andExtension:@"mp3"];
+                    //Introduce una pausa para que la canción empiece después del sonido de la aguja sobre el vinilo
+                    [retardo tiempoEspera:0.4];
+
+                    [playerPicker playButton:cancionActual];
+                }
             }
+            pausado = YES;
         }
         else
         {
-            [playButton encender:@"BotonPlayVerde.png"];
-            pausado = NO;
-            if (funcionandoPicker) {
-                [playerPicker playButton:Nil];
+            [playButton encender:@"play-on.png"];
+            if (funcionandoPicker) {                
+                [playerPicker pauseButton];
             }
+            pausado = NO;
+            pause = YES;
         }
+        [playerPicker volumen:volumenSlider];
     }
 }
 
@@ -155,8 +163,9 @@
 }*/
 
 - (IBAction)Stop:(id)sender {
-    [playButton apagar];
-    [stopButton encender:@"BotonStopVerde.png"];
+    [playButton encender:@"active-play@2x.png"];
+    [stopButton encender:@"stop-off@2x.png"];
+
     [animacion inicioAnimacion:1.0];
     [disco pararGiro];
     [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];
@@ -166,6 +175,8 @@
     if (funcionandoPicker) {
         [playerPicker stopButton];
     }
+    pause = NO;
+    pausado = NO;
 }
 
 - (IBAction)cambioVolumen:(id)sender {
@@ -193,8 +204,8 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     //Detiene la canción actual
-    [playButton apagar];
-    [stopButton encender:@"BotonStopVerde.png"];
+    //[playButton apagar];
+    [stopButton encender:@"stop-on@2x-png"];
     [animacion inicioAnimacion:1.0];
     [disco pararGiro];
     [brazo giroBrazo:brazoAgujaImageView andGradosGiro:-0.01];

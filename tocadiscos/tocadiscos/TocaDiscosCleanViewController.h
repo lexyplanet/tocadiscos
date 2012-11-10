@@ -24,6 +24,8 @@
 {
     TocadiscosViewController *tocadiscos;
     
+    BOOL pause;
+    
     NSString *cancionActual;
     
     BOOL pausado;   //Variable para el status de Pause
@@ -57,6 +59,7 @@
 @property (nonatomic, strong) IBOutlet Boton *playButton;
 //@property (nonatomic, strong) IBOutlet Boton *pauseButton;
 @property (nonatomic, strong) IBOutlet Boton *stopButton;
+@property (nonatomic, strong) IBOutlet Boton *soundButton;
 
 - (IBAction)Play:(id)sender;
 //- (IBAction)Pausa:(id)sender;

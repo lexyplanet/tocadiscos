@@ -31,9 +31,9 @@
     [reproductor prepareToPlay];
     
     //Oculta las imagenes asignadas a los botones del tocadiscos (play, pause, stop)
-    [playButton apagar];
-    [pauseButton apagar];
-    [stopButton apagar];
+    //[playButton apagar];
+    //[pauseButton apagar];
+    //[stopButton apagar];
     
     //Canción comodín del Picker para asegurarnos que ha seleccionado una canción el usuario
     cancion0 = @"SELECCIONA CANCIÓN:";

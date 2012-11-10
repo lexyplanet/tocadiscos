@@ -51,6 +51,9 @@
     playerPicker = [[PlayerPicker alloc] init];
     funcionandoPicker = YES;
     
+    /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro */
+    [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:220 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
+    
     //Personalización de los sliders
     [panSlider personalizarSlider:@"BotonVolumenHorizontal-04.png" andImagenMin:@"ControlStereoHorizontal-03.png" andImagenMax:@"ControlStereoHorizontal-03.png" andVertical:YES];
     
@@ -59,8 +62,7 @@
     [rateSlider personalizarSlider:@"BotonControlVelocidadHorizontal-03.png" andImagenMin:@"ControlVelocidadHorizontal-02.png" andImagenMax:@"ControlVelocidadHorizontal-02.png" andVertical:NO];
     
     
-    /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro */
-    [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:190 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
+    
     
     if (cancionActual == nil) {
         cancionActual = @"El tiempo se nos va";
@@ -168,6 +170,8 @@
                 [playerPicker playButton:Nil];
             }
         }
+        //Colocamos el volumen al porcentaje con el que inicia.
+        [playerPicker volumen:volumenSlider];
     }
 }
 
