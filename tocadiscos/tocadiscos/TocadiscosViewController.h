@@ -22,6 +22,7 @@
 @interface TocadiscosViewController : UIViewController  <NuevaCancionDelegate>
 {
     NSString *cancionActual;
+    NSString *nombreCancion;
     
     BOOL pausado;   //Variable para el status de Pause
     
@@ -48,6 +49,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *tiempoTranscurridoLabel;
 @property (strong, nonatomic) IBOutlet UILabel *tiempoTotalLabel;
 @property (strong, nonatomic) IBOutlet UIProgressView *cancionProgressView;
+@property (strong, nonatomic) IBOutlet UILabel *nombreCancionLabel;
 
 //Reproductor AudioPlayer
 //@property (nonatomic, strong) AVAudioPlayer *reproductorAudioPlayer;

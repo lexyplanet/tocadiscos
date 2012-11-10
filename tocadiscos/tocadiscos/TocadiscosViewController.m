@@ -50,6 +50,7 @@
     animacion = [[Animacion alloc] init];
     playerPicker = [[PlayerPicker alloc] init];
     funcionandoPicker = YES;
+    self.nombreCancionLabel.text  =@"holahola ";
     
     /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro */
     [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:220 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
@@ -257,16 +258,20 @@
 
 
 /*Invoqué el metodo IBAction ya definido ya que contiene toda la animacion y play de la cancion*/
-#pragma mark - nuevaCanción Piker
-- (void) nuevaCancion: (NSString *) cancion
+- (void) nuevaCancion: (NSString *) cancion :(int) pos
 {
+    if ([cancion isEqualToString:@"SELECCIONA CANCIÓN:"])
+    {
+        nombreCancion=@" ";
+    }
     //Pasamos el nombre de la canción eliminando su ruta y extensión
     cancionActual = [cancion lastPathComponent];
     if ([cancionActual hasSuffix:@".mp3"]) {
-        [cancionActual stringByDeletingPathExtension];
+        nombreCancion =[cancionActual stringByDeletingPathExtension];
+        
     }
+    self.nombreCancionLabel.text = [NSString stringWithFormat:@"%@",nombreCancion];
 }
-
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     //Detiene la canción actual

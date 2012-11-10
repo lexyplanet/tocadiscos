@@ -223,7 +223,7 @@
 
 /*Invoqué el metodo IBAction ya definido ya que contiene toda la animacion y play de la cancion*/
 #pragma mark - nuevaCanción Piker
-- (void) nuevaCancion: (NSString *) cancion
+- (void) nuevaCancion: (NSString *) cancion :(int) pos
 {
     //Pasamos el nombre de la canción eliminando su ruta y extensión
     cancionActual = [cancion lastPathComponent];

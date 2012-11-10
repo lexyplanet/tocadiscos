@@ -175,6 +175,7 @@
                         <outlet property="brazoAgujaImageView" destination="a1j-sn-VgJ" id="s6z-Bl-mJM"/>
                         <outlet property="cancionProgressView" destination="jLk-hT-5mf" id="iQQ-gy-VcM"/>
                         <outlet property="discoImageView" destination="la1-In-508" id="bph-gu-mEh"/>
+                        <outlet property="nombreCancionLabel" destination="E1V-BC-447" id="Jpt-8w-Ncj"/>
                         <outlet property="panSlider" destination="Los-Bb-gX7" id="9nw-13-n5o"/>
                         <outlet property="pauseButton" destination="Eas-Re-8sB" id="2zT-cg-6fL"/>
                         <outlet property="playButton" destination="S4s-le-aeY" id="Swg-0i-CPX"/>
@@ -514,6 +515,7 @@
                 <relationship kind="outlet" name="brazoAgujaImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="cancionProgressView" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="discoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nombreCancionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="panSlider" candidateClass="TocadiscosSlider"/>
                 <relationship kind="outlet" name="pauseButton" candidateClass="Boton"/>
                 <relationship kind="outlet" name="playButton" candidateClass="Boton"/>
@@ -531,6 +533,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KSo-JS-7CP"/>
+        <segue reference="7Bd-PF-qww"/>
     </inferredMetricsTieBreakers>
 </document>

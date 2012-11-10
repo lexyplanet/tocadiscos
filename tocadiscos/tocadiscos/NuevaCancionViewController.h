@@ -15,7 +15,7 @@
 @protocol NuevaCancionDelegate <NSObject>
 
 @optional
-- (void) nuevaCancion: (NSString *) cancion :(NSInteger) pos;
+- (void) nuevaCancion: (NSString *) cancion :(int) pos;
 
 @end
 

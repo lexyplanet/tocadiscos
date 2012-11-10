@@ -31,6 +31,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.canciones = [[NSArray alloc] initWithObjects: @"SELECCIONA CANCIÓN:",@"Into LexyPlanet", @"Downbeat", @"El tiempo se nos va", @"Enganchado a ti", @"Sin Rumbo",nil];
+    
     posUltimaCancion = self.pickerMusicItem.tag;
 }
 
