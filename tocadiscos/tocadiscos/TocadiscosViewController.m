@@ -50,8 +50,7 @@
     animacion = [[Animacion alloc] init];
     playerPicker = [[PlayerPicker alloc] init];
     funcionandoPicker = YES;
-    self.nombreCancionLabel.text  =@"holahola ";
-    
+        
     /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro */
     [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:220 andPosicionY:4 andAnclajeX:0.5 andAnclajeY:0.26];
     
@@ -67,6 +66,8 @@
     
     if (cancionActual == nil) {
         cancionActual = @"El tiempo se nos va";
+        self.nombreCancionLabel.text  =@"El tiempo se nos va";
+
     }
     
     if (funcionandoPicker) {
