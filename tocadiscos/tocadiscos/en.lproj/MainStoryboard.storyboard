@@ -187,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2W-6n-WZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-621" y="-337"/>
+            <point key="canvasLocation" x="-588" y="-338"/>
         </scene>
         <!--Nueva Cancion View Controller-->
         <scene sceneID="MxW-RN-RBw">
@@ -369,6 +369,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Next:" destination="XHD-zP-ck8" eventType="touchUpInside" id="uub-HC-anq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TfH-bV-Vg4">
                                 <rect key="frame" x="272" y="278" width="25" height="30"/>
@@ -382,8 +385,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Y8E-fp-hRs">
-                                <rect key="frame" x="43" y="341" width="53" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Y8E-fp-hRs" customClass="Boton">
+                                <rect key="frame" x="41" y="341" width="53" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="active-pre@2x.png">
@@ -393,6 +396,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Previous:" destination="XHD-zP-ck8" eventType="touchUpInside" id="mNm-9b-oVh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -403,6 +409,7 @@
                         <outlet property="brazoAgujaImageView" destination="qW6-ud-ZAP" id="7xS-eP-H2f"/>
                         <outlet property="discoImageView" destination="WQs-SR-83v" id="npn-GI-phH"/>
                         <outlet property="playButton" destination="dt3-V5-lmU" id="5ou-N9-ifg"/>
+                        <outlet property="prevButton" destination="Y8E-fp-hRs" id="l1g-SF-hO2"/>
                         <outlet property="stopButton" destination="80Z-8z-4Ha" id="46z-Vc-8AM"/>
                         <outlet property="tiempoTotalLabel" destination="KTg-ay-lcP" id="37F-ek-PBI"/>
                         <outlet property="tiempoTranscurridoLabel" destination="Rmt-oe-7Ep" id="4WS-4i-6hc"/>
@@ -473,14 +480,18 @@
         <class className="TocadiscosCleanViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TocadiscosCleanViewController.h"/>
             <relationships>
+                <relationship kind="action" name="Next:"/>
                 <relationship kind="action" name="Play:"/>
+                <relationship kind="action" name="Previous:"/>
                 <relationship kind="action" name="Stop:"/>
                 <relationship kind="action" name="cambioVolumen:"/>
                 <relationship kind="action" name="volverRetro:"/>
                 <relationship kind="outlet" name="brazoAgujaImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="cancionProgressView" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="discoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="Boton"/>
                 <relationship kind="outlet" name="playButton" candidateClass="Boton"/>
+                <relationship kind="outlet" name="prevButton" candidateClass="Boton"/>
                 <relationship kind="outlet" name="soundButton" candidateClass="Boton"/>
                 <relationship kind="outlet" name="stopButton" candidateClass="Boton"/>
                 <relationship kind="outlet" name="tiempoTotalLabel" candidateClass="UILabel"/>

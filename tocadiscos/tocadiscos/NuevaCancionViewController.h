@@ -15,11 +15,11 @@
 @protocol NuevaCancionDelegate <NSObject>
 
 @optional
-- (void) nuevaCancion: (NSString *) cancion;
+- (void) nuevaCancion: (NSString *) cancion :(NSInteger) pos;
 
 @end
 
-NSInteger posUltimaCancion;
+int posUltimaCancion;
 
 @interface NuevaCancionViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 {

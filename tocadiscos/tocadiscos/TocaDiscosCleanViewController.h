@@ -38,6 +38,7 @@
     Disco *disco;
     Animacion *animacion;
     PlayerPicker *playerPicker;
+    int posActual;
     
     BOOL funcionandoPicker; //Controla la selección de canciones del picker o del mediaPlayer.
 }
@@ -54,16 +55,28 @@
 @property (strong, nonatomic) IBOutlet UIImageView *brazoAgujaImageView;
 
 @property(nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSArray *canciones;
 
 //Botones del tocadiscos
 @property (nonatomic, strong) IBOutlet Boton *playButton;
 //@property (nonatomic, strong) IBOutlet Boton *pauseButton;
 @property (nonatomic, strong) IBOutlet Boton *stopButton;
 @property (nonatomic, strong) IBOutlet Boton *soundButton;
+@property (nonatomic, strong) IBOutlet Boton *nextButton;
+@property (nonatomic, strong) IBOutlet Boton *prevButton;
+
+
+
+
+
+
 
 - (IBAction)Play:(id)sender;
 //- (IBAction)Pausa:(id)sender;
 - (IBAction)Stop:(id)sender;
+- (IBAction)Next:(id)sender;
+- (IBAction)Previous:(id)sender;
+
 
 - (IBAction)cambioVolumen:(id)sender;
 

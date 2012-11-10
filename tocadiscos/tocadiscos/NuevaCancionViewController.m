@@ -31,7 +31,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.canciones = [[NSArray alloc] initWithObjects: @"SELECCIONA CANCIÓN:",@"Into LexyPlanet", @"Downbeat", @"El tiempo se nos va", @"Enganchado a ti", @"Sin Rumbo",nil];
-    self.pickerMusicItem.tag = posUltimaCancion;
+    posUltimaCancion = self.pickerMusicItem.tag;
 }
 
 - (void)didReceiveMemoryWarning
@@ -106,7 +106,7 @@
 
 - (IBAction) hecho:(id)sender
 {
-    [self.delegate nuevaCancion: self.cancionSeleccionada];
+    [self.delegate nuevaCancion: self.cancionSeleccionada :posUltimaCancion];
     
     // [self.delegate].posUltimaCancion = self.pickerMusicItem.;
     //[self.delegate].tiempoQueTranscurre = 0;

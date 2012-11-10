@@ -46,11 +46,15 @@
     playerPicker = [[PlayerPicker alloc] init];
     funcionandoPicker = YES;
     
+    
     /* Es necesario colocar la posición de x,y al modificar el anchorPoint el cual se utiliza para colocar el eje central donde se hará el giro */
     [brazo anchorPointGiroBrazo:brazoAgujaImageView PosicionX:227 andPosicionY:66 andAnclajeX:0.5 andAnclajeY:0.26];
     
+    self.canciones = [[NSArray alloc] initWithObjects: @"SELECCIONA CANCIÓN:",@"Into LexyPlanet", @"Downbeat", @"El tiempo se nos va", @"Enganchado a ti", @"Sin Rumbo",nil];
+    
     if (cancionActual == nil) {
         cancionActual = @"El tiempo se nos va";
+        posActual = 3;
     }
     
     if (funcionandoPicker) {
@@ -183,6 +187,33 @@
     if (funcionandoPicker) {
         [playerPicker volumen:volumenSlider];
     }
+}
+
+- (IBAction)Next:(id)sender
+{
+    if (posActual +1 < self.canciones.count )
+    {
+        posActual +=1;
+        
+    }
+    else
+    {
+        posActual = 1;
+    }
+    cancionActual = self.canciones[posActual];
+    
+}
+
+- (IBAction)Previous:(id)sender
+{
+    if (posActual -1 > 0)
+    {
+        posActual -=1;
+    }
+    else{
+        posActual = (self.canciones.count) -1;
+    }
+    cancionActual = self.canciones[posActual];
 }
 
 - (IBAction)volverRetro:(id)sender
